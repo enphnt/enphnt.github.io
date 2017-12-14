@@ -10,10 +10,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="https://www.enphnt.github.io.ico" rel="icon" />
-    <link rel="icon" href="http://ibm.github.io/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link href="https://enphnt.github.io" rel="icon" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/enphnt.css" rel="stylesheet">
 
     <title>Nathan Phennel @ Github</title>
 
@@ -38,21 +38,16 @@
         })
     </script>
 
-    <script src="https://1.www.s81c.com/common/stats/ida_stats.js"></script>
-    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet">
-    <script src="https://1.www.s81c.com/common/v18/js/www.js"></script>
-
 </head>
 
 <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="http://www.enphnt.github.io">
+            <a class="navbar-brand" href="https://enphnt.github.io">
                 <img src="images/np_white_42x20.png" alt="NP">
             </a>
-            <!--a class="navbar-brand" style="float: right" href="http://www.enphnt.github.io"><img src="images/dWmark.png" alt="DW"></a-->
-            <a id="dw-nav" class="navbar-brand" style="float: right" href="http://www.github.com/enphnt" title="enphnt home">
+            <a id="dw-nav" class="navbar-brand" style="float: right" href="https://www.github.com/enphnt" title="enphnt home">
                 <span class="dw-logo-come-on">Come on</span>&nbsp;
                 <span class="dw-logo-feel-the">feel the</span>
                 <span class="dw-logo-tests">tests</span>
@@ -61,6 +56,7 @@
             </div>
         </div>
     </div>
+
     <!-- main banner-->
     <div id="ibm-leadspace-head" class="ibm-alternate ibm-padding-top-2 ibm-padding-bottom-1" style="background: url(images/open-bg.jpg) center / cover no-repeat;">
         <div id="ibm-leadspace-body" class="ibm-padding-top-3 ibm-padding-bottom-1">
@@ -68,11 +64,9 @@
                 <div class="ibm-col-6-5 ibm-col-medium-1-1">
                     <h1 class="ibm-h1 ibm-medium">Nathan Phennel</h1>
                     <h2 class="ibm-h2 ibm-medium ibm-padding-bottom-3">▶ Jack of all trades, master of tests</h2>
-                    <!--<h4 class="ibm-h4 ibm-padding-bottom-2">Drive performance and deliver results to transform your enterprise</h4>-->
                     <p class="ibm-button-link ibm-btn-row">
-                        <a href="https://developer.ibm.com/code/open" class="ibm-btn-pri ibm-btn-white" data-analytics-category="Leadspace buttons"
-                            data-analytics-action="IBM Code Open">Check out my Resume</a>
-                        <a href="https://www.bluemix.net/" class="ibm-btn-sec ibm-btn-white" data-analytics-category="Leadspace buttons" data-analytics-action="BlueMix">Read my Rants</a>
+                        <a href="https://developer.ibm.com/code/open" class="ibm-btn-pri ibm-btn-white">Check out my Resume</a>
+                        <a href="https://www.to-do.net/" class="ibm-btn-sec ibm-btn-white">Read my Rants</a>
                     </p>
                 </div>
             </div>
@@ -80,21 +74,23 @@
     </div>
     <!-- /main banner -->
 
-    <!-- Main jumbotron for a primary marketing message or call to action
-    <div class="jumbotron">
+    <!--<div class="jumbotron">
         <div class="container">
-            <h1>IBM open source at GitHub</h1>
+            <h1>Here are three things that I think are pretty cool</h1>
             <div class="leadspace-buttons">
-                <a href="https://console.bluemix.net/devops/getting-started" data-analytics-category="Leadspace buttons" data-analytics-action="JazzHub">
-                    <p class="btn btn-primary btn-lg btn-custom-jazz">Enhance your GitHub experience with <b>IBM Cloud DevOps</b>
+                <a href="https://www.reddit.com/r/internetisbeautiful">
+                    <p class="btn btn-primary btn-lg btn-custom-jazz">Look at some web art
+                        <b>/r/Internet Is Beautiful</b>
                     </p>
                 </a>
-                <a href="https://www.bluemix.net/" data-analytics-category="Leadspace buttons" data-analytics-action="BlueMix">
-                    <p class="btn btn-primary btn-lg btn-custom-bm">Deploy your application to <b>IBM Cloud</b>
+                <a href="https://archive.org/details/softwarelibrary_msdos_games">
+                    <p class="btn btn-primary btn-lg btn-custom-bm">Have some old school fun
+                        <b>MS-DOS Internet Archive</b>
                     </p>
                 </a>
-                <a href="http://developer.ibm.com/code/open" data-analytics-category="Leadspace buttons" data-analytics-action="IBM Code Open">
-                    <p class="btn btn-primary btn-lg btn-custom-dw">Engage with IBM Open Source <b>IBM Code</b>
+                <a href="http://www.pointless.com/">
+                    <p class="btn btn-primary btn-lg btn-custom-dw">Peruse the pointless
+                        <b>Pointless.com</b>
                     </p>
                 </a>
             </div>
@@ -132,11 +128,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; Copyright IBM 2013-
+            <p class="copy-left">&copy;</p>
+            <span>Copyleft 2016 -
                 <span id="copyright-last-year">
                     <script>document.write(new Date().getFullYear())</script>
                 </span>
-            </p>
+            </span>
         </div>
     </footer>
     </div>
@@ -435,73 +432,6 @@
             }
 
             $(".nrepos").text("(" + (n - m) + ")");
-
-
-            // ---------------------------------
-            // Google Analytics Event Tracking
-            //
-            //
-            // usage: add the following attributes to links you want to track:
-            //   data-analytics-category=""    REQUIRED  String   Typically the object that was interacted with (e.g. button)
-            //   data-analytics-action=""      REQUIRED  String   The type of interaction (e.g. click)
-            //   data-analytics-label=""       OPTIONAL  String   Useful for categorizing events (e.g. nav buttons)
-            //   data-analytics-value=""       OPTIONAL  Integer  Values must be non-negative. Useful to pass counts (e.g. 4 times)
-            //
-            // Those are the suggested usages, but you can use the attributes how you want
-            // see https://developers.google.com/analytics/devguides/collection/analyticsjs/events for more details
-            //
-            // EXAMPLE:
-            // <a href="http://ibm.com" data-analytics-category="Leadspace button" data-analytics-action="To ibm.com">Off you go!</a>
-            // ---------------------------------
-
-            $('body').on('click', 'a[data-analytics-category][data-analytics-action]', function (e) {
-
-                // No analytics? Bail.
-                if (!window.ga)
-                    return;
-
-                // for links to external sources, we need a tiny delay to have a little extra time to send to Google's servers before unload
-                // 200ms is about right for enough time
-                if (this.hostname && this.hostname !== location.hostname) {
-
-                    // Stop the link action
-                    e.preventDefault();
-
-                    // setTimeout callback is called in the window scope, so cache the url from the link now
-                    var url = this.href;
-
-                    // in 200ms, off you go
-                    setTimeout(function () {
-                        document.location = url;
-                    }, 200);
-                }
-
-                // make a new data object
-                var $el = $(this),
-                    data = {
-                        'hitType': 'event'
-                    };
-
-                // category (required string)
-                data['eventCategory'] = $el.attr('data-analytics-category');
-
-                // action (required string)
-                data['eventAction'] = $el.attr('data-analytics-action');
-
-                // label (optional string)
-                if ($el.attr('data-analytics-label')) {
-                    data['eventLabel'] = $el.attr('data-analytics-label');
-                }
-
-                // value (optional int)
-                if ($el.attr('data-analytics-value')) {
-                    data['eventValue'] = parseInt($el.attr('data-analytics-value'));
-                }
-
-                // send the data
-                ga('send', data);
-
-            });
         });
 
     </script>
