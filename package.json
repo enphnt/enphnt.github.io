@@ -1,7 +1,7 @@
 {
-  "name": "ibm.github.io",
-  "description": "ibm.github.io",
-  "author": "IBM",
+  "name": "enphnt.github.io",
+  "description": "enphnt.github.io",
+  "author": "Nathan Phennel",
   "version": "0.0.1",
   "devDependencies": {
     "jshint": "^2.9.5"
