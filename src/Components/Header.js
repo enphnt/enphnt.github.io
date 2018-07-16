@@ -34,8 +34,8 @@ class Header extends Component {
 
       <div className="row banner">
          <div className="banner-text">
-            <h1 className="responsive-headline">I'm {name}.</h1>
-            <h3>I'm a {city} based <span>{occupation}</span>. {description}.</h3>
+            <h1 className="responsive-headline" style={{ marginTop: -90, color: "rgb(135, 179, 166)" }}>I'm {name}.</h1>
+            <h3 style={{ color: "rgb(208, 255, 241)" }}>I'm a {city} based <span>{occupation}</span>. {description}.</h3>
             <hr />
             <ul className="social">
                {networks}
