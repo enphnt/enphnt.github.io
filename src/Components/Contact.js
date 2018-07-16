@@ -60,7 +60,7 @@ class Contact extends Component {
                   </div>
 
                   <div>
-                     <button className="submit">Submit</button>
+                     <button className="submit">Submit (TODO)</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif" />
                      </span>
@@ -74,16 +74,15 @@ class Contact extends Component {
 				   </div>
            </div>
 
-
             <aside className="four columns footer-widgets">
               <div className="widget widget_contact">
-                <h4>Address and Phone</h4>
+                <h4>Send a message to:</h4>
                   <p className="address">
                     {name}<br />
                     {city}, {state} {zip}<br />
+                    {email}<br />
                   </p>
 				      </div>
-
             </aside>
       </div>
    </section>
