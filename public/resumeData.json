@@ -95,34 +95,22 @@
   "portfolio":{
     "projects": [
       {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
-      },
-      {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.enphnt.github.io"
-      },
-      {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.enphnt.github.io/originalthaifood.github.io"
-      },
-      {
         "title":"Resume Website",
-        "category":"A React based resume website template",
+        "category":"This very site! 🙌 Made using a React based resume website template.",
         "image":"resume-website.jpg",
         "url":"http://www.enphnt.github.io"
       },
       {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
+        "title":"Tyranny of the Majority (TotM)",
+        "category":"Game built with a friend that combines Family-Feud-style guessing with Google search autocompletes.",
+        "image":"totm.jpg",
+        "url":"http://www.playtotm.com/"
+      },
+      {
+        "title":"uTest Community",
+        "category":"I've tested everything from shopping cart systems to 'smart' digital set top boxes for TV.",
+        "image":"utest.jpg",
+        "url":"https://www.utest.com/profile/p151929/about"
       }
     ]
   },
