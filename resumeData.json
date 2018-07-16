@@ -4,10 +4,9 @@
     "occupation":"Test Engineer",
     "description":"As a hybrid of tester/developer, I work closely with devs to design, perform, and automate testing",
     "image":"profilepic.jpg",
-    "bio":"Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.",
-    "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
+    "bio":"I write mainly JavaScript code for end to end and integration tests. However, to make continuous testing a reality I leverage js to create needed tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I help to create procedures that give teams transparent actionable feedback to expose risk early and build confidence with every build.",
+    "contactmessage":"TODO: fix this comment form; Til then, email me if you want to get in touch about a software testing opportunity.",
     "email": "nathanphennel@gmail.com",
-    "phone": "555-555-5555",
     "address":{
       "city":"Sydney",
       "state":"NSW",
@@ -29,7 +28,7 @@
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage":"I have a varied skill-set from both professional and personal ventures.",
     "education":[
       {
         "school":"University?",
@@ -61,65 +60,57 @@
     "skills":[
       {
         "name":"Git",
-        "level":"60%"
+        "level":"70%"
       },
       {
-        "name":"Illustrator",
-        "level":"55%"
+        "name":"mochajs",
+        "level":"80%"
+      },
+      {
+        "name":"js",
+        "level":"70%"
+      },
+      {
+        "name":"Docker",
+        "level":"50%"
       },
       {
         "name":"ReactJs",
         "level":"50%"
       },
       {
-        "name":"CSS",
-        "level":"90%"
-      },
-      {
-        "name":"HTML5",
-        "level":"80%"
-      },
-      {
-        "name":"VueJs",
+        "name":"Python",
         "level":"50%"
       },
       {
-        "name":"MongoDB",
-        "level":"80%"
+        "name":"C#",
+        "level":"40%"
+      },
+      {
+        "name":"Java",
+        "level":"30%"
       }
     ]
   },
   "portfolio":{
     "projects": [
       {
-        "title":"Canadian Wanderlust",
-        "category":"My Travel Blog for my post-university travels",
-        "image":"canadian-wanderlust.jpg",
-        "url":"https://www.canadianwanderlust.com"
-      },
-      {
-        "title":"Fury Fighting Gear",
-        "category":"(offline now) A fighting gear company I started",
-        "image":"fury-fighting-gear.jpg",
-        "url":"http://www.enphnt.github.io"
-      },
-      {
-        "title":"Original Thai Food",
-        "category":"Website I built for a restaurant I like in Thailand",
-        "image":"original-thai-food.jpg",
-        "url":"http://www.enphnt.github.io/originalthaifood.github.io"
-      },
-      {
         "title":"Resume Website",
-        "category":"A React based resume website template",
+        "category":"This very site! 🙌 Made using a React based resume website template.",
         "image":"resume-website.jpg",
         "url":"http://www.enphnt.github.io"
       },
       {
-        "title":"Smirkspace",
-        "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"smirkspace.jpg",
-        "url":"http://www.smirkspace.com"
+        "title":"Tyranny of the Majority (TotM)",
+        "category":"Game built with a friend that combines Family-Feud-style guessing with Google search autocompletes.",
+        "image":"totm.jpg",
+        "url":"http://www.playtotm.com/"
+      },
+      {
+        "title":"uTest Community",
+        "category":"I've tested everything from shopping cart systems to 'smart' digital set top boxes for TV.",
+        "image":"utest.jpg",
+        "url":"https://www.utest.com/profile/p151929/about"
       }
     ]
   },
