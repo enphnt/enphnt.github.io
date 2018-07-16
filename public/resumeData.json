@@ -28,7 +28,7 @@
     ]
   },
   "resume":{
-    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "skillmessage":"I have a varied skill-set from both professional and personal ventures.",
     "education":[
       {
         "school":"University?",
@@ -60,31 +60,35 @@
     "skills":[
       {
         "name":"Git",
-        "level":"60%"
+        "level":"70%"
       },
       {
-        "name":"Illustrator",
-        "level":"55%"
+        "name":"mochajs",
+        "level":"80%"
+      },
+      {
+        "name":"js",
+        "level":"70%"
+      },
+      {
+        "name":"Docker",
+        "level":"50%"
       },
       {
         "name":"ReactJs",
         "level":"50%"
       },
       {
-        "name":"CSS",
-        "level":"90%"
-      },
-      {
-        "name":"HTML5",
-        "level":"80%"
-      },
-      {
-        "name":"VueJs",
+        "name":"Python",
         "level":"50%"
       },
       {
-        "name":"MongoDB",
-        "level":"80%"
+        "name":"C#",
+        "level":"40%"
+      },
+      {
+        "name":"Java",
+        "level":"30%"
       }
     ]
   },
