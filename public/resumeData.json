@@ -28,33 +28,40 @@
     ]
   },
   "resume":{
-    "skillmessage":"I have a varied skill-set from both professional and personal ventures.",
-    "education":[
-      {
-        "school":"University?",
-        "degree":"Masters in Beer tasting",
-        "graduated":"April 2007",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
-      },
-      {
-        "school":"School #1 Maybe College?",
-        "degree":"What did you study 101",
-        "graduated":"March 2003",
-        "description":"Describe your experience at school, what you learned, what useful skills you have acquired etc."
-      }
-    ],
+    "skillmessage":"In software, I have a skill-set developed from both professional and personal ventures.",
     "work":[
       {
-        "company":"Awesome Design Studio",
-        "title":"Senior UX God ",
-        "years":"March 2010 - Present",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"Avoka",
+        "title":"Software Test Engineer",
+        "years":"January 2018 - Present",
+        "description":"My focus is testing required the analytics product and leveraging behavioral data to influence decisions. Hybrid of a software tester and a developer to automate testing and maintain continuous testing. We are currently aiming to create a unified framework for writing unit/integration/e2e tests to better align testers and devs."
       },
       {
-        "company":"Super Cool Studio",
-        "title":"Junior bug fixer",
-        "years":"March 2007 - February 2010",
-        "description":"Describe work, special projects, notable achievements, what technologies you have been working with, and anything else that would be useful for an employer to know."
+        "company":"Domain Group",
+        "title":"Software Test Engineer",
+        "years":"October 2016 - December 2017",
+        "description":"I looked after new Web and API test automation as well as maintenance of those test running in CI, often debugging and improving tests. Used Node.js E2E frameworks such as Nightwatch, Cypress, Protractor. As well we used tools Web service test tools such as Postman/Newman, Rest- Assured, JMeter, Gatling. Integrated tests/bots into CI pipeline tools Jenkins, CircleCI, GitHub."
+      },
+      {
+        "company":"Quantium",
+        "title":"Software Test Engineer",
+        "years":"January 2014 - October 2016",
+        "description":"Looked over design, execution and maintenance of manual and automated tests. Used Protractor combined with local builds from feature branches to test breaking changes. Overall, I provided a robust communication channel between developers and QA."
+      }
+    ],
+    "education":[
+      {
+        "school":"University of Technology, Sydney",
+        "degree":"Master of Information Technology",
+        "graduated":"April 2014",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0306437915302192",
+        "description": "Maintained a High Distinction Average throughout my degree. Focus included software development, design, implementation and maintenance. As part of my final research, my work was published in a scholarly journal: "
+      },
+      {
+        "school":"University of North Texas",
+        "degree":"Bachelor of Arts, International Studies",
+        "graduated":"December 2009",
+        "description":"I minored in Spanish. In the end, I graduated Cum Laude and maintained the Dean's list. Study programs abroad included Summer Semester in Mexico for Spanish immersion and Winter Semester in India for Ethnomusicology."
       }
     ],
     "skills":[
