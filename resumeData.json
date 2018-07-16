@@ -4,7 +4,8 @@
     "occupation":"Test Engineer",
     "description":"As a hybrid of tester/developer, I work closely with devs to design, perform, and automate testing",
     "image":"profilepic.jpg",
-    "bio":"I write mainly JavaScript code for end to end and integration tests. However, to make continuous testing a reality I leverage js to create needed tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I help to create procedures that give teams transparent actionable feedback to expose risk early and build confidence with every build.",
+    "bio":"I write mainly JavaScript code for end to end and integration tests. However, to make continuous testing a reality, I leverage js to create needed tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I help to create procedures that give teams transparent actionable feedback to expose risk early and build confidence with every build.",
+    "bio2":"In my free time, when I'm not looking at code, I'm making music on drumset, bass, guitar or the computer. I also enjoy playing with video and video editing to put together funny things here and there.",
     "contactmessage":"TODO: fix this comment form; Til then, email me if you want to get in touch about a software testing opportunity.",
     "email": "nathanphennel@gmail.com",
     "address":{
