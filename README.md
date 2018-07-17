@@ -1,3 +1,6 @@
+|Note: `master` branch is only used for publishing (ie. `npm run deploy`). All work is kept on `develop` and these branches are not kept in sync.
+------
+
 # Nathan's Site 
 This is a simple react+github-pages project to serve as a personal website for my resume and a whatever else I feel like adding in. It can be viewed live here: https://enphnt.github.io/.
 

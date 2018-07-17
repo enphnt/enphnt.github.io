@@ -110,9 +110,9 @@
     "projects": [
       {
         "title":"This Very Website!",
-        "category":"🙌  I made this custom site using React with JSON for data storage. Audit this site to really appreciate the performance.",
+        "category":"🙌  I made this custom github-pages site using React with JSON for data storage. Audit this site to really appreciate the performance.",
         "image":"resume-website.jpg",
-        "url":"http://enphnt.github.io"
+        "url":"https://github.com/enphnt/enphnt.github.io/tree/develop"
       },
       {
         "title":"Tyranny of the Majority (TotM)",
