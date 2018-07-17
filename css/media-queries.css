@@ -188,17 +188,18 @@
    /* Header Styles
    -------------------------------------------------------------------- */
    header .banner {
-      padding-bottom: 12px;
-      padding-top: 6px;
+      padding-bottom: 10px;
+      padding-top: 5px;
    }
    header .banner-text h1 { font: 68px/1.1em 'opensans-bold', sans-serif; }
    header .banner-text h3 {
       font: 16px/1.9em 'librebaskerville-regular', serif;
       width: 85%;
+      color: rgb(223, 255, 245);
    }
    header .banner-text hr {
       width: 80%;
-      margin: 18px auto;
+      margin: 20px auto;
    }
 
    /* header social links */
@@ -207,7 +208,10 @@
       font-size: 24px;
       line-height: 36px;      
    }
-   header .social li { margin: 0 10px; }
+   header .social li { 
+     margin: 0 10px;
+     font-size: 28px;
+  }
 
     /* scrolldown link */
    header .scrolldown { display: none; }
