@@ -4,8 +4,8 @@
     "occupation":"Test Engineer",
     "description":"As a hybrid of tester/developer, I work closely with devs to design, perform, and automate testing",
     "image":"profilepic.jpg",
-    "bio":"I write mainly JavaScript code for end to end and integration tests. However, to make continuous testing a reality, I leverage js to create needed tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I help to create procedures that give teams transparent actionable feedback to expose risk early and build confidence with every build.",
-    "bio2":"In my free time, when I'm not looking at code, I'm making music on drumset, bass, guitar or the computer. I also enjoy playing with video and video editing to put together funny things here and there.",
+    "bio":"I mainly write code for end to end and integration tests. However, to make continuous testing a reality, I code to create the necessary tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I help to create procedures that give teams transparent actionable feedback to expose risk early and build confidence with every build.",
+    "bio2":"In my free time, when I'm not looking at code, I'm making music on drum set, bass, guitar or the computer. I also enjoy playing with video and video editing to put together funny things here and there.",
     "contactmessage":"TODO: fix this comment form; Til then, email me if you want to get in touch about a software testing opportunity.",
     "email": "nathanphennel@gmail.com",
     "address":{
@@ -25,6 +25,11 @@
         "name":"linkedin",
         "url":"https://au.linkedin.com/in/enphnt",
         "className":"fa fa-linkedin"
+      },
+      {
+        "name":"gitlab",
+        "url":"http://gitlab.com/enphnt",
+        "className":"fa fa-code"
       }
     ]
   },
@@ -35,19 +40,19 @@
         "company":"Avoka",
         "title":"Software Test Engineer",
         "years":"January 2018 - Present",
-        "description":"My focus is testing required the analytics product and leveraging behavioral data to influence decisions. Hybrid of a software tester and a developer to automate testing and maintain continuous testing. We are currently aiming to create a unified framework for writing unit/integration/e2e tests to better align testers and devs."
+        "description":"My focus is looking over the testing required for the analytics product which leverage behavioral data to influence decisions. Hybrid of a software tester and a developer to automate testing and maintain continuous testing. We are currently aiming to create a unified framework for writing unit/integration/e2e tests to better align testers and devs."
       },
       {
         "company":"Domain Group",
         "title":"Software Test Engineer",
         "years":"October 2016 - December 2017",
-        "description":"I looked after new Web and API test automation as well as maintenance of those test running in CI, often debugging and improving tests. Used Node.js E2E frameworks such as Nightwatch, Cypress, Protractor. As well we used tools Web service test tools such as Postman/Newman, Rest- Assured, JMeter, Gatling. Integrated tests/bots into CI pipeline tools Jenkins, CircleCI, GitHub."
+        "description":"I looked after new Web and API test automation as well as maintenance of those test running in CI, debugging and improving tests along the way. Working to help with performance and security needs, I used Node.js and E2E frameworks such as Nightwatch, Cypress, Protractor and Web service tools like Postman/Newman, Rest- Assured, JMeter, Gatling. I integrated tests/bots into CI pipeline tools Jenkins, CircleCI, GitHub to build continuous testing tools."
       },
       {
         "company":"Quantium",
         "title":"Software Test Engineer",
         "years":"January 2014 - October 2016",
-        "description":"Looked over design, execution and maintenance of manual and automated tests. Used Protractor combined with local builds from feature branches to test breaking changes. Overall, I provided a robust communication channel between developers and QA."
+        "description":"I oversaw the design, execution and maintenance of manual and automated tests for another analytics product. Used Protractor, C#, and F# frameworks combined with local builds from feature branches to test breaking changes. Overall, I provided a robust communication channel between developers and QA."
       }
     ],
     "education":[
@@ -56,7 +61,7 @@
         "degree":"Master of Information Technology",
         "graduated":"April 2014",
         "link": "https://www.sciencedirect.com/science/article/pii/S0306437915302192",
-        "description": "Maintained a High Distinction Average throughout my degree. Focus included software development, design, implementation and maintenance. As part of my final research, my work was published in a scholarly journal: "
+        "description": "Maintained a High Distinction Average throughout my degree. Focus included software development, design, implementation and maintenance. As part of my final research around IoT use in emergencies, my work was published in a scholarly journal: "
       },
       {
         "school":"University of North Texas",
