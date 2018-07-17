@@ -29,7 +29,7 @@
       {
         "name":"gitlab",
         "url":"http://gitlab.com/enphnt",
-        "className":"fa fa-code"
+        "className":"fa fa-code-fork"
       }
     ]
   },
