@@ -1,5 +1,5 @@
 # Nathan's Site 
-This is a simple react+github-pages project to serve as a personal website for my resume and a whatever else I feel like adding in. It can be viewed live here: https://www.enphnt.github.io/.
+This is a simple react+github-pages project to serve as a personal website for my resume and a whatever else I feel like adding in. It can be viewed live here: https://enphnt.github.io/.
 
 ## How to work on this one:
 
@@ -13,4 +13,4 @@ This is a simple react+github-pages project to serve as a personal website for m
 Deployment use `gh-pages` and currently just pushes latest bundle to `master`. TODO: improve the messages of each deployment.
 
 1. To deploy, `npm run deploy`. On success, you should see the message 'Published'. 
-2. Verify the update works as expected on https://www.enphnt.github.io/
+2. Verify the update works as expected on https://enphnt.github.io/
