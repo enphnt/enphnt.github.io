@@ -13,7 +13,7 @@
       "state":"NSW",
       "zip": "2000"
     },
-    "website": "http://www.enphnt.github.io",
+    "website": "http://enphnt.github.io",
     "resumedownload":"/NathanPhennelProfile.pdf",
     "social":[
       {
@@ -109,10 +109,10 @@
   "portfolio":{
     "projects": [
       {
-        "title":"Resume Website",
-        "category":"This very site! 🙌 Made using a React based resume website template.",
+        "title":"This Very Website!",
+        "category":"🙌  I made this custom site using React with JSON for data storage. Audit this site to really appreciate the performance.",
         "image":"resume-website.jpg",
-        "url":"http://www.enphnt.github.io"
+        "url":"http://enphnt.github.io"
       },
       {
         "title":"Tyranny of the Majority (TotM)",
