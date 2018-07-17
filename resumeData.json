@@ -67,7 +67,8 @@
         "school":"University of North Texas",
         "degree":"Bachelor of Arts, International Studies",
         "graduated":"December 2009",
-        "description":"I minored in Spanish. In the end, I graduated Cum Laude and maintained the Dean's list. Study programs abroad included Summer Semester in Mexico for Spanish immersion and Winter Semester in India for Ethnomusicology."
+        "link": "https://www.ntdaily.com/students-to-teach-in-korea/",
+        "description":"I minored in Spanish. In the end, I graduated Cum Laude and maintained the Dean's list. Study programs abroad included Summer Semester in Mexico for Spanish immersion and Winter Semester in India for Ethnomusicology. To finish, I spearheaded a program to send teachers to Korea. There was even an article about my mission: "
       }
     ],
     "skills":[
@@ -124,6 +125,18 @@
         "category":"I've tested everything from shopping cart systems to 'smart' digital set top boxes for TV.",
         "image":"utest.jpg",
         "url":"https://www.utest.com/profile/p151929/about"
+      },
+      {
+        "title":"nighthelper",
+        "category":"Because I was using nightwatch extensively, I made a generic tool for quickly generating tests, page objects, configuration files and custom commands.",
+        "image":"nighthelper.jpg",
+        "url": "https://www.npmjs.com/package/nighthelper"
+      },
+      {
+        "title":"IoT in Emergency Research",
+        "category":"As part of my Master of IT, I developed a device using a Raspberry Pi and some custom python code to warn users of impending natural disasters.",
+        "image":"iot-emergency-research.jpg",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306437915302192"
       }
     ]
   },
