@@ -298,13 +298,13 @@ ul#nav li.current a { color: rgb(189, 91, 26); }
 }
 .bars li {
    position: relative;
-  	margin-bottom: 60px;
+  	margin-bottom: 55px;
   	background: #ccc;
   	height: 42px;
   	border-radius: 3px;
 }
 .bars li em {
-	font: 15px 'opensans-bold', sans-serif;
+	font: 18px 'opensans-bold', sans-serif;
    color: #313131;
 	text-transform: uppercase;
    letter-spacing: 2px;
@@ -688,22 +688,21 @@ call-to-action .button {
    margin: 0 0px 30px 0px;
    padding-left: 0;
    position: relative;
-   text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
 }
 #testimonials blockquote:before { content: none; }
 #testimonials blockquote p {
-   font-family: 'librebaskerville-italic', serif;
    padding: 0;
-   font-size: 18px;
+   font-size: 21px;
+   text-shadow: .5px 1px #000000c9;
    line-height: 36px;
-   color: #fff
+   color: rgba(46, 43, 43, 0.8);
 }
 #testimonials blockquote cite {
    display: block;
    font-size: 15px;
    font-style: normal;
    line-height: 14px;
-   color: #fff;
+   color: rgba(46, 43, 43, 0.8);
 }
 #testimonials blockquote cite:before { content: "\2014 \0020"; }
 #testimonials blockquote cite a,
@@ -843,7 +842,7 @@ call-to-action .button {
 /* contact form */
 #contact form { margin-bottom: 30px; }
 #contact label {
-   font: 15px/24px 'opensans-bold', sans-serif;
+   font: 18px/28px 'opensans-bold', sans-serif;
    margin: 12px 0;
    color: #EBEEEE;
 	display: inline-block;
