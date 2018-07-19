@@ -4,6 +4,7 @@ class Header extends Component {
   render() {
 
     if(this.props.data){
+      var rand = 10 * Math.random().toFixed(1)
       var name = this.props.data.name;
       var occupation= this.props.data.occupation;
       var description= this.props.data.description;
@@ -27,6 +28,7 @@ class Header extends Component {
 	         <li><a className="smoothscroll" href="#resume">Resume</a></li>
             <li><a className="smoothscroll" href="#portfolio">Works</a></li>
             <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
+            <li><a className="smoothscroll" href={`${process.env.PUBLIC_URL}/blog/?${rand}`}>Blog</a></li>
             <li><a className="smoothscroll" href="#contact">Contact</a></li>
          </ul>
 
