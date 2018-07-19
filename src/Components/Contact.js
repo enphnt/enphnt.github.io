@@ -10,6 +10,7 @@ class Contact extends Component {
       var zip = this.props.data.address.zip;
       var email = this.props.data.email;
       var message = this.props.data.contactmessage;
+      var sendEmail = `https://formspree.io/${email}`;
     }
 
     return (
@@ -34,22 +35,22 @@ class Contact extends Component {
         <div className="row">
           <div className="eight columns">
 
-            <form action="" method="post" id="contactForm" name="contactForm">
+            <form action={sendEmail} method="post" id="contactForm" name="contactForm">
               <fieldset>
 
                 <div>
                   <label htmlFor="contactName">Name <span className="required">*</span></label>
-                  <input type="text" value="" size="35" id="contactName" name="contactName" />
+                  <input type="text" autoComplete="name" size="35" id="contactName" name="contactName" />
                 </div>
 
                 <div>
                   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                  <input type="text" value="" size="35" id="contactEmail" name="contactEmail" />
+                  <input type="text" autoComplete="email" size="35" id="contactEmail" name="email" />
                 </div>
 
                 <div>
                   <label htmlFor="contactSubject">Subject</label>
-                  <input type="text" value="" size="35" id="contactSubject" name="contactSubject" />
+                  <input type="text" size="35" id="contactSubject" name="_subject" />
                 </div>
 
                 <div>
@@ -58,11 +59,14 @@ class Contact extends Component {
                 </div>
 
                 <div>
-                  <button className="submit">Submit (TODO)</button>
+                  <button className="submit" type="submit" value="Send">Submit</button>
                   <span id="image-loader">
                     <img alt="" src="images/loader.gif" />
                   </span>
                 </div>
+
+                <input type="text" name="_gotcha" style={{ display: "none"}} />
+
               </fieldset>
             </form>
 
