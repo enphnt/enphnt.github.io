@@ -28,7 +28,7 @@ class Header extends Component {
 	         <li><a className="smoothscroll" href="#resume">Resume</a></li>
             <li><a className="smoothscroll" href="#portfolio">Works</a></li>
             <li><a className="smoothscroll" href="#testimonials">Testimonials</a></li>
-            <li><a className="smoothscroll" href={`${process.env.PUBLIC_URL}/blog/?${rand}`}>Blog</a></li>
+            <li><a target="_blank" href={`https://enphnt.github.io/blog/?${rand}`}>Blog</a></li>
             <li><a className="smoothscroll" href="#contact">Contact</a></li>
          </ul>
 
