@@ -593,7 +593,7 @@ input[type="checkbox"] { display: inline; }
 /* default
 --------------------------------------------------------------- */
 .row {
-   width: 96%;
+   width: 98%;
    max-width: 1620px;
    margin: 0 auto;
 }
