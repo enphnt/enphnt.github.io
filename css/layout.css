@@ -653,6 +653,7 @@ call-to-action .button {
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    background-attachment: fixed;
+   padding-bottom: 50px;
 
    position: relative;
    min-height: 200px;
