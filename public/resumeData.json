@@ -2,9 +2,9 @@
   "main": {
     "name":"Nathan Phennel",
     "occupation":"Test Engineer",
-    "description":"As a hybrid of tester/developer, I work closely with devs to design, perform, and automate testing",
+    "description":"As a hybrid of tester/developer, I work closely with devs to automate testing. In my free time, I play drums",
     "image":"profilepic.jpg",
-    "bio":"I mainly write code for end to end and integration tests. However, to make continuous testing a reality, I code to create the necessary tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I help to create procedures that give teams transparent actionable feedback to expose risk early and build confidence with every build.",
+    "bio":"At work, I mainly code end-to-end (e2e) and integration tests. However, to make continuous testing a reality, I also code tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I strive to give transparent actionable feedback to expose risk early and build confidence with every build.",
     "bio2":"In my free time, when I'm not looking at code, I'm making music on drum set, bass, guitar or the computer. I also enjoy playing with video and video editing to put together funny things here and there.",
     "contactmessage":"Use this handy lil form and I'll receive your message.",
     "email": "nathanphennel@gmail.com",
