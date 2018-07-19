@@ -15,37 +15,42 @@ class Contact extends Component {
 
     return (
       <section id="contact">
-
         <div className="row section-head">
-
           <div className="two columns header-col">
-
             <h1><span>Get In Touch.</span></h1>
-
           </div>
-
           <div className="ten columns">
-
             <p className="lead">{message}</p>
-
           </div>
-
         </div>
 
         <div className="row">
           <div className="eight columns">
-
             <form action={sendEmail} method="post" id="contactForm" name="contactForm">
               <fieldset>
 
+                <input type="text" name="_gotcha" style={{ display: "none" }} />
+
                 <div>
                   <label htmlFor="contactName">Name <span className="required">*</span></label>
-                  <input type="text" autoComplete="name" size="35" id="contactName" name="contactName" />
+                  <input
+                    type="text"
+                    autoComplete="name"
+                    size="35"
+                    id="contactName"
+                    name="contactName"
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                  <input type="text" autoComplete="email" size="35" id="contactEmail" name="email" />
+                  <input
+                    type="text"
+                    autoComplete="email"
+                    size="35"
+                    id="contactEmail"
+                    name="email"
+                  />
                 </div>
 
                 <div>
@@ -63,14 +68,14 @@ class Contact extends Component {
                   <span id="image-loader">
                     <img alt="" src="images/loader.gif" />
                   </span>
+                  <span style={{ float: "right", marginTop: "auto" }}> * by submitting, you promise you're not a robot.</span>
                 </div>
-
-                <input type="text" name="_gotcha" style={{ display: "none"}} />
 
               </fieldset>
             </form>
 
             <div id="message-warning"> Error boy</div>
+
             <div id="message-success">
               <i className="fa fa-check"></i>Your message was sent, thank you!<br />
             </div>
@@ -86,6 +91,7 @@ class Contact extends Component {
               </p>
             </div>
           </aside>
+
         </div>
       </section>
     );
