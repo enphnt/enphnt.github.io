@@ -1,4 +1,4 @@
-|Note: `master` branch is only used for publishing (ie. `npm run deploy`). All work is kept on `develop` and these branches are not kept in sync.
+|Note:: `master` branch is only used for publishing (ie. `npm run deploy`). All work is kept on `develop` and these branches are not kept in sync.
 ------
 
 # Nathan's Site 
