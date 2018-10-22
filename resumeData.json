@@ -116,13 +116,13 @@
         "title":"Chat Application",
         "category":"A basic chat app built with React, Redux, Redux-Saga, and web sockets.",
         "image":"chat-app.jpg",
-        "url":"https://github.com/enphnt/chat/tree/develop"
+        "url":"https://github.com/enphnt/chat/"
       },
       {
         "title":"Wedding Photo Gallery",
         "category":"Instead of speading via fb, made a static site using github-pages site w/React. The pictures are great but still don't capture the awesomeness.",
         "image":"wedding-photo-gallery.jpg",
-        "url":"https://github.com/enphnt/enphnt.github.io/tree/develop"
+        "url":"https://github.com/enphnt/hanna-nathan-gallery"
       },
       {
         "title":"This Very Website!",
