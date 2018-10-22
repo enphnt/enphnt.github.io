@@ -495,7 +495,7 @@ ul#nav li.current a { color: rgb(189, 91, 26); }
 .portfolio-item .item-wrap img {
    vertical-align: bottom;
 }
-.portfolio-item .portfolio-item-meta { 
+.portfolio-item .portfolio-item-meta {
   padding: 14px;
   border: .12rem dashed green;
 }
