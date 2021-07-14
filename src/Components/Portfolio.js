@@ -6,9 +6,9 @@ class Portfolio extends Component {
     if (this.props.data) {
       var projects = this.props.data.projects.map(function(projects) {
         var projectImage = 'images/portfolio/' + projects.image;
-        return <div key={projects.title} className="columns portfolio-item" style={{ minHeight: 310}}>
+        return <div key={projects.title} className="columns portfolio-item" style={{ minHeight: 200}}>
           <div className="item-wrap">
-            <a href={projects.url} title={projects.title}>
+            <a href={projects.url} target="_blank" title={projects.title}>
               <img alt={projects.title} src={projectImage} />
               <h5 className="portfolio-item-meta">{projects.title}</h5>
               <div className="overlay">

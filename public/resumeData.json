@@ -2,10 +2,10 @@
   "main": {
     "name":"Nathan Phennel",
     "occupation":"Test Engineer",
-    "description":"Hybrid software tester/developer striving to better automate testing",
-    "image":"profilepic.jpg",
-    "bio":"I started my journey in end-to-end (e2e) and integration testing. However, to make continuous testing a reality, I develop code for tooling and infrastructure. To pun it lightly, I'm a jack of all trades and a master of test. In addition to performing and writing tests, I strive to give transparent actionable feedback to expose risk early and build confidence with every build.",
-    "bio2":"In my free time, when not looking at code, I'm making music on drum set, bass, guitar or whatever music toys I can get my hands on. I also enjoy playing with video and video editing to put together funny things here and there.",
+    "description":"Developer | Tester | Music Maker",
+    "image":"profilepic.png",
+    "bio":"To pun it lightly, I'm a jack of all trades and a master of test. I have 4 years experience as a Web Developer and 3 years as a Test Engineer. I specialize in front-end work but can comfortably leverage the power of Node.js, React, Google Cloud Platform and CI/CD setup. I'm looking for a web developer position at a company which will utilize my excellent team management and communication skills.",
+    "bio2":"In my free time, when not looking at code, I'm making music.",
     "contactmessage":"Use this handy lil form and I'll receive your message.",
     "email": "nathanphennel@gmail.com",
     "address":{
@@ -37,22 +37,22 @@
     "skillmessage":"In software, I have a skill-set developed from both professional and personal ventures.",
     "work":[
       {
-        "company":"Avoka",
-        "title":"Software Test Engineer",
+        "company":"Temenos (Avoka)",
+        "title":"Software Developer / Test Engineer",
         "years":"January 2018 - Present",
-        "description":"My primary focus is looking over the testing required for the analytics product which leverage behavioral data to aid decision making. We use continuous testing (CI) to protect against regressions. I also work on dev work for the product involving redux and react as well as a unified framework for writing unit/integration/e2e tests to better align testers and devs."
+        "description":"Developed an analytics product used internationally by Bank staff which leverages behavioral data to aid decision making. We use continuous testing (CI) to protect against regressions. I also work the product development which is a TS, React, Redux, Java stack hosted on GCP. For the wider company, I developed a unified framework for writing unit/integration/e2e tests to better align testers and devs."
       },
       {
         "company":"Domain Group",
-        "title":"Software Test Engineer",
+        "title":"Test Engineer",
         "years":"October 2016 - December 2017",
-        "description":"I looked after new Web and API test automation as well as maintenance of those test running in CI, debugging and improving tests along the way. Working to help with performance and security needs, I used Node.js and frameworks such as Nightwatch, Cypress, Puppet, Protractor and Web service tools like Postman/Newman, Rest- Assured, JMeter, Gatling. I integrated tests/bots into CI pipeline tools Jenkins, CircleCI, GitHub to build continuous testing tools."
+        "description":"Web and API test automation running in CI to ensure our public site was always working as expected for our millions of users. To improve performance and security, I used Node.js and frameworks such as Nightwatch, Cypress, Puppet, Protractor and Web service tools like Postman/Newman, Rest-Assured, JMeter, Gatling. I integrated tests/bots into CI pipeline tools Jenkins, CircleCI, GitHub to build continuous testing tools."
       },
       {
         "company":"Quantium",
-        "title":"Software Test Engineer",
+        "title":"Test Engineer",
         "years":"January 2014 - October 2016",
-        "description":"I oversaw the design, execution and maintenance of manual and automated tests for another analytics product. Used Protractor, C#, and F# frameworks combined with local builds from feature branches to test breaking changes. Overall, I provided a robust communication channel between developers and QA."
+        "description":"I oversaw the design, execution and maintenance of manual and automated tests for analytics product to support Woolworth's suppliers. Used Protractor, C#, and F# frameworks combined with local builds from feature branches to test breaking changes. I provided a robust communication channel between developers and QA which were dispersed globally."
       }
     ],
     "education":[
@@ -73,45 +73,45 @@
     ],
     "skills":[
       {
-        "name":"Git",
-        "level":"70%"
+        "name":"js",
+        "level":"90%"
       },
       {
-        "name":"mochajs",
+        "name":"React",
         "level":"80%"
       },
       {
-        "name":"js",
+        "name":"redux",
         "level":"70%"
       },
       {
-        "name":"ReactJs",
-        "level":"60%"
-      },
-      {
-        "name":"redux",
-        "level":"50%"
+        "name":"Git",
+        "level":"70%"
       },
       {
         "name":"Docker",
         "level":"50%"
       },
       {
-        "name":"Python",
-        "level":"50%"
-      },
-      {
-        "name":"C#",
-        "level":"40%"
-      },
-      {
         "name":"Java",
-        "level":"30%"
+        "level":"50%"
       }
     ]
   },
   "portfolio":{
     "projects": [
+      {
+        "title":"Banterer",
+        "category":"Displays comical and smart quotes in the terminal for dev inspiration.",
+        "image":"banterer.png",
+        "url":"https://www.npmjs.com/package/banterer"
+      },
+      {
+        "title":"nighthelper",
+        "category":"A tool for quickly generating tests, page objects, configuration files and custom commands.",
+        "image":"nighthelper.jpg",
+        "url": "https://www.npmjs.com/package/nighthelper"
+      },
       {
         "title":"Chat Application",
         "category":"A basic chat app built with React, Redux, Redux-Saga, and web sockets.",
@@ -119,20 +119,20 @@
         "url":"https://github.com/enphnt/chat/"
       },
       {
-        "title":"Wedding Photo Gallery",
-        "category":"Instead of speading via fb, made a static site using github-pages site w/React. The pictures are great but still don't capture the awesomeness.",
+        "title":"Wedding Gallery",
+        "category":"Static site to share photos of our special day.",
         "image":"wedding-photo-gallery.jpg",
-        "url":"https://github.com/enphnt/hanna-nathan-gallery"
+        "url":"https://enphnt.github.io/hanna-nathan-gallery/"
       },
       {
         "title":"This Very Website!",
-        "category":"🙌  I made this custom github-pages site using React with JSON for data storage. Audit this site to really appreciate the performance.",
+        "category":"🙌  I dare you to audit this site to really appreciate the site performance.",
         "image":"resume-website.jpg",
         "url":"https://github.com/enphnt/enphnt.github.io/tree/develop"
       },
       {
-        "title":"Tyranny of the Majority (TotM)",
-        "category":"Game built with a friend that combines Family-Feud-style guessing with Google search autocompletes.",
+        "title":"TotM",
+        "category":"Family-Feud-style guessing game with Google search autocomplete.",
         "image":"totm.jpg",
         "url":"http://www.playtotm.com/"
       },
@@ -143,14 +143,8 @@
         "url":"https://www.utest.com/profile/p151929/about"
       },
       {
-        "title":"nighthelper",
-        "category":"Because I was using nightwatch extensively, I made a generic tool for quickly generating tests, page objects, configuration files and custom commands.",
-        "image":"nighthelper.jpg",
-        "url": "https://www.npmjs.com/package/nighthelper"
-      },
-      {
-        "title":"IoT in Emergency Research",
-        "category":"As part of my Master of IT, I developed a device using a Raspberry Pi and some custom python code to warn users of impending natural disasters.",
+        "title":"IoT in Emergency",
+        "category":"IoT device to warn users of impending natural disasters.",
         "image":"iot-emergency-research.jpg",
         "url": "https://www.sciencedirect.com/science/article/pii/S0306437915302192"
       }
@@ -159,12 +153,20 @@
   "testimonials":{
     "testimonials":[
       {
-        "text":"I definitely recommend Nathan as he is a great agile tester with a strong appetite to learn. He is broad-minded and thinks outside of the box. He is mastering automation languages. Hence, a great asset for any BA/QA/Testers team.",
+        "text":"He operates with a long-term strategic view and a day-to-day sense of urgency. Not someone who sits back on his heels and waits for things to happen ... he sees the need and makes it happen now.",
+        "user":"Ken M. - Technical Writer @Temenos"
+      },
+      {
+        "text":"I definitely recommend Nathan as he is a great agile tester with a strong appetite to learn. He is broad-minded and thinks outside of the box.",
         "user":"Raja Bellebon - SDET @Atlassian"
       },
       {
         "text":"A high-achiever who is capable of digesting any new advanced technical knowledge you present at him. A studious individual who will go the extra miles/hours.",
         "user":"Henry Santoso - Consultant @Servian"
+      },
+      {
+        "text":"Nathan always aims to work towards achieving growth for the entire team, accomplishing goals, devising plans to achieve best results.",
+        "user":"Jaya Ramesh - Senior Programmer @Avoka"
       }
     ]
   }
