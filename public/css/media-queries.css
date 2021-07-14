@@ -216,6 +216,7 @@
    #about .profile-pic {
      display: inline-block;
      margin: 10px;
+     padding: 2px;
     }
    #about .download .button {
       width: 100%;
