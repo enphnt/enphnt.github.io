@@ -119,12 +119,6 @@
         "url":"https://github.com/enphnt/chat/"
       },
       {
-        "title":"Wedding Gallery",
-        "category":"Static site to share photos of our special day.",
-        "image":"wedding-photo-gallery.jpg",
-        "url":"https://enphnt.github.io/hanna-nathan-gallery/"
-      },
-      {
         "title":"This Very Website!",
         "category":"🙌  I dare you to audit this site to really appreciate the site performance.",
         "image":"resume-website.jpg",
