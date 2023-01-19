@@ -4,8 +4,8 @@
     "occupation":"Software Engineer | Music Maker",
     "description":"Software Engineer | Music Maker",
     "image":"profilepic.png",
-    "bio":"I'm a software developer and product owner. Lately, my focus is in visualising data and capturing analytics to help clients better understand their customers. I prefer to make things that people really use. Just like the things I build, I try to incrementally improve over time.",
-    "bio2":"In my free time, when not looking at code, I'm making music.",
+    "bio":"I'm a software developer and product owner. Lately, my focus is in visualising data and capturing analytics to help clients better understand their customers.",
+    "bio2":"I prefer to make things that people really use and incorporate feedback. Like the things I build, I strive to incrementally improve over time. When not looking at code, I can usually be found making music.",
     "contactmessage":"Use this handy lil form and I'll receive your message.",
     "email": "nathanphennel@gmail.com",
     "address":{
@@ -67,7 +67,7 @@
         "degree":"Master of Information Technology",
         "graduated":"April 2014",
         "link": "https://www.sciencedirect.com/science/article/pii/S0306437915302192",
-        "description": "Focus included software development, design, implementation and maintenance. As part of my final research around IoT use in emergencies, my work was published in a scholarly journal: "
+        "description": "I concentrated on IT software development, design, implementation and maintenance strategies. My research for IoT use in emergencies was published in a scholarly journal: "
       },
       {
         "school":"University of North Texas",
