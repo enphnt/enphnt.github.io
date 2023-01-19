@@ -234,8 +234,15 @@
       text-align: center;
    }
    #resume h1 { letter-spacing: 3px; }
-   #resume .main-col { padding-right: 30px; }
-   #resume h3, #resume .info { text-align: center; }
+   #resume .main-col { padding-right: 18px; padding-left: 18px; }
+   #resume h3, #resume .info { text-align: center; margin-bottom: 4px; }
+   #resume .info { 
+      margin: 2px;
+      font: 14px/24px 'librebaskerville-italic', serif;
+   }
+   #resume .date {
+      font: 10px/14px 'opensans-light', sans-serif;
+   }
 
    .bars { width: 100%; }
 
@@ -273,8 +280,8 @@
    #testimonials .header-col h1:before { content: none; }
    #testimonials blockquote { padding-bottom: 24px; }
    #testimonials blockquote p {
-      font-size: 20px;
-      line-height: 42px;
+      font-size: 15px;
+      line-height: 22px;
    }
 
    /* Control Nav */
