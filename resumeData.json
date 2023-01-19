@@ -1,10 +1,10 @@
 {
   "main": {
     "name":"Nathan Phennel",
-    "occupation":"Dev | Test Engineer",
-    "description":"Developer | Tester | Music Maker",
+    "occupation":"Software Engineer | Music Maker",
+    "description":"Software Engineer | Music Maker",
     "image":"profilepic.png",
-    "bio":"To pun it lightly, I'm a jack of all trades and a master of test. I have experience as a Web Developer and as a Test Engineer. I specialize in front-end work and can comfortably leverage the power of Node.js, React, Google Cloud Platform and CI/CD setup. I'm open to a web developer role at a company that will utilize my excellent team management and communication skills.",
+    "bio":"I'm a software developer and product owner. Lately, my focus is in visualising data and capturing analytics to help clients better understand their customers. I prefer to make things that people really use. Just like the things I build, I try to incrementally improve over time.",
     "bio2":"In my free time, when not looking at code, I'm making music.",
     "contactmessage":"Use this handy lil form and I'll receive your message.",
     "email": "nathanphennel@gmail.com",
@@ -37,22 +37,28 @@
     "skillmessage":"In software, I have a skill-set developed from both professional and personal ventures.",
     "work":[
       {
-        "company":"Temenos (Avoka)",
-        "title":"Software Developer / Test Engineer",
-        "years":"January 2018 - Present",
-        "description":"Developed an analytics product used internationally by Bank staff which leverages behavioral data to aid decision making. We use continuous testing (CI) to protect against regressions. I also work the product development which is a TS, React, Redux, Java stack hosted on GCP. For the wider company, I developed a unified framework for writing unit/integration/e2e tests to better align testers and devs."
+        "company":"Temenos",
+        "title":"Tech Lead, Product Owner",
+        "years":"January 2020 - Present",
+        "description":"Developing user-behavior analytics products used internationally by tier 1 banks."
+      },
+      {
+        "company":"Avoka",
+        "title":"Software Developer, Test Engineer",
+        "years":"January 2018 - January 2020",
+        "description":"Built a unified framework for writing unit/integration/e2e tests to better align testers and devs."
       },
       {
         "company":"Domain Group",
         "title":"Test Engineer",
         "years":"October 2016 - December 2017",
-        "description":"Web and API test automation running in CI to ensure our public site was always working as expected for our millions of users. To improve performance and security, I used Node.js and frameworks such as Nightwatch, Cypress, Puppet, Protractor and Web service tools like Postman/Newman, Rest-Assured, JMeter, Gatling. I integrated tests/bots into CI pipeline tools Jenkins, CircleCI, GitHub to build continuous testing tools."
+        "description":"Web and API CI test automation for one of the most popular sites in Australia, with millions of weekly users."
       },
       {
         "company":"Quantium",
         "title":"Test Engineer",
         "years":"January 2014 - October 2016",
-        "description":"I oversaw the design, execution and maintenance of manual and automated tests for analytics product to support Woolworth's suppliers. Used Protractor, C#, and F# frameworks combined with local builds from feature branches to test breaking changes. I provided a robust communication channel between developers and QA which were dispersed globally."
+        "description":"Management, design, execution and maintenance of manual and automated tests for analytics product to support Australia's largest grocery supplier."
       }
     ],
     "education":[
@@ -61,14 +67,14 @@
         "degree":"Master of Information Technology",
         "graduated":"April 2014",
         "link": "https://www.sciencedirect.com/science/article/pii/S0306437915302192",
-        "description": "Maintained a High Distinction Average throughout my degree. Focus included software development, design, implementation and maintenance. As part of my final research around IoT use in emergencies, my work was published in a scholarly journal: "
+        "description": "Focus included software development, design, implementation and maintenance. As part of my final research around IoT use in emergencies, my work was published in a scholarly journal: "
       },
       {
         "school":"University of North Texas",
         "degree":"Bachelor of Arts, International Studies",
         "graduated":"December 2009",
         "link": "https://www.ntdaily.com/students-to-teach-in-korea/",
-        "description":"I minored in Spanish. In the end, I graduated Cum Laude and maintained the Dean's list. Study programs abroad included Summer Semester in Mexico for Spanish immersion and Winter Semester in India for Ethnomusicology. To finish, I spearheaded a program to send teachers to Korea. There was even an article about my mission: "
+        "description":"Due to my focus in cultural and linguistic anthropology, I studied abroad to Mexico, for language courses, and India, for Carnatic music. I spearheaded a new program to send teachers to Korea: "
       }
     ],
     "skills":[

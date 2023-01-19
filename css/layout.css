@@ -238,7 +238,6 @@ ul#nav li.current a { color: rgb(189, 91, 26); }
 #resume {
    background: #fff;
    padding-top: 90px;
-   padding-bottom: 72px;
    overflow: hidden;
 }
 
@@ -262,7 +261,7 @@ ul#nav li.current a { color: rgb(189, 91, 26); }
 #resume .main-col { padding-right: 10%; }
 
 .education, .work {
-   margin-bottom: 48px;
+   margin-bottom: 12px;
    padding-bottom: 24px;
    border-bottom: 1px solid #E8E8E8;
 }
@@ -658,7 +657,7 @@ call-to-action .button {
 #testimonials blockquote:before { content: none; }
 #testimonials blockquote p {
    padding: 0;
-   font-size: 21px;
+   font-size: 18px;
    text-shadow: .25px 1px #090909;
    line-height: 36px;
    color: rgb(209, 209, 209);
