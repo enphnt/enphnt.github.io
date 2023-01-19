@@ -9,7 +9,7 @@ class Resume extends Component {
       var work = this.props.data.work.map(function(work) {
         return <div key={work.company}><h3>{work.company}</h3>
           <p className="info">{work.title}
-            <div> <em className="date">{work.years}</em></div>
+            <div style={{fontSize: 0}}> <em className="date">{work.years}</em></div>
           </p>
           <ul><li>{work.description}</li></ul>
         </div>

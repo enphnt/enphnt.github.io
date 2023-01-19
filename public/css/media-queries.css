@@ -234,12 +234,11 @@
       text-align: center;
    }
    #resume h1 { letter-spacing: 3px; }
-   /* #resume p { font-size: 13px; } */
    #resume .main-col { padding-right: 18px; padding-left: 18px; }
    #resume h3, #resume .info { text-align: center; margin-bottom: 4px; }
    #resume .info { 
       margin: 2px;
-      font: 12px/24px 'librebaskerville-italic', serif;
+      font: 14px/24px 'librebaskerville-italic', serif;
    }
    #resume .date {
       font: 10px/14px 'opensans-light', sans-serif;
