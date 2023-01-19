@@ -49,8 +49,8 @@ header:before {
 }
 header .banner {
    display: inline-block;
-   vertical-align: text-bottom;
-   margin: 0 auto;
+   vertical-align: top;
+   margin: 160px auto;
    width: 85%;
    padding-bottom: 30px;
    text-align: center;
@@ -61,7 +61,7 @@ header .banner-text h1 {
    font: 90px/1.1em 'opensans-bold', sans-serif;
    color: rgb(255, 135, 55);
    letter-spacing: -2px;
-   margin: 0 auto 18px auto;
+   margin: 0 auto 0 auto;
    text-shadow: 1px 3px 4px rgba(0, 0, 0, .8);
 }
 header .banner-text h3 {
@@ -82,7 +82,9 @@ header .banner-text hr {
    border-color: #2F2D2E;
    border-color: rgba(150, 150, 150, .5);
 }
-
+header .banner-text h5 {
+   margin-bottom: 22px;
+}
 /* header social links */
 header .social {
    padding: 0;
