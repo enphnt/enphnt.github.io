@@ -54,9 +54,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div>
-      </div>
-      <NextSectionLink nextSection="/#resume" size="3x" />
+      <NextSectionLink nextSection="/#portfolio" size="3x" />
     </section>
   );
 };
