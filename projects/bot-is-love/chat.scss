@@ -1,0 +1,172 @@
+
+.chat-frame {
+  height: 100%;
+}
+
+.chat-window {
+  box-sizing: border-box;
+  font-family: Arial;
+  height: 60vh;
+  max-height: 700px;
+  margin: 0 0 15% 0;
+  @media screen and (max-width: 750px) {
+    scale: .75;
+  }
+}
+
+.b-chat {
+  width: 100%;
+  padding: 1em 0;
+  height: 100%;
+
+  &__container {
+    width: 350px;
+    margin: auto;
+    height: 100%;
+    background: #222;
+    padding: 18px 0 18px 18px;
+    border-radius: 10px;
+    border-right: solid 4px #0084ac;
+    border-bottom: solid 4px #0084ac;
+
+  }
+}
+
+#chat,
+.c-chat {
+  height: 100%;
+}
+
+.c-chat {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  font-size: 1em;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 90%;
+
+      /* hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    /* hide scrollbar for chrome, safari and opera */
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+
+    .c-chat__item {
+      text-align: left;
+
+      &--You {
+        text-align: right;
+
+        .c-chat__message {
+          background: #13a5fa;
+          color: #fff;
+          border-top-right-radius: 0;
+          border-top-left-radius: 10px;
+        }
+      }
+      
+      &--Nathan {
+        .c-chat__message {
+          background: #409f37;
+          color: #fff;
+          border-top-right-radius: 0;
+          border-top-left-radius: 10px;
+        }
+      }
+      margin-right: 0.8em;
+      margin-bottom: 1em;
+    }
+
+    .c-chat__message {
+      display: inline-block;
+      background: #fff;
+      color: #222;
+
+      padding: 0.6em;
+      border-radius: 10px;
+      border-top-left-radius: 0;
+
+      animation-name: bounceIn;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+
+      .c-chat__item--You & {
+        background: #0084ac;
+        color: #fff;
+        border-top-right-radius: 0;
+        border-top-left-radius: 10px;
+      }
+
+    }
+
+    .c-chat__action {
+      border-bottom: 1px dotted #fff;
+      color: #fff;
+      padding: 0.6em;
+      display: inline-block;
+
+      animation-name: bounceIn;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+
+      margin-right: 0.8em;
+
+      &:hover {
+        border-bottom: 1px dotted transparent;
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: none;
+      color: #fff;
+      margin: 35px 0;
+
+      &,
+      &:focus {
+        outline: none;
+      }
+
+    }
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,34 @@
+---
+title: "Get affirmation and confidence via text"
+date: "2023-03-04"
+slug: "bot-is-love"
+hero_image: 
+hero_image_alt:
+hero_image_credit_text:
+hero_image_credit_link:
+---
+import Chat from "./chat"
+
+This tiny project will live forever! 
+
+If the day, week, life, or the universe is getting too overwhelming, "bot is love" is here to help. You can interact by sending a message. It's not the most nuanced in replies but if you are willing to listen, you might just get some good advice. 
+
+<Chat />
+
+This tiny chat simulation, built using only React and some styling, is a great demonstration of front-end design and it’s fun to interact with, despite its limitations.
+
+I found this via Codepen over [here](https://codepen.io/Sgatapi/pen/oOmNRQ). After spending about an hour learning how it works, I repurposed it for my own entertainment. 
+
+If you have prior knowledge of React, understanding how it works is relatively easy. It is worth noting that the implementation used here does not include hooks and instead uses a Class component.
+
+There are two types of data stored as an array of objects: "Messages" and "Responses". Messages are triggered automatically in sequence, whereas Responses occur sequentially only after a user input is received.
+
+The component starts out running the 'demo' “Messages” first via "ComponentDidMount" method from React. After those messages are completed, then upon user input, the "handleSubmit" method triggers a mock reply from the "responses" array. This continues until the "responses" are all used up.
+
+React components can be powerful tools for creating interactive user interfaces. One of the handiest features, that I'm a fan of, is the ability to use "ComponentDidMount" and "handleSubmit" methods to quickly and easily generate messages on demand. With the help of these methods, developers can save time and energy by creating messages that engage users and can provide valuable information. In this application, the "ComponentDidMount" method triggers a demo message sequence when first loading the component, while "handleSubmit" enables users to input their own text and receive a response, making it easier for them to interact with the application.
+
+Artificial intelligence has changed the way humans create and interact with technology. AI-based bots are increasingly being used to automate tasks such as responding to customer inquiries, providing product recommendations, and more. This bot contains nothing of the sort.
+
+In this implementation, user input is not factored into the algorithm and the bot just randomly roles through all its responses until they are all exhausted. This front-end component may be limited but it's still certainly capable of being used for a variety of applications, like an AI message service.
+
+Altogether, this construction is speedy with some great capabilities. From a code quality point of view, it's essential to upgrade and modify to upgrade the implementation to use a "FunctionComponent" rather than now the unnecessarily verbose Class component. 
