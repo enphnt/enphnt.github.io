@@ -121,6 +121,10 @@ h5 {
   margin-top: 8px;
 }
 
+pre * {
+  list-style: "- ";
+}
+
 pre {
   margin-left: 0;
   margin-right: 0;
