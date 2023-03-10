@@ -45,8 +45,8 @@ const About = () => {
               The tools I build help businesses identify and reduce customer friction and track progress over time.
             </p>
             <p>
-              I prefer to make things that are {highlight("useful")} and  {highlight("engaging")} because I eat {highlight("feedback")}
-              for breakfast.
+              I prefer to make things that are {highlight("useful")} and {highlight("engaging")} because I
+              eat {highlight("feedback")} for breakfast.
             </p >
             <p>
               When not looking at {highlight("code")}, I can be found perfecting my ollie or making music.
