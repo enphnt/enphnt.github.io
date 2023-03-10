@@ -12,7 +12,7 @@ import Footer from './footer';
 
 const Layout = ({ pageTitle, children }) => (
   <>
-    <nav className={navWrap}>
+    <nav id="navBar" className={navWrap}>
       <ul className={navLinks}>
         <li className={navLinkItem}>
           <Link to="/" className={navLinkText}>

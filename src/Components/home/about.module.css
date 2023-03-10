@@ -1,0 +1,50 @@
+.about-section {
+  display: inline-flex;
+  margin: auto auto 70px;
+  flex-flow: row wrap;
+  min-height: 85vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.about-pic {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-text {
+  max-width: 60vw;
+  padding: 0 32px;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.about-background {
+  height: 99vh;
+  background-size: cover;
+  margin-top: 40px;
+}
+
+
+.text-highlight {
+  text-shadow:
+    2px 0 5px rgb(255, 255, 167),
+    -2px 0 5px rgb(255, 255, 167),
+    4px 2px 5px rgb(255, 255, 167),
+    -4px -2px 5px rgb(255, 255, 167),
+    6px -4px 5px rgb(255, 255, 167),
+    -6px 4px 5px rgb(255, 255, 167),
+    8px -4px 7px rgb(255, 255, 167),
+    8px 4px 7px rgb(255, 255, 167),
+    10px -6px 7px rgb(255, 255, 167),
+    10px 6px 7px rgb(255, 255, 167);
+}

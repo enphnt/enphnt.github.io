@@ -9,8 +9,10 @@ import {
   aboutPic,
   flex,
   textHighlight
-} from "../layout.module.css";
+} from "./about.module.css";
 import NextSectionLink from '../next-section-link';
+
+const highlight = (txt) => <span className={textHighlight}>{txt}</span>;
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -36,26 +38,30 @@ const About = () => {
           <div className={aboutText}>
             <h2>About Me</h2>
             <p>
-              After studying linguistic anthropology, I'm now a <span className={textHighlight}> software developer </span> and <span className={textHighlight}>product owner</span>. </p>
-            <p>
-              I use Javascript and Java to collect user behavior <span className={textHighlight}> data</span>, structure  <span className={textHighlight}>information</span>, and visualize <span className={textHighlight}>analytics</span>. The tools I build help businesses identify and reduce customer friction and track progress over time.
+              After studying linguistic anthropology, I'm now a {highlight("software developer")} and {highlight("product owner")}.
             </p>
             <p>
-              I prefer to make things that are <span className={textHighlight}>useful</span> and  <span className={textHighlight}>engaging</span> because I eat <span className={textHighlight}>feedback</span> for breakfast. </p>
-            <p>
-              When not looking at <span className={textHighlight}>code</span>, I can be found perfecting my ollie or making music.
+              I use Javascript and Java to collect user behavior {highlight("data")} and visualize {highlight("analytics")}.
+              The tools I build help businesses identify and reduce customer friction and track progress over time.
             </p>
+            <p>
+              I prefer to make things that are {highlight("useful")} and  {highlight("engaging")} because I eat {highlight("feedback")}
+              for breakfast.
+            </p >
+            <p>
+              When not looking at {highlight("code")}, I can be found perfecting my ollie or making music.
+            </p >
             <a href={data.file.publicURL} download>
               <button>
                 Download My Resume
                 <span role="img" aria-label="hugging"> &#129303;</span>
               </button>
             </a>
-          </div>
-        </div>
-      </div>
+          </div >
+        </div >
+      </div >
       <NextSectionLink nextSection="/#portfolio" size="3x" />
-    </section>
+    </section >
   );
 };
 
