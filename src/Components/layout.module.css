@@ -30,6 +30,7 @@
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
+  --clr-maroon: #321010;
   --transition: all 0.3s linear;
   --spacing: 0.1rem;
   --radius: 0.25rem;
@@ -43,7 +44,7 @@ html {
   font-family: Helvetica, sans-serif;
   letter-spacing: .02rem;
   scroll-behavior: smooth;
-  scrollbar-color: var(--clr-red-dark) #b0594500;
+  scrollbar-color: var(--clr-maroon) #cfcfcfbd;
   animation: .5s ease 1s normal forwards 1 fadein;
   -webkit-animation: .5s ease 1s normal forwards 1 fadein;
   opacity: 0

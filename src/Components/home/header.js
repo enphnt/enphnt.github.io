@@ -3,18 +3,17 @@ import { useTransition, animated } from "@react-spring/web";
 import Networks from "../networks";
 import {
   background,
-  bgVideo,
-  bgVideoWrapper,
+  wrapper,
   container,
   containerItem,
   dividerWrap,
   dividerWrapFaded,
   dividerWrapFadedMore,
   transitionsContainer,
-  transitionsItem
+  transitionsItem,
+  transitionsTxt
 } from "./header.module.css";
 
-import backgroundVideo from "../../videos/sydney-trains.mp4";
 import NextSectionLink from "../next-section-link";
 
 const blue = "#7280b5";
@@ -58,19 +57,19 @@ export default function Header() {
         () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 5000)
     );
     ref.current.push(
-      setTimeout(() => set(["Nathan Phennel", "Software Dev"]), 7500)
+      setTimeout(() => set(["Nathan Phennel", "Software Dev"]), 6000)
     );
     ref.current.push(
       setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 9500)
+        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 7500)
     );
     ref.current.push(
       setTimeout(
-        () => set(["Nathan Phennel"]), 11500)
+        () => set(["Nathan Phennel"]), 8500)
     );
     ref.current.push(
       setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 12500)
+        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 10000)
     );
   }, []);
 
@@ -81,12 +80,7 @@ export default function Header() {
 
   return (
     <section>
-      <figure>
-        <video className={bgVideo} autoPlay loop muted>
-          <source src={backgroundVideo} type="video/mp4" />
-        </video>
-      </figure>
-      <div className={bgVideoWrapper}>
+      <div className={wrapper}>
         <div className={background}>
 
           <div className={container}>
@@ -99,7 +93,7 @@ export default function Header() {
                     style={rest}
                     onClick={reset}
                   >
-                    <animated.div style={{ overflow: "hidden", height: innerHeight }}>
+                    <animated.div className={transitionsTxt} style={{ height: innerHeight }}>
                       {item}
                     </animated.div>
                   </animated.div>
