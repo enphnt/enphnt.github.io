@@ -31,9 +31,8 @@
 .about-background {
   height: auto;
   background-size: cover;
-  margin-top: 40px;
+  margin: 40px 0 100px 0;
 }
-
 
 .text-highlight {
   text-shadow:

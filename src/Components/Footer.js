@@ -6,7 +6,7 @@ const currentYear = (new Date()).getFullYear();
 
 const style = {
   textAlign: "center",
-  padding: "75px",
+  padding: "75px 0 0",
 };
 
 function Footer() {

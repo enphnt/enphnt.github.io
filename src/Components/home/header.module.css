@@ -2,6 +2,7 @@
   height: auto;
   padding: 0;
   transition: opacity 3s, visibility 3s;
+  max-height: 80vh;
 }
 
 .container {

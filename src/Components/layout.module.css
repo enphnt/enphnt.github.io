@@ -1,10 +1,49 @@
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(0, 0%, 100%);
+  --clr-primary-2: hsl(115, 17%, 27%);
+  --clr-primary-3: hsl(115, 12%, 37%);
+  --clr-primary-4: hsl(115, 13%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(115, 18%, 30%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(115, 19%, 65%);
+  --clr-primary-7: hsl(115, 10%, 70%);
+  --clr-primary-8: hsl(115, 16%, 75%);
+  --clr-primary-9: hsl(115, 10%, 80%);
+  --clr-primary-10: hsl(0, 0%, 90%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #f4f4f4;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --dark-shadow: -5px 5px 50px rgba(0, 0, 0, 0.2);
+  --max-width: 970px;
+}
+
 html {
   scroll-padding-top: 70px;
   color: rgb(73, 73, 73);
   font-family: Helvetica, sans-serif;
   letter-spacing: .02rem;
   scroll-behavior: smooth;
-  scrollbar-color: #ff7373 #b0594500;
+  scrollbar-color: var(--clr-red-dark) #b0594500;
   animation: .5s ease 1s normal forwards 1 fadein;
   -webkit-animation: .5s ease 1s normal forwards 1 fadein;
   opacity: 0
@@ -100,7 +139,6 @@ h5 {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  min-height: 400px;
 }
 
 .vertical-flex-container>* {
@@ -141,6 +179,10 @@ h5 {
 
 .nav-link-text {
   color: black;
+}
+
+.nav-link-text:hover {
+  color: rgb(120, 120, 120);
 }
 
 @keyframes fadein {
