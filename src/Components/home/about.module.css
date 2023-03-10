@@ -2,7 +2,7 @@
   display: inline-flex;
   margin: auto auto 70px;
   flex-flow: row wrap;
-  min-height: 85vh;
+  height: auto;
   align-items: center;
   justify-content: center;
 }
@@ -19,7 +19,7 @@
 }
 
 .about-text {
-  max-width: 60vw;
+  max-width: 600px;
   padding: 0 32px;
   margin-bottom: 36px;
   display: flex;
@@ -29,7 +29,7 @@
 }
 
 .about-background {
-  height: 99vh;
+  height: auto;
   background-size: cover;
   margin-top: 40px;
 }

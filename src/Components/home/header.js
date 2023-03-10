@@ -80,13 +80,13 @@ export default function Header() {
   }, [reset]);
 
   return (
-    <>
+    <section>
+      <figure>
+        <video className={bgVideo} autoPlay loop muted>
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      </figure>
       <div className={bgVideoWrapper}>
-        <figure>
-          <video className={bgVideo} autoPlay loop muted>
-            <source src={backgroundVideo} type="video/mp4" />
-          </video>
-        </figure>
         <div className={background}>
 
           <div className={container}>
@@ -115,6 +115,6 @@ export default function Header() {
         <NextSectionLink nextSection="/#about" size={120} />
       </div>
 
-    </>
+    </section>
   );
 }

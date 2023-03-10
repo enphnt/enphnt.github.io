@@ -1,5 +1,5 @@
 #testimonials {
-  height: 88vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +53,7 @@ Reviews
 */
 
 .container {
-  width: 80vw;
+  width: 90vw;
 }
 
 .review {
@@ -63,7 +63,7 @@ Reviews
   box-shadow: var(--dark-shadow);
   transition: var(--transition);
   text-align: center;
-  margin: 2vh 10vw;
+  margin: 24px 10vw;
 
 }
 
@@ -137,6 +137,7 @@ Reviews
 }
 
 .info {
+  margin-top: 1rem;
   margin-bottom: 0.75rem;
   min-height: 110px;
   color: rgba(0, 0, 0, 0.7)

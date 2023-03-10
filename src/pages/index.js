@@ -10,13 +10,12 @@ import Header from '../components/home/header';
 const IndexPage = () => (
   <>
     <Header />
-    <About />
 
     <Layout pageTitle="Home Page">
+      <About />
       <Portfolio />
       <Testimonials />
       <Contact />
-
     </Layout>
   </>
 );

@@ -39,7 +39,7 @@ const Review = () => {
         <img src={image} alt={name} className="person-img" />
 
         <span className="quote-icon">
-          <FontAwesomeIcon size="lg" icon={faQuoteRight} />
+          <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faQuoteRight} />
 
         </span>
       </div>
@@ -48,10 +48,10 @@ const Review = () => {
       <p className="info">{text}</p>
       <div className="button-container">
         <button className="prev-btn" onClick={prevPerson}>
-          <FontAwesomeIcon size="lg" icon={faChevronLeft} />
+          <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronLeft} />
         </button>
         <button className="next-btn" onClick={nextPerson}>
-          <FontAwesomeIcon size="lg" icon={faChevronRight} />
+          <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronRight} />
         </button>
       </div>
     </article>
@@ -61,10 +61,8 @@ const Review = () => {
 const Testimonials = () => {
   return (
     <section id="testimonials">
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: 70 }}>
-        <div>
-          <h1>What people say</h1>
-        </div>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 70 }}>
+        <h1 style={{ textAlign: "center" }}>What people say</h1>
         <div className="container">
           <Review />
         </div>

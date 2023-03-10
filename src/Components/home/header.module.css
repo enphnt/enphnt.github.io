@@ -1,5 +1,5 @@
 .background {
-  height: 90vh;
+  height: auto;
   padding: 0;
   transition: opacity 3s, visibility 3s;
 }
@@ -39,9 +39,18 @@
   }
 }
 
+@media (max-height: 750px) {
+  .container-item {
+    margin-top: 8%;
+  }
+}
+
 .bg-video-wrapper {
   width: 100%;
-  height: 99vh;
+  min-height: 99vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .bg-video {

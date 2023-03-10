@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+.portfolio h1 {
+  margin-top: 10px;
 }
 
 .portfolio-projects {
@@ -22,7 +29,6 @@
 
 .anchor-tile h3 {
   height: 2.6em;
-  text-align: center;
 }
 
 .anchor-tile p {
