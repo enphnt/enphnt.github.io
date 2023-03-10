@@ -9,7 +9,10 @@ const BlogPost = ({ data, children }) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      <a style={{ margin: "2px 0 90px", fontSize: 12, textAlign: "right" }} href='/projects'> ../Back to Projects</a>
+      <a
+        style={{ margin: "2px 0 90px", fontSize: 12, textAlign: "right" }}
+        href='/blog'>  {"<"}Back
+      </a>
 
       <p>{data.mdx.frontmatter.date}</p>
       {
