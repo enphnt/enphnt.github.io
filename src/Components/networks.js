@@ -30,8 +30,8 @@ const Networks = ({ alignRight }) => {
     display: "flex",
     justifyContent: alignRight ? "start" : "center",
     alignItems: "start",
-    margin: alignRight ? "60px 0" : "10px 0",
-    padding: alignRight ? "60px 0" : "10px 0",
+    margin: alignRight ? "30px 0" : "10px 0",
+    padding: alignRight ? "30px 0" : "10px 0",
   };
 
   const networks = social().map(network =>
