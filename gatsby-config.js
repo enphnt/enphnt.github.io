@@ -6,7 +6,6 @@ module.exports = {
     title: `Nathan Phennel's website`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
@@ -37,8 +36,22 @@ module.exports = {
         path: `${__dirname}/pdf`,
       }
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 900,
+            },
+          },
+        ],
+      },
+    },
+
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
+    // "gatsby-remark-images",
   ],
 };

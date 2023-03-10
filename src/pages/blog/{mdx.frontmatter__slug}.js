@@ -21,7 +21,7 @@ const BlogPost = ({ data, children }) => {
             <GatsbyImage
               image={heroImage}
               alt={data.mdx.frontmatter.hero_image_alt}
-              style={{ maxHeight: "22vh" }}
+              style={{ maxHeight: "40vh" }}
             />
             <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
               Photo Credit:{" "}
