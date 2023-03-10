@@ -6,7 +6,14 @@ module.exports = {
     title: `Nathan Phennel's website`,
     siteUrl: `https://www.yourdomain.tld`,
   },
+
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/favicon.png',
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
