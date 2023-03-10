@@ -9,6 +9,8 @@ const BlogPost = ({ data, children }) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
+      <a style={{ margin: "2px 0 90px", fontSize: 12, textAlign: "right" }} href='/projects'> ../Back to Projects</a>
+
       <p>{data.mdx.frontmatter.date}</p>
       {
         heroImage ? (
@@ -16,10 +18,11 @@ const BlogPost = ({ data, children }) => {
             <GatsbyImage
               image={heroImage}
               alt={data.mdx.frontmatter.hero_image_alt}
+              style={{ maxHeight: "22vh" }}
             />
-            <p>
+            <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
               Photo Credit:{" "}
-              <a href={data.mdx.frontmatter.hero_image_credit_link}>
+              <a href={data.mdx.frontmatter.hero_image_credit_link} >
                 {data.mdx.frontmatter.hero_image_credit_text}
               </a>
             </p>
