@@ -47,7 +47,7 @@ const Contact = () => {
         </button>
       </form>
 
-      <NextSectionLink />
+      <NextSectionLink size={120} />
     </section>
   );
 };

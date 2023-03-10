@@ -112,7 +112,7 @@ export default function Header() {
             <div className={dividerWrap} />
           </div>
         </div>
-        <NextSectionLink nextSection="/#about" size="6x" />
+        <NextSectionLink nextSection="/#about" size={120} />
       </div>
 
     </>

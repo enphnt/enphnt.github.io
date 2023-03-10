@@ -60,7 +60,7 @@ const About = () => {
           </div >
         </div >
       </div >
-      <NextSectionLink nextSection="/#portfolio" size="3x" />
+      <NextSectionLink nextSection="/#portfolio" />
     </section >
   );
 };
