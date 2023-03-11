@@ -29,9 +29,9 @@
 }
 
 .post h1,
-h2,
-p,
-sup {
+.post h2,
+.post p,
+.post sup {
   margin: 10px;
 }
 
@@ -68,10 +68,6 @@ sup {
     line-height: 18px;
   }
 
-  .post p {
-    font-size: 12px;
-  }
-
   .post sup {
     font-size: 12px;
   }
@@ -92,7 +88,7 @@ sup {
 }
 
 .breadcrumbLink {
-  font-size: .75em;
+  font-size: .65em;
   text-decoration: none;
   padding-right: 2px;
   color: #321010;
@@ -109,6 +105,8 @@ sup {
   font-weight: 200;
 }
 
-.content p {
+.content p,
+.content li {
   margin-top: 20px;
+  line-height: 1.5em;
 }
