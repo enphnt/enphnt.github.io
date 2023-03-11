@@ -10,6 +10,7 @@ config.autoAddCss = false;
 const NextSectionLink = ({ nextSection, size }) => {
   const svgStyles = {
     width: size ? size : 100,
+    height: size ? size : 100,
   };
 
   return (
