@@ -1,20 +1,23 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
+import { breadcrumbs, breadcrumbLink, breadcrumbLinkSeparator } from "./index.module.css";
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <a
-        style={{ margin: "2px 0 90px", fontSize: 12, textAlign: "right" }}
-        href='/blog'>  {"<"}Back
-      </a>
+    <Layout >
+      <div className={breadcrumbs}>
+        <Link className={breadcrumbLink} to="/">Home</Link>
+        <div className={breadcrumbLinkSeparator}>{`>`}</div>
+        <Link className={breadcrumbLink} to="/blog">Blog</Link>
+        <div className={breadcrumbLinkSeparator}>{`>`}</div>
+        <Link className={breadcrumbLink} to={`./`}>{data.mdx.frontmatter.title}</Link>
+      </div>
 
-      <p>{data.mdx.frontmatter.date}</p>
       {
         heroImage ? (
           <>
@@ -33,7 +36,11 @@ const BlogPost = ({ data, children }) => {
         )
           : null
       }
+      <h1>{data.mdx.frontmatter.title}</h1>
+      <p style={{ fontWeight: 100, marginBottom: 30 }}>{data.mdx.frontmatter.date}</p>
+
       {children}
+      <Link to="/">Go back to the homepage</Link>
     </Layout>
   );
 };
