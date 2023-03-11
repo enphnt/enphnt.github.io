@@ -30,6 +30,7 @@
     "gatsby-plugin-mdx": "^5.7.0",
     "gatsby-plugin-sass": "^6.7.0",
     "gatsby-plugin-sharp": "^5.7.0",
+    "gatsby-remark-embed-video": "^3.2.1",
     "gatsby-remark-images": "^7.7.0",
     "gatsby-remark-prismjs": "^7.7.0",
     "gatsby-source-filesystem": "^5.7.0",
