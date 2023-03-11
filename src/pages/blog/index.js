@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { article, post, postList, thumbnail } from "./index.module.css";
+import { article, post, postList, thumbnail, highlightAnchor } from "./index.module.css";
 
 const BlogPage = ({ data }) => {
 
@@ -11,7 +11,10 @@ const BlogPage = ({ data }) => {
     <Layout>
       <div className={postList}>
         <h1>Blog Posts</h1>
-        <p>A collection of blog posts that I've written on various topics.</p>
+        <p>
+          A collection of blog posts that I've written on various topics. I also have written
+          about <a className={highlightAnchor} href="/projects">projects</a>, too.
+        </p>
         {
           data.allMdx.nodes.map(node => {
             const thumb = getImage(node.frontmatter.thumbnail);

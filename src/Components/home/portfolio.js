@@ -10,7 +10,8 @@ const projectData = [
     image: (
       <StaticImage
         alt={"image of Referral Bot"}
-        src={`../../images/portfolio-bot-is-love.jpg`}
+        src={`../../../projects/bot-is-love/thumbnail.png`}
+        height={111}
       />
     ),
     url: "/projects/bot-is-love"

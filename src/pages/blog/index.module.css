@@ -50,15 +50,16 @@
 
 @media screen and (max-width: 750px) {
 
-  .post h1,
-  .post h2,
-  p,
-  sup {
-    margin: 6px 0;
-  }
-
   .post h2 {
     font-size: 18px;
+  }
+
+  .post p {
+    font-size: 13px;
+  }
+
+  .post sup {
+    font-size: 12px;
   }
 
   .content p,
@@ -68,9 +69,6 @@
     line-height: 18px;
   }
 
-  .post sup {
-    font-size: 12px;
-  }
 
   .thumbnail {
     margin: 1px;
@@ -95,7 +93,8 @@
   font-weight: 300;
 }
 
-.breadcrumbLink:hover {
+.breadcrumbLink:hover,
+.highlight-anchor:hover {
   -webkit-text-stroke: .5px rgb(10, 0, 59);
 }
 

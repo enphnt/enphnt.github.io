@@ -2,22 +2,47 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { article, post, postList, thumbnail, highlightAnchor } from "../blog/index.module.css";
 
-const ProjectsPage = ({ data }) => {
+const BlogPage = ({ data }) => {
+
   return (
-    <Layout pageTitle="Projects of all shapes and sizes">
-      {
-        data.allMdx.nodes.map(node => (
-          <article key={node.id}>
-            <h2>
+    <Layout>
+      <div className={postList}>
+        <h1>Projects</h1>
+        <p>
+          Here is a list of projects that I have discovered, been
+          involved with or built from scratch myself. I also have
+          a <a className={highlightAnchor} href="/blog">blog</a> section
+          of the site, too.
+        </p>
+        {
+          data.allMdx.nodes.map(node => {
+            const thumb = getImage(node.frontmatter.thumbnail);
+            return (
               <Link to={`/projects/${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
+                <article className={article} key={node.id}>
+                  <div className={thumbnail}>
+                    <GatsbyImage
+                      image={thumb}
+                      alt={`thumbnail for ${node.frontmatter.slug}`}
+                    />
+                  </div>
+                  <div className={post}>
+                    <h2>
+                      {node.frontmatter.title}
+                    </h2>
+                    <sup>Posted: {node.frontmatter.date}</sup>
+                    <p>{node.excerpt}</p>
+                  </div>
+                </article>
               </Link>
-            </h2>
-            <p>Posted: {node.frontmatter.date}</p>
-          </article>
-        ))
-      }
+
+            );
+          })
+        }
+      </div>
     </Layout>
   );
 };
@@ -29,10 +54,16 @@ export const query = graphql`
       sort: {frontmatter: {date: DESC}}
     ) {
       nodes {
+        excerpt(pruneLength: 180)
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
           slug
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         id
       }
@@ -40,6 +71,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Projects" />;
+export const Head = () => <Seo title="My Blog Posts" />;
 
-export default ProjectsPage;
+export default BlogPage;
