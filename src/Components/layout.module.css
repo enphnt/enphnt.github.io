@@ -121,33 +121,11 @@ h5 {
   margin-top: 8px;
 }
 
-pre * {
-  list-style: "- ";
-}
-
-pre {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 1.45rem;
-  font-size: 0.85rem;
-  line-height: 1.42;
-  background: hsl(0, 0%, 87%);
-  border-radius: 3px;
-  word-wrap: normal;
-  padding: 0.45rem;
-  resize: vertical;
-  overflow: auto;
-  height: auto;
-  min-height: 50px;
-}
-
-
 .note {
   background-color: lavender;
   padding: 14px;
   border-radius: 4px;
-  width: 80%;
+  width: auto;
   margin-left: 1em;
   margin-bottom: 1em;
 }

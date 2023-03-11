@@ -18,8 +18,11 @@ Time travel is often a reference point for `git`'s complexity but I'd argue that
 
 I am referring to:
 
-    ```
+    ```bash
+
     git worktree add [branchName] [targetDir]
+    
+    
     ```
 
 
@@ -34,27 +37,30 @@ So, when your testing some bug fix or new feature, you may find it useful to com
 
 The basic workflow I find myself using is:
 
-```
-    # Checkout new feature branch
-    $ git checkout origin/feature/thingy
+  ```bash
 
-    # Build and start, and test new feature
+      # Checkout new feature branch
+      $ git checkout origin/feature/thingy
 
-    $ git worktree add -b feature/thingy/old
-      ..thingy origin/master
+      # Build and start, and test new feature
 
-    $ cd ../thingy
-    # Switched to a new branch
-      'feature/thingy/old'
+      $ git worktree add -b feature/thingy/old
+        ..thingy origin/master
 
-    # Build and start, and test
-      using the new feature branch
-```
+      $ cd ../thingy
+      # Switched to a new branch
+        'feature/thingy/old'
+
+      # Build and start, and test
+        using the new feature branch
+
+  ```
 
 I find that I typically spend most of my time comparing (step 6). However, sometimes urgent issues or 'hot-fixes' are sent my way. In those cases, I use git worktree for both the feature branch under test as well as the "previous-behaviour" branch. This is great because it allows me to context switch with less frustration, no stashing, temp commits, aborting merge conflicts, etc.
 
 Developers also can use `git worktree` for quick reacting to production issues or other urgent matters requiring a hot-fix. This workflow illustrates how that is accomplished:
-```
+```bash
+
     $ git worktree add -b hotfix
       ../hotfix origin/master
 
@@ -64,6 +70,7 @@ Developers also can use `git worktree` for quick reacting to production issues o
 
     $ cd ../hotfix
     # Switched to a new branch 'hotfix'
+
 
 ```
 

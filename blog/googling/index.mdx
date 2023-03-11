@@ -22,6 +22,7 @@ When it comes to finding the more obscure, sometimes the search results can be l
 # Lvl 1 - Script kid
 You've probably seen these if you are using google for work in any capacity. Just noting down those that are usually the most useful and straightforward to use.
 
+<br />
 ## 1. Exact Match with "Double Quotes"
 Use quotation marks to search for something exactly.
 
@@ -29,8 +30,14 @@ Search `"Frank Foster"` to get results which contain both the first and last nam
 
 This can be extended to other terms to. In this case, it appears a country western artist shares the same name. So to find the sax legend, ensure that all search results also contain the term 'jazz':
 
-- ```"Frank Foster" "jazz"```
+```
 
+"Frank Foster" "jazz"
+
+```
+<sup>Pop this text into the google search bar and submit</sup>
+
+<br />
 ## 2. Subtract terms with -minus operator
 Exclude terms by putting a minus or dash, `-`, in front.
 
@@ -38,8 +45,14 @@ If you wanted to find out who wrote "Breakfast of Champions", a great read btw, 
 
 To remove the flakes, try:
 
-- ```breakfast of champions -wheaties```
+```
 
+breakfast of champions -wheaties
+
+
+```
+
+<br />
 ## 3. File extension filtering with 'filetype:'
 Get results that are a specified filetype.
 
@@ -47,39 +60,69 @@ If you're on the hunt for a specific PDF file you know exists, you could do some
 
 Or perhaps you're after an animated image:
 
-- ```side eye monkey filetype:gif```
+```
+
+side eye monkey filetype:gif
+
+
+```
 
 # Lvl 2 - Junior Dev
 At this level, we get deeper into the operators we can use. These are commonly known but ultimately that's due to their utility.
 
+<br />
 ## 4. Results only from this 'site:'
 Use this to get results only from a specified website.
 
 Quick example:
 
-- ```us audio interface site:drummersdream.com.au```
+```
 
+us audio interface site:drummersdream.com.au
+
+
+```
+
+<br />
 ## 5. This OR that with the | operator
 For situations where you want to search several things simultaneously.
 
 For example, what if you have 2 favorite coffees and you want to look at results for both:
 
-- ```Vizcaya Guatemala coffee beans | Deri Kocha Ethiopia coffee beans```
+```
 
+Vizcaya Guatemala coffee beans | Deri Kocha Ethiopia coffee beans
+
+
+```
+
+<br />
 ## 6. Search a range of..numbers or price range
 Put `..` to search for a range of numbers. This can be combined with `$` to search a price range.
 
 Looking for a new metronome thats within your budget? Try:
 
-- ```metronome $25..$55```
+```
 
+metronome $25..$55
+
+
+```
+
+<br />
 ## 7. Filter results by 'imagesize:widthxheight'
 Following your search term/s, add the text `imagesize:widthxheight`. Dimensions can be specified in pixels.
 
 For example, if you want your Nick Cage imgs for the desktop try something like:
 
-- ```nick cage imagesize:1920x1080```
+```
 
+nick cage imagesize:1920x1080
+
+
+```
+
+<br />
 ## 8. Use asterisk `*` for wildcard search
 Wherever you place the * character it will serve as a wildcard and match any phrase or word. It's actually more useful to review search autocompletion results when you want to find some missing part of your search.
 
@@ -90,15 +133,22 @@ For example, you could use it to see what things you could do with javascript:
 
 # Lvl 3 - Senior Dev
 
+<br />
 ## 9. Check latest Googlebot indexes using `cache:`
 Let's say you have a website that you can't access server logs for but you want to see  the last time Googlebot hit the page.
 
 Simply search for the page or URL and add the `cache:` prefix, for example:
 
-- ```cache:https://enphnt.github.io```
+```
+
+cache:https://enphnt.github.io
+
+
+```
 
 This will redirect you to the most recent cache of the HTML page. Importantly, Javascript is not included in the cache as its just a cache of plain HTML only.
 
+<br />
 ## 10. Identify insecure pages for a `site:`
 These days, HTTPS is reportedly everywhere but unfortunately, some outdated areas of many major websites are still insecure. We can use a combo of `site:` operator and an inverse `inUrl:` search to display all the pages whose URL doesn't contain `https` for a given domain.
 
@@ -111,12 +161,18 @@ Ooops... Looks like around ~1500 pages of `guitarcenter.com` remain insecure. Th
 
 Clicking any of the resulting links reveals that the page is actually non-existent. So ultimately, there appears to be a google search indexing issue with these old listings.
 
+<br />
 ## 11. Find those who steal from you!
 So you have a blog and you just crafted some amazing informative post but you're afraid others may copy your work. Well, aside from feeling flattered, if you want to identify websites that are repurposing your content, you can!
 
 For example, let's see if anyone has copied this very article elsewhere on the net using the title:
 
-- ```intitle:"Dev Googling" -site:enphnt.github.io```
+```
+
+intitle:"Dev Googling" -site:enphnt.github.io
+
+
+```
 
 Notice that I've ignored my own site and have just targeted a portion of the page title. This is because not many result exist for this title portion.
 
