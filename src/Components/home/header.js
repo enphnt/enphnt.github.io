@@ -16,7 +16,7 @@ import {
 
 import NextSectionLink from "../next-section-link";
 
-const blue = "#7280b5";
+const blue = "rgb(72, 93, 146)";
 const green = "#4DA167";
 const white = "black";
 
