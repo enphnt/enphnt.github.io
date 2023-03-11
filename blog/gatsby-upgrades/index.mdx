@@ -12,7 +12,7 @@ First off, I'm using such an old of a version of `gatsy` that I can't currently 
 
 This post is just my notes from performing the upgrade. I'm dog sitting this weekend so will be doing this with my partner, Pickle, today. Pickle is an extremely needy dachshund. She needs pats and stimulation constantly much like this blog needs posts and upgrades today.
 
-### v1 to v2 upgrade
+# v1 to v2 upgrade
 I'll try just setting package.json version to 2.0.0:
 ```json
   
@@ -32,15 +32,15 @@ However, now I see massive layout issues and I will move on to restructuring my 
 After the following steps, which are thankfully documented in the  <a target="_blank" href="https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v1-to-v2/">migration guide</a>, I'm up and running again. Had to do the following steps.
 
   1. Convert layout's children from render prop to normal prop (required)
-  2. Mv layouts/index.js to src/components/layout.js (optional, but recommended)
+  2. Mv `layouts/index.js` to `src/components/layout.js` (optional, but recommended)
   3. Import then wrap pages with layout component
   4. Pass history, location, and match props to layout (didn't do this actually)
-  5. Change the query to use StaticQuery (now getting false pos warn about 'maxWidth' in query)
+  5. Change the query to use StaticQuery (now getting false pos warn about `'maxWidth'` in query)
 
-#### v2 Done
+## v2 Done
 We made it. Things so far have remained straightforward. Next I'll continue upgrading to v4 now from v2.
 
-### v2 to v4 upgrade
+# v2 to v4 upgrade
 For this migration, I skipped 3 altogether as I saw few breaking changes that would affect me. In fact, it looks like none! Even further migrating to v4 shows no apparent breaking changes i'll need to address.
 
 I updated the package.json to the latest release for v4 according to npm:
