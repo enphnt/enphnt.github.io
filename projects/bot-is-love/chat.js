@@ -186,7 +186,7 @@ class Chat extends React.Component {
 
     let cssClass = ['c-chat'];
 
-    if (this.state.messages.length === 5) {
+    if (this.state.messages.length === 4) {
       document.querySelector('input').focus();
     }
 
