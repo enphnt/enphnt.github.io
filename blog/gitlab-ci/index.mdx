@@ -7,6 +7,7 @@ hero_image_alt: "an actual photo of the internals of gitlab ci"
 hero_image_credit_text: "Miguel Á. Padriñán"
 hero_image_credit_link: "https://www.pexels.com/photo/photo-of-golden-cogwheel-on-black-background-3785935/"
 ---
+import Video from "../../src/components/video";
 
 Before attempting to use `gitlab.yml`, a few things must be in place:
  - gitlab instance
@@ -15,10 +16,10 @@ Before attempting to use `gitlab.yml`, a few things must be in place:
 
 Before you start, I recommend watching this video, or atleast the beginning:
   
-  <div style={{textAlign: "center", padding: "20px 0"}}>
-  `youtube: https://www.youtube.com/watch?v=kTNfi5z6Uvk`
-  </div>
-
+<Video
+  videoSrcURL="https://www.youtube.com/embed/1iXFbchozdY"
+  videoTitle="Demo: CI/CD with GitLab"
+/>
 
 Basically, you'll want to clone a simple project in a tech stack that you're already familiar with. I will use a node.js app to demonstrate.
 
