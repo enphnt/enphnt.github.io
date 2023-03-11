@@ -40,7 +40,8 @@ const BlogPost = ({ data, children }) => {
       <p style={{ fontWeight: 100, marginBottom: 30 }}>{data.mdx.frontmatter.date}</p>
 
       {children}
-      <Link to="/">Go back to the homepage</Link>
+      <br />
+      <Link to="/blog">Go back to the blog homepage</Link>
     </Layout>
   );
 };
