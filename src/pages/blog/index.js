@@ -26,7 +26,6 @@ const BlogPage = ({ data }) => {
                   </div>
                   <div className={post}>
                     <h2>
-
                       {node.frontmatter.title}
                     </h2>
                     <sup>Posted: {node.frontmatter.date}</sup>

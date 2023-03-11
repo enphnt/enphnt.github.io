@@ -51,14 +51,21 @@ sup {
 @media screen and (max-width: 750px) {
 
   .post h1,
-  h2,
+  .post h2,
   p,
   sup {
-    margin: 4px;
+    margin: 6px 0;
   }
 
   .post h2 {
     font-size: 18px;
+  }
+
+  .content p,
+  .content pre,
+  .content li {
+    font-size: 13px;
+    line-height: 18px;
   }
 
   .post p {
@@ -100,4 +107,8 @@ sup {
   font-size: .75em;
   margin: 0 4px;
   font-weight: 200;
+}
+
+.content p {
+  margin-top: 20px;
 }

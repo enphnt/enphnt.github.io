@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
-import { breadcrumbs, breadcrumbLink, breadcrumbLinkSeparator } from "./index.module.css";
+import { breadcrumbs, breadcrumbLink, breadcrumbLinkSeparator, content } from "./index.module.css";
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -38,8 +38,9 @@ const BlogPost = ({ data, children }) => {
       }
       <h1>{data.mdx.frontmatter.title}</h1>
       <p style={{ fontWeight: 100, marginBottom: 30 }}>{data.mdx.frontmatter.date}</p>
-
-      {children}
+      <div className={content}>
+        {children}
+      </div>
       <br />
       <Link to="/blog">Go back to the blog homepage</Link>
     </Layout>

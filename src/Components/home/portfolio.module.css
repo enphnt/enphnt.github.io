@@ -20,9 +20,9 @@
 }
 
 .anchor-tile {
-  width: 150px;
+  width: 140px;
   border: solid 1px;
-  padding: 4px 8px;
+  padding: 4px;
   margin: 2px;
   color: black;
 }
