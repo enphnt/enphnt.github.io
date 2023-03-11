@@ -6,11 +6,12 @@
   justify-content: space-between;
   z-index: 0;
   position: relative;
-  background: linear-gradient(30deg, #1e1e1e, #442020, var(--clr-maroon));
-  background-size: 600% 600%;
-  -webkit-animation: AnimatedGradient 50s ease infinite;
-  -moz-animation: AnimatedGradient 50s ease infinite;
-  animation: AnimatedGradient 50s ease infinite;
+  background: url("../../images/bg.jpg");
+  /* background: linear-gradient(30deg, #1e1e1e, #442020, var(--clr-maroon)); */
+  background-size: cover;
+  -webkit-animation: AnimatedGradient 80s ease infinite;
+  -moz-animation: AnimatedGradient 80s ease infinite;
+  animation: AnimatedGradient 80s ease infinite;
 }
 
 .background {
@@ -119,13 +120,13 @@
   }
 
   100% {
-    background-position: 0% 53%
+    background-position: 10% 53%
   }
 }
 
 @-moz-keyframes AnimatedGradient {
   0% {
-    background-position: 0% 53%
+    background-position: 10% 53%
   }
 
   50% {
@@ -133,13 +134,13 @@
   }
 
   100% {
-    background-position: 0% 53%
+    background-position: 10% 53%
   }
 }
 
 @keyframes AnimatedGradient {
   0% {
-    background-position: 0% 53%
+    background-position: 10% 53%
   }
 
   50% {
@@ -147,6 +148,6 @@
   }
 
   100% {
-    background-position: 0% 53%
+    background-position: 10% 53%
   }
 }
