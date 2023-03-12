@@ -1,10 +1,12 @@
+import "@fontsource/quicksand";
 // const React = require("react");
 
 //imports styles used for pre/code pretty printing
 require("prismjs/themes/prism-coy.css");
 require("prismjs/plugins/command-line/prism-command-line.css");
 
-// not needed but keeping for reference, see: 
+
+// not needed but keeping for reference, see:
 // https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/#wrapPageElement
 // Logs when the client route changes
 // exports.onRouteUpdate = ({ location, prevLocation }) => {

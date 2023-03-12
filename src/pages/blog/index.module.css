@@ -30,9 +30,14 @@
 
 .post h1,
 .post h2,
-.post p,
-.post sup {
+.post h5,
+.post p {
   margin: 10px;
+}
+
+.post h5 {
+  margin-top: -5px;
+  margin-bottom: 15px;
 }
 
 .post p {
@@ -41,6 +46,12 @@
 
 .post sup {
   font-size: 12px;
+}
+
+.content p,
+.content li,
+.content code {
+  line-height: 1.6em;
 }
 
 .thumbnail {
@@ -66,7 +77,6 @@
   .content pre,
   .content li {
     font-size: 15px;
-    line-height: 18px;
   }
 
 
@@ -78,19 +88,29 @@
   }
 }
 
+.hero {
+  border-radius: 5px;
+}
+
 .breadcrumbs {
   display: flex;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   text-transform: uppercase;
+  align-items: center;
 }
 
 .breadcrumbLink {
-  font-size: .65em;
-  text-decoration: none;
+  font-size: .75em;
   padding-right: 2px;
-  color: #321010;
-  font-weight: 300;
+  color: #35435d;
+}
+
+.breadcrumbLinkHighlight {
+  font-size: .75em;
+  padding-right: 2px;
+  font-weight: 500;
+  -webkit-text-stroke: .5px rgb(10, 0, 59);
 }
 
 .breadcrumbLink:hover,
@@ -99,13 +119,7 @@
 }
 
 .breadcrumbLink-separator {
-  font-size: .75em;
-  margin: 0 4px;
+  font-size: 1.2em;
+  margin: 2px 4px;
   font-weight: 200;
-}
-
-.content p,
-.content li {
-  margin-top: 20px;
-  line-height: 1.5em;
 }

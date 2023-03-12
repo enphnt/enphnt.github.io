@@ -26,14 +26,12 @@ const BlogPage = ({ data }) => {
                   <div className={thumbnail}>
                     <GatsbyImage
                       image={thumb}
-                      alt={`thumbnail for ${node.frontmatter.slug}`}
+                      alt={`Thumbnail for ${node.frontmatter.title}`}
                     />
                   </div>
                   <div className={post}>
-                    <h2>
-                      {node.frontmatter.title}
-                    </h2>
-                    <sup>Posted: {node.frontmatter.date}</sup>
+                    <h2>{node.frontmatter.title}</h2>
+                    <h5>{node.frontmatter.date}</h5>
                     <p>{node.excerpt}</p>
                   </div>
                 </article>

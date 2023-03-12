@@ -3,7 +3,13 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
-import { breadcrumbs, breadcrumbLink, breadcrumbLinkSeparator, content } from "../blog/index.module.css";
+import {
+  breadcrumbs,
+  breadcrumbLink,
+  breadcrumbLinkSeparator,
+  content,
+  hero
+} from "../blog/index.module.css";
 
 const Projects = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -25,6 +31,7 @@ const Projects = ({ data, children }) => {
               <GatsbyImage
                 image={heroImage}
                 alt={data.mdx.frontmatter.hero_image_alt}
+                className={hero}
               />
               <p>
                 Photo Credit:{" "}
@@ -37,7 +44,7 @@ const Projects = ({ data, children }) => {
             : null
         }
         <h1>{data.mdx.frontmatter.title}</h1>
-        <p style={{ fontWeight: 100, marginBottom: 30 }}>{data.mdx.frontmatter.date}</p>
+        <h5>{data.mdx.frontmatter.date}</h5>
         <div className={content}>
           {children}
         </div>

@@ -61,7 +61,7 @@ const Review = () => {
 const Testimonials = () => {
   return (
     <section id="testimonials">
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 70 }}>
+      <div className="testimonials-container">
         <h1 style={{ textAlign: "center" }}>What people say</h1>
         <div className="container">
           <Review />

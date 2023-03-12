@@ -1,5 +1,5 @@
 #testimonials {
-  height: auto;
+  height: 99vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +7,14 @@
 }
 
 #testimonials h1 {
-  margin-top: 20px;
+  margin-top: 0;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30;
 }
 
 /*
@@ -17,7 +24,8 @@ Reviews
 */
 
 .container {
-  width: 90vw;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .review {
@@ -27,7 +35,7 @@ Reviews
   box-shadow: var(--dark-shadow);
   transition: var(--transition);
   text-align: center;
-  margin: 24px 10vw;
+  margin: 24px 10px;
 
 }
 

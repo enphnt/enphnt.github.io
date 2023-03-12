@@ -126,10 +126,10 @@ const Portfolio = () => (
     <a href="/projects">more projects...</a>
     <div style={{ textAlign: "center" }}>
       <h1>Dead Projects</h1>
-      <h5>
+      <sub>
         Sadly, this work is no longer maintained for one reason
         or another but it's important to remember the good times.
-      </h5>
+      </sub>
     </div>
     <div className={portfolioProjects} >
       {generateTiles(deadProjectData)}

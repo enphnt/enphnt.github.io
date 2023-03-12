@@ -3,7 +3,14 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
-import { breadcrumbs, breadcrumbLink, breadcrumbLinkSeparator, content } from "./index.module.css";
+import {
+  breadcrumbs,
+  breadcrumbLink,
+  breadcrumbLinkHighlight,
+  breadcrumbLinkSeparator,
+  content,
+  hero
+} from "./index.module.css";
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -12,10 +19,10 @@ const BlogPost = ({ data, children }) => {
     <Layout >
       <div className={breadcrumbs}>
         <Link className={breadcrumbLink} to="/">Home</Link>
-        <div className={breadcrumbLinkSeparator}>{`>`}</div>
+        <div className={breadcrumbLinkSeparator}>&#187;</div>
         <Link className={breadcrumbLink} to="/blog">Blog</Link>
-        <div className={breadcrumbLinkSeparator}>{`>`}</div>
-        <Link className={breadcrumbLink} to={`./`}>{data.mdx.frontmatter.title}</Link>
+        <div className={breadcrumbLinkSeparator}>&#187;</div>
+        <Link className={breadcrumbLinkHighlight} to={`./`}>{data.mdx.frontmatter.title}</Link>
       </div>
 
       {
@@ -25,6 +32,7 @@ const BlogPost = ({ data, children }) => {
               image={heroImage}
               alt={data.mdx.frontmatter.hero_image_alt}
               style={{ maxHeight: "40vh" }}
+              className={hero}
             />
             <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
               Photo Credit:{" "}
@@ -37,7 +45,7 @@ const BlogPost = ({ data, children }) => {
           : null
       }
       <h1>{data.mdx.frontmatter.title}</h1>
-      <p style={{ fontWeight: 100, marginBottom: 30 }}>{data.mdx.frontmatter.date}</p>
+      <h5>{data.mdx.frontmatter.date}</h5>
       <div className={content}>
         {children}
       </div>

@@ -12,9 +12,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className={verticalFlexContainer}>
-      <div>
-        <h1 style={{ textAlign: "center" }}>Get in touch</h1>
-        <h5 style={{ textAlign: "center" }}>Use this handy lil form and I'll receive your message.</h5>
+      <div style={{ textAlign: "center" }}>
+        <h1>Get in touch</h1>
+        <p>Use this handy lil form and I'll receive your message.</p>
       </div>
       <form onSubmit={handleSubmit} className={verticalFlexContainer}>
         <label htmlFor="email">
