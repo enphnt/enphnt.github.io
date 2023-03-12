@@ -8,7 +8,8 @@ const NavItem = styled(Link)`
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
-  transition: all 200ms ease-in;
+  opacity: 1;
+  animation: fadeInOpacity 1s linear;
   position: relative;
   :after {
     position: absolute;
@@ -29,12 +30,21 @@ const NavItem = styled(Link)`
     }
   }
   @media (max-width: 768px) {
-    padding: 20px 0;
-    font-size: 1.5rem;
+    padding: 15px 0;
+    font-size: 2rem;
+    animation: none;
     z-index: 6;
     margin: 0 0 16px;
     ::after {
       height: 8px;
+    }
+  }
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 `;

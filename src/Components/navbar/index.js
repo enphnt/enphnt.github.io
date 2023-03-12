@@ -8,14 +8,14 @@ const Navigation = styled.nav`
   height: 6vh;
   display: flex;
   background-color: #fff;
-  position: relative;
-  justify-content: space-between;
+  justify-content: center;
   text-transform: uppercase;
   margin: 0 auto;
   padding: 0 4vw;
   z-index: 2;
   align-self: center;
   @media (max-width: 768px) {
+    justify-content: space-between;
     position: sticky;
     height: 6vh;
     top: 0;

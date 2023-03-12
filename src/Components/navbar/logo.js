@@ -2,11 +2,17 @@ import React from "react";
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from "styled-components";
 import { Link } from "gatsby";
+
+const offset = "7";
 const LogoWrap = styled.div`
-  margin: auto 0;
+  margin: auto ${offset}vw auto calc(-36px - ${offset}vw);
   flex: 0 1 36px;
-  @media (max-width: 768px) and (orientation: landscape) {
-    flex: 0 1 25px;
+  transition: transform .7s ease-in-out;
+  @media (max-width: 768px){
+    margin: auto 0;
+  }
+  :hover {
+    transform: rotate(367deg);
   }
 `;
 
