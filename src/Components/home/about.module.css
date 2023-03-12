@@ -1,6 +1,6 @@
 .about-section {
   display: inline-flex;
-  margin: 50px auto 70px;
+  margin: 15px auto 10px;
   flex-flow: row wrap;
   height: auto;
   align-items: center;
@@ -17,6 +17,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.about-pic img {
+  border-radius: 12%;
 }
 
 .about-text {
