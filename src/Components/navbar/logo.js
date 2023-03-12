@@ -20,7 +20,7 @@ const Logo = () => {
 
   return (
     <LogoWrap as={Link} to="/">
-      <StaticImage src={`../../images/logo.png`} alt="logo" />
+      <StaticImage src={`../../images/favicon.png`} alt="logo" />
     </LogoWrap>
   );
 };
