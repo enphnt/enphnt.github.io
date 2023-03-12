@@ -18,12 +18,12 @@ const NavItem = styled(Link)`
     width: 0%;
     content: ".";
     color: transparent;
-    background: goldenrod;
-    height: 1px;
+    background: #4DA167;
+    height: 2px;
     transition: all 0.4s ease-in;
   }
   :hover {
-    color: goldenrod;
+    color: #35435d; 
     ::after {
       width: 100%;
     }
@@ -32,6 +32,10 @@ const NavItem = styled(Link)`
     padding: 20px 0;
     font-size: 1.5rem;
     z-index: 6;
+    margin: 0 0 16px;
+    ::after {
+      height: 8px;
+    }
   }
 `;
 const NavbarLinks = () => {

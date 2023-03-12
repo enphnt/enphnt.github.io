@@ -12,12 +12,12 @@ const Navigation = styled.nav`
   justify-content: space-between;
   text-transform: uppercase;
   margin: 0 auto;
-  padding: 0 2vw;
+  padding: 0 4vw;
   z-index: 2;
   align-self: center;
   @media (max-width: 768px) {
     position: sticky;
-    height: 8vh;
+    height: 6vh;
     top: 0;
     left: 0;
     right: 0;
@@ -48,7 +48,8 @@ const Navbox = styled.div`
     padding-top: 10vh;
     background-color: #fff;
     transition: all 0.3s ease-in;
-    top: 8vh;
+    border-top: solid;
+    top: 6vh;
     left: ${props => (props.open ? "-100%" : "0")};
   }
 `;
