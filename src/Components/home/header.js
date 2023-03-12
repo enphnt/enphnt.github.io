@@ -79,7 +79,8 @@ export default function Header() {
   }, [reset]);
 
   return (
-    <section>
+    // id=top needed for smoothcroll workaround
+    <section id="top">
       <div className={wrapper}>
         <div className={background}>
 

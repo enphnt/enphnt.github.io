@@ -44,11 +44,19 @@ html {
   color: rgb(73, 73, 73);
   font-family: Helvetica, sans-serif;
   font-weight: 300;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   scrollbar-color: var(--clr-maroon) #cfcfcfbd;
   animation: .5s ease 1s normal forwards 1 fadein;
   -webkit-animation: .5s ease 1s normal forwards 1 fadein;
   opacity: 0
+}
+
+.landing-page {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  display: block;
+  height: 100vh;
+  /* // test with smaller heights */
 }
 
 html p,

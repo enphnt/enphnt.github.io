@@ -144,7 +144,7 @@ const Navbar = () => {
       </Toggle>
       {navbarOpen ? (
         <Navbox>
-          <NavItem onClick={() => setNavbarOpen(false)} to="/">Home</NavItem>
+          <NavItem onClick={() => setNavbarOpen(false)} to="/#top">Home</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/#about">About</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/#portfolio">Portfolio</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/#testimonials">Testimonials</NavItem>
@@ -153,7 +153,7 @@ const Navbar = () => {
         </Navbox>
       ) : (
         <Navbox open>
-          <NavItem to="/">Home</NavItem>
+          <NavItem to="/#top">Home</NavItem>
           <NavItem to="/#about">About</NavItem>
           <NavItem to="/#portfolio">Portfolio</NavItem>
           <NavItem to="/#testimonials">Testimonials</NavItem>

@@ -7,8 +7,10 @@ import Testimonials from '../components/home/testimonials';
 import Contact from '../components/home/contact';
 import Header from '../components/home/header';
 
+import { landingPage } from "../components/layout.module.css";
+
 const IndexPage = () => (
-  <>
+  <div className={landingPage}>
     <Header />
 
     <Layout pageTitle="Home Page">
@@ -17,7 +19,7 @@ const IndexPage = () => (
       <Testimonials />
       <Contact />
     </Layout>
-  </>
+  </div>
 );
 
 export const Head = () => <Seo title="Home Page" />;
