@@ -6,6 +6,7 @@ import Logo from "./logo";
 
 const Navigation = styled.nav`
   height: 6vh;
+  min-height: 40px;
   display: flex;
   background-color: #fff;
   justify-content: center;

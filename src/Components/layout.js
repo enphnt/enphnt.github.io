@@ -15,7 +15,8 @@ const Layout = ({ pageTitle, children }) => (
     <div className={container}>
       <main>
         {
-          pageTitle === "Home Page" ?
+          !pageTitle ||
+            pageTitle === "Home Page" ?
             null :
             <h1 className={heading}>{pageTitle}</h1>
         }
