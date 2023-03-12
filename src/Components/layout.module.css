@@ -186,32 +186,6 @@ h5 {
   box-shadow: 6px 2px 24px 8px rgba(0, 0, 0, .12)
 }
 
-.nav-links {
-  display: flex;
-  background-color: inherit;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  min-height: 36px;
-  flex-wrap: wrap;
-  margin: 8px
-}
-
-.nav-link-item {
-  padding: 4px 1rem;
-}
-
-.nav-link-text {
-  color: black;
-}
-
-.nav-link-text:hover {
-  color: rgb(120, 120, 120);
-}
-
 @keyframes fadein {
   from {
     opacity: 0;
