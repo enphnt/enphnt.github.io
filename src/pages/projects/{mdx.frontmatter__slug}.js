@@ -15,13 +15,13 @@ const Projects = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
 
   return (
-    <div style={{ margin: 12 }}>
+    <div style={{ margin: 12, paddingTop: 40 }}>
       <Layout>
         <div className={breadcrumbs}>
           <Link className={breadcrumbLink} to="/">Home</Link>
-          <div className={breadcrumbLinkSeparator}>{`>`}</div>
+          <div className={breadcrumbLinkSeparator}>&#187;</div>
           <Link className={breadcrumbLink} to="/projects">Projects</Link>
-          <div className={breadcrumbLinkSeparator}>{`>`}</div>
+          <div className={breadcrumbLinkSeparator}>&#187;</div>
           <Link className={breadcrumbLink} to={`./`}>{data.mdx.frontmatter.title}</Link>
         </div>
 

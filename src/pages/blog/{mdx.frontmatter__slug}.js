@@ -17,40 +17,42 @@ const BlogPost = ({ data, children }) => {
 
   return (
     <Layout >
-      <div className={breadcrumbs}>
-        <Link className={breadcrumbLink} to="/">Home</Link>
-        <div className={breadcrumbLinkSeparator}>&#187;</div>
-        <Link className={breadcrumbLink} to="/blog">Blog</Link>
-        <div className={breadcrumbLinkSeparator}>&#187;</div>
-        <Link className={breadcrumbLinkHighlight} to={`./`}>{data.mdx.frontmatter.title}</Link>
-      </div>
+      <div style={{ paddingTop: 40 }}>
+        <div className={breadcrumbs}>
+          <Link className={breadcrumbLink} to="/">Home</Link>
+          <div className={breadcrumbLinkSeparator}>&#187;</div>
+          <Link className={breadcrumbLink} to="/blog">Blog</Link>
+          <div className={breadcrumbLinkSeparator}>&#187;</div>
+          <Link className={breadcrumbLinkHighlight} to={`./`}>{data.mdx.frontmatter.title}</Link>
+        </div>
 
-      {
-        heroImage ? (
-          <>
-            <GatsbyImage
-              image={heroImage}
-              alt={data.mdx.frontmatter.hero_image_alt}
-              style={{ maxHeight: "40vh" }}
-              className={hero}
-            />
-            <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
-              Photo Credit:{" "}
-              <a href={data.mdx.frontmatter.hero_image_credit_link} >
-                {data.mdx.frontmatter.hero_image_credit_text}
-              </a>
-            </p>
-          </>
-        )
-          : null
-      }
-      <h1>{data.mdx.frontmatter.title}</h1>
-      <h5>{data.mdx.frontmatter.date}</h5>
-      <div className={content}>
-        {children}
+        {
+          heroImage ? (
+            <>
+              <GatsbyImage
+                image={heroImage}
+                alt={data.mdx.frontmatter.hero_image_alt}
+                style={{ maxHeight: "40vh" }}
+                className={hero}
+              />
+              <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
+                Photo Credit:{" "}
+                <a href={data.mdx.frontmatter.hero_image_credit_link} >
+                  {data.mdx.frontmatter.hero_image_credit_text}
+                </a>
+              </p>
+            </>
+          )
+            : null
+        }
+        <h1>{data.mdx.frontmatter.title}</h1>
+        <h5>{data.mdx.frontmatter.date}</h5>
+        <div className={content}>
+          {children}
+        </div>
+        <br />
+        <Link to="/blog">Go back to the blog homepage</Link>
       </div>
-      <br />
-      <Link to="/blog">Go back to the blog homepage</Link>
     </Layout>
   );
 };
