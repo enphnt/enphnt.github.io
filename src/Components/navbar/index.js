@@ -102,7 +102,7 @@ const NavItem = styled(Link)`
     color: transparent;
     background: #4DA167;
     height: 2px;
-    transition: all 0.4s ease-in;
+    transition: all 0.3s ease-in;
   }
   :hover {
     color: #35435d; 
