@@ -12,7 +12,7 @@ const LogoWrap = styled.div`
     margin: auto 0;
   }
   :hover {
-    transform: rotate(367deg);
+    transform: rotate(367.4deg);
   }
 `;
 

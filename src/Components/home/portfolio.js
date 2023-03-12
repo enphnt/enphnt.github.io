@@ -2,6 +2,7 @@ import * as React from "react";
 import { StaticImage } from 'gatsby-plugin-image';
 import { anchorTile, portfolioProjects, portfolio } from "./portfolio.module.css";
 import NextSectionLink from "../next-section-link";
+import { Link } from "gatsby";
 
 const projectData = [
   {
@@ -123,7 +124,7 @@ const Portfolio = () => (
     <div className={portfolioProjects}>
       {generateTiles(projectData)}
     </div>
-    <a href="/projects">more projects...</a>
+    <Link to="/projects">more projects...</Link>
     <div style={{ textAlign: "center" }}>
       <h1>Dead Projects</h1>
       <sub>

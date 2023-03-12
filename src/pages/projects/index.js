@@ -14,7 +14,7 @@ const BlogPage = ({ data }) => {
         <p>
           Here is a list of projects that I have discovered, been
           involved with or built from scratch myself. I also have
-          a <a className={highlightAnchor} href="/blog">blog</a> section
+          a <Link className={highlightAnchor} to="/blog">blog</Link> section
           of the site, too.
         </p>
         {

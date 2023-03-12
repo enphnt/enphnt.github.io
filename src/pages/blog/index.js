@@ -13,7 +13,7 @@ const BlogPage = ({ data }) => {
         <h1>Blog Posts</h1>
         <p>
           A collection of blog posts that I've written on various topics. I also have written
-          about <a className={highlightAnchor} href="/projects">projects</a>, too.
+          about <Link className={highlightAnchor} to="/projects">projects</Link>, too.
         </p>
         {
           data.allMdx.nodes.map(node => {
