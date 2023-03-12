@@ -1,5 +1,5 @@
 #testimonials {
-  height: 99vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
