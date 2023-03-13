@@ -9,6 +9,8 @@ import NextSectionLink from "../../next-section-link";
 const Review = () => {
   const [index, setIndex] = useState(0);
   const { name, job, image, text } = people[index];
+
+  // Define a function to check the number
   const checkNumber = (number) => {
     if (number > people.length - 1) {
       return 0;
@@ -19,18 +21,9 @@ const Review = () => {
     return number;
   };
 
-  const nextPerson = () => {
-    setIndex((index) => {
-      let newIndex = index + 1;
-      return checkNumber(newIndex);
-    });
-  };
-
-  const prevPerson = () => {
-    setIndex((index) => {
-      let newIndex = index - 1;
-      return checkNumber(newIndex);
-    });
+  // Define a function to handle both prev and next buttons
+  const changePerson = (direction) => {
+    setIndex(checkNumber(index + direction));
   };
 
   return (
@@ -40,17 +33,16 @@ const Review = () => {
 
         <span className="quote-icon">
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faQuoteRight} />
-
         </span>
       </div>
       <h4 className="author">{name}</h4>
       <p className="job">{job}</p>
       <p className="info">{text}</p>
       <div className="button-container">
-        <button className="prev-btn" onClick={prevPerson}>
+        <button className="prev-btn" onClick={() => changePerson(-1)}>
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronLeft} />
         </button>
-        <button className="next-btn" onClick={nextPerson}>
+        <button className="next-btn" onClick={() => changePerson(1)}>
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronRight} />
         </button>
       </div>
@@ -71,5 +63,4 @@ const Testimonials = () => {
     </section>
   );
 };
-
 export default Testimonials;
