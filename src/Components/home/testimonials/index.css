@@ -118,7 +118,7 @@ Reviews
 @media screen and (max-width: 692px) {
   .info {
     margin-bottom: 0.75rem;
-    min-height: 160px;
+    min-height: 9em;
   }
 }
 
