@@ -80,7 +80,7 @@ main {
   margin: 0 24px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   iframe {
     max-width: 100% !important;
     width: auto !important;
