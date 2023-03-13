@@ -55,7 +55,7 @@ Reviews
 .button-container {
   width: 150px;
   display: flex;
-  margin: 0 auto;
+  margin: 40px auto 0;
   position: relative;
   bottom: 0;
 }
@@ -111,15 +111,15 @@ Reviews
 .info {
   margin-top: 1rem;
   margin-bottom: 0.75rem;
-  min-height: 110px;
+  min-height: 115px;
   color: rgba(0, 0, 0, 0.7)
 }
 
-@media screen and (max-width: 692px) {
+@media (max-width: 692px) {
   .info {
-    -webkit-text-size-adjust: 100%;
     margin-bottom: 0.75rem;
-    height: 170px;
+    min-height: auto;
+    height: auto;
   }
 }
 
