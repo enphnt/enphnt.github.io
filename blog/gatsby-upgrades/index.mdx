@@ -30,7 +30,7 @@ I was able to finish the install of new packages and render the site successfull
 
 However, now I see massive layout issues and I will move on to restructuring my react components so that they no longer use the `layout.js` as a root component.
 
-After the following steps, which are thankfully documented in the  <a target="_blank" href="https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v1-to-v2/">migration guide</a>, I'm up and running again. Had to do the following steps.
+After the following steps, which are thankfully documented in the [migration guide](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v1-to-v2/), I'm up and running again. Had to do the following steps.
 
   1. Convert layout's children from render prop to normal prop (required)
   2. Mv `layouts/index.js` to `src/components/layout.js` (optional, but recommended)
@@ -83,7 +83,7 @@ File: .cache/find-path.js:1:0
 
 ```
 
-To overcome these, I found that its necessary to add gatsby peer deps to the `package.json` for some unknown reason. I saw there was a bit of chatter about deps issues on gatsby's github <a target="_blank" href="https://github.com/gatsbyjs/gatsby/discussions/35313">issues</a>. <a target="_blank" href="https://github.com/gatsbyjs/gatsby/issues/25708">Here</a> I saw I could just bypass issues with the transient deps and just specify compatible versions myself in the `package.json` like so:
+To overcome these, I found that its necessary to add gatsby peer deps to the `package.json` for some unknown reason. I saw there was a bit of chatter about deps issues on gatsby's github [issues](https://github.com/gatsbyjs/gatsby/discussions/35313). [Here](https://github.com/gatsbyjs/gatsby/issues/25708), I saw I could just bypass issues with the transient deps and just specify compatible versions myself in the `package.json` like so:
 
 ```javascript
 
