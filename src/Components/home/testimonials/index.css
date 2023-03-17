@@ -36,7 +36,8 @@ Reviews
   transition: var(--transition);
   text-align: center;
   margin: 24px 10px;
-
+  /* Necessary to prevent float issues */
+  display: inline-block;
 }
 
 .review:hover {
@@ -112,14 +113,14 @@ Reviews
   margin-top: 1rem;
   margin-bottom: 0.75rem;
   min-height: 115px;
-  color: rgba(0, 0, 0, 0.7)
+  color: rgba(0, 0, 0, 0.7);
+
 }
 
 @media (max-width: 692px) {
   .info {
     margin-bottom: 0.75rem;
     min-height: 160px;
-    font-size: 0.75em;
   }
 }
 
