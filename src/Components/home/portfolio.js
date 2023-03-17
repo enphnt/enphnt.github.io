@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 const projectData = [
   {
     title: "Bot_is_Love",
-    category: "An IM bot simulation, built with React, that I redesigned to give users a more mindful outlook.",
+    category: "IM bot simulation, built with React, that I redesigned to give users a more mindful outlook.",
     image: (
       <StaticImage
         alt={"image of Referral Bot"}
@@ -19,7 +19,7 @@ const projectData = [
   },
   {
     title: "Banterer",
-    category: "Displays comical and smart quotes in the terminal for dev inspiration.",
+    category: "npm package that displays comical and smart quotes in the terminal for dev inspiration.",
     image: (
       <StaticImage
         alt={"image of Banterer"}
@@ -30,7 +30,7 @@ const projectData = [
   },
   {
     title: "nighthelper",
-    category: "A tool for quickly generating tests, page objects, configuration files and custom commands.",
+    category: "npm package for quickly generating tests, page objects, configuration files and custom commands.",
     image: (
       <StaticImage
         alt={"image of nighthelper.jpg"}

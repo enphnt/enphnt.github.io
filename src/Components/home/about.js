@@ -41,15 +41,12 @@ const About = () => {
               After studying linguistic anthropology, I'm now a {highlight("software developer")} and {highlight("product owner")}.
             </p>
             <p>
-              I use Javascript and Java to collect user behavior {highlight("data")} and visualize {highlight("analytics")}.
-              The tools I build help businesses identify and reduce customer friction and track progress over time.
+              I lead a team that collects user behavior {highlight("data")} and visualizes {highlight("analytics")} using Javascript and Java.
+              With our tools, businesses can identify friction points and respond accordingly.
             </p>
             <p>
               I prefer to make things that are {highlight("useful")} and {highlight("engaging")} because I
               eat {highlight("feedback")} for breakfast.
-            </p >
-            <p>
-              When not looking at {highlight("code")}, I can be found perfecting my ollie or making music.
             </p >
             <a href={data.file.publicURL} download>
               <button>
