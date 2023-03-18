@@ -5,7 +5,7 @@ import Seo from '../../components/seo';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { article, post, postList, thumbnail, highlightAnchor } from "../blog/index.module.css";
 
-const BlogPage = ({ data }) => {
+const ProjectsPage = ({ data }) => {
 
   return (
     <Layout>
@@ -69,6 +69,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="My Blog Posts" />;
+export const Head = () => <Seo title="Projects" />;
 
-export default BlogPage;
+export default ProjectsPage;

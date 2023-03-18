@@ -51,6 +51,7 @@ const Projects = ({ data, children }) => {
         <br />
         <Link to="/projects">Go back to the projects homepage</Link>
       </Layout>
+      <Seo title={`${data.mdx.frontmatter.title} | Projects`} />
     </div>
   );
 };
@@ -73,7 +74,5 @@ export const query = graphql`
     }
   }
 `;
-
-export const Head = () => <Seo title="Super Cool Projects" />;
 
 export default Projects;
