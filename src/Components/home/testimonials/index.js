@@ -37,7 +37,7 @@ const Review = () => {
       </div>
       <h4 className="author">{name}</h4>
       <p className="job">{job}</p>
-      <p className="info">{text}</p>
+      <p className="info">'{text}'</p>
       <div className="button-container">
         <button className="prev-btn" onClick={() => changePerson(-1)}>
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronLeft} />
