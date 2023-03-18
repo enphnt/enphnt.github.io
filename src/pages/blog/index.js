@@ -16,10 +16,10 @@ const BlogPage = ({ data }) => {
           about <Link className={highlightAnchor} to="/projects">projects</Link>, too.
         </p>
         {
-          data.allMdx.nodes.map(node => {
+          data.allMdx.nodes.map((node, index) => {
             const thumb = getImage(node.frontmatter.thumbnail);
             return (
-              <Link to={`/blog/${node.frontmatter.slug}`}>
+              <Link key={index} to={`/blog/${node.frontmatter.slug}`}>
                 <article className={article} key={node.id}>
                   <div className={thumbnail}>
                     <GatsbyImage

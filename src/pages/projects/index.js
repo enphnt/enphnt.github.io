@@ -18,10 +18,10 @@ const BlogPage = ({ data }) => {
           of the site, too.
         </p>
         {
-          data.allMdx.nodes.map(node => {
+          data.allMdx.nodes.map((node, index) => {
             const thumb = getImage(node.frontmatter.thumbnail);
             return (
-              <Link to={`/projects/${node.frontmatter.slug}`}>
+              <Link key={index} to={`/projects/${node.frontmatter.slug}`}>
                 <article className={article} key={node.id}>
                   <div className={thumbnail}>
                     <GatsbyImage
