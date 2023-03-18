@@ -1,49 +1,49 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from "react";
+import { Link } from "gatsby";
+import image from "../images/404.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 const pageStyles = {
   color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+  padding: "96px 0 0",
+  margin: 0,
+  textAlign: "center",
+  wordWrap: "wrap",
+  backgroundColor: "#add8e685",
+  height: "100%",
+  width: "100%",
+  position: "absolute",
+  top: 0,
+  right: 0,
+};
+
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
-  maxWidth: 320,
-}
+  fontSize: "6em",
+};
 
 const paragraphStyles = {
   marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+};
 
 const NotFoundPage = () => {
   return (
     <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
+      <h1 style={headingStyles}>Uhhh... ...what?</h1>
+      <h1>Error: 404 - Page not found.</h1>
+      <StaticImage
+        alt={"what...page not found"}
+        src={`../images/404.png`}
+        width={350}
+      />
+      <p style={paragraphStyles}>Sorry 😔, couldn’t find what you were looking for. </p>
+
+      <Link to="/">{"< "}Back to homepage</Link>.
     </main>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;
 
-export const Head = () => <title>Not found</title>
+export const Head = () => <title>Not found</title>;
