@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import image from "../images/404.png";
 import { StaticImage } from "gatsby-plugin-image";
 
 const pageStyles = {
