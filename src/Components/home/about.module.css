@@ -39,16 +39,10 @@
   margin: 40px 0 100px 0;
 }
 
-.text-highlight {
+.textHighlight {
   text-shadow:
     2px 0 5px rgb(255, 255, 167),
     -2px 0 5px rgb(255, 255, 167),
     4px 2px 5px rgb(255, 255, 167),
-    -4px -2px 5px rgb(255, 255, 167),
-    6px -4px 5px rgb(255, 255, 167),
-    -6px 4px 5px rgb(255, 255, 167),
-    8px -4px 7px rgb(255, 255, 167),
-    8px 4px 7px rgb(255, 255, 167),
-    10px -6px 7px rgb(255, 255, 167),
-    10px 6px 7px rgb(255, 255, 167);
+    -4px -2px 5px rgb(255, 255, 167)
 }
