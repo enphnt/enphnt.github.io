@@ -37,9 +37,10 @@ const Contact = () => {
         <h1>Maker</h1>
       </div>
       <div>
-        <h3>Want to </h3>
+        <h2>Want to </h2>
         <br />
-        <h3>get in touch?</h3>
+        <h2>get in </h2>
+        <h2>touch?</h2>
         <button aria-label="Contact Me" type="button" onClick={handleRequestJob}>
           Contact me
         </button>

@@ -100,7 +100,6 @@
 
 .contactCover p {
   line-height: 1em;
-
   background-color: white;
   line-height: 1.3em;
   margin-bottom: 8px;
@@ -114,7 +113,7 @@
 }
 
 .contactCover h1,
-.contactCover h3 {
+.contactCover h2 {
   display: inline-block;
   margin: 0;
   background-color: white;
