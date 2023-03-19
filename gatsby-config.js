@@ -4,7 +4,9 @@
 module.exports = {
   siteMetadata: {
     title: `Nathan Phennel's website`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://enphnt.github.io/`,
+    description: "My own little world for blogging, experimenting with code, sharing music and web shenanigans.",
+    image: `/favicon.png`,
   },
   plugins: [
     {
