@@ -7,6 +7,8 @@ const Seo = ({ title }) => {
       site {
         siteMetadata {
           title
+          description
+          image
         }
       }
     }
@@ -15,6 +17,8 @@ const Seo = ({ title }) => {
   return (
     <>
       <html lang="en" />
+      <meta name="description" content={data.site.siteMetadata.description} />
+      <meta name="image" content={data.site.siteMetadata.image} />
       <title>{title} | {data.site.siteMetadata.title}</title>
     </>
   );
