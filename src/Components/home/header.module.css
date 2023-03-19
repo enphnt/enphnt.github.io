@@ -6,7 +6,8 @@
   justify-content: space-between;
   z-index: 0;
   position: relative;
-  background: url("../../images/bg.jpg");
+  background-image: image-set(url("../../images/bg.webp") type("image/webp"),
+      url("../../images/bg.jpg") type("image/jpeg"));
   /* background: linear-gradient(30deg, #1e1e1e, #442020, var(--clr-maroon)); */
   background-size: cover;
   -webkit-animation: AnimatedGradient 80s ease infinite;
