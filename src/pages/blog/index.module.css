@@ -112,7 +112,8 @@
   -webkit-text-stroke: 1px rgba(10, 0, 59, 0.592);
 }
 
-.breadcrumbLink:hover {
+.breadcrumbLink:hover,
+.highlightAnchor:hover {
   -webkit-text-stroke: 1px rgba(10, 0, 59, 0.592);
 }
 
