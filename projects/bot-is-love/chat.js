@@ -69,7 +69,7 @@ const Message = props => {
 
   if (Array.isArray(body)) {
     finalBody = body.map((item, index) => {
-      return <a href={item.url} className="c-chat__action" key={index}>{item.text}</a>;
+      return <a aria-label={`chat${index}`} href={item.url} className="c-chat__action" key={index}>{item.text}</a>;
     });
   }
   else {

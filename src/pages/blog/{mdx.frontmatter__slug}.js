@@ -37,7 +37,10 @@ const BlogPost = ({ data, children }) => {
               />
               <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
                 Photo Credit:{" "}
-                <a href={data.mdx.frontmatter.hero_image_credit_link} >
+                <a
+                  aria-label={data.mdx.frontmatter.hero_image_credit_link}
+                  href={data.mdx.frontmatter.hero_image_credit_link}
+                >
                   {data.mdx.frontmatter.hero_image_credit_text}
                 </a>
               </p>

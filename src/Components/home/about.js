@@ -51,7 +51,7 @@ const About = () => {
               I'm passionate about building things that are {highlight("useful")} and {highlight("engaging")} because I
               eat {highlight("feedback")} for breakfast.
             </p >
-            <a href={data.file.publicURL} download>
+            <a aria-label="Download Resume" href={data.file.publicURL} download>
               <button aria-label="Download Resume">
                 Download My Resume
                 <span role="img" aria-label="hugging"> &#129303;</span>

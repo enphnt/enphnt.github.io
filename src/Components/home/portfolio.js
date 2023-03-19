@@ -102,6 +102,7 @@ const deadProjectData = [
 
 const generateTiles = (data) => data.map(proj =>
   <a
+    aria-label={proj.title}
     href={proj.url}
     key={proj.title}
     title={proj.title}
