@@ -32,7 +32,6 @@ const Contact = () => {
       <div>
         <h1>Web</h1>
         <h1>Dev</h1>
-        <h1></h1>
         <h1>/</h1>
         <h1>Music</h1>
         <h1>Maker</h1>
@@ -56,7 +55,7 @@ const Contact = () => {
         required
         onChange={changeReason}
       >
-        <option value="" defaultValue selected disabled></option>
+        <option value="" defaultValue selected disabled>Select a reason</option>
         {
           reasons.map(reason =>
             <option value={reason}>{reason}</option>
