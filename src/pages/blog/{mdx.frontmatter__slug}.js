@@ -11,6 +11,7 @@ import {
   content,
   hero
 } from "./index.module.css";
+import TagLinks from '../../components/tagLinks';
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -49,7 +50,10 @@ const BlogPost = ({ data, children }) => {
             : null
         }
         <h1>{data.mdx.frontmatter.title}</h1>
+        <TagLinks tags={data.mdx.frontmatter.tags} />
         <h5>{data.mdx.frontmatter.date}</h5>
+        <br />
+
         <div className={content}>
           {children}
         </div>
@@ -66,6 +70,7 @@ export const query = graphql`
         mdx(id: {eq: $id}) {
         frontmatter {
           title
+          tags
           date(formatString: "MMMM DD, YYYY")
           hero_image_alt
           hero_image_credit_link
