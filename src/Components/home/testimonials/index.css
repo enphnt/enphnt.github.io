@@ -149,4 +149,6 @@ Reviews
 .prev-btn:hover,
 .next-btn:hover {
   color: var(--clr-primary-5);
+  background-color: transparent;
+  border: solid transparent;
 }
