@@ -97,6 +97,21 @@ button a {
   cursor: pointer;
 }
 
+button {
+  margin-top: 10px;
+  border-radius: 0;
+  background-color: white;
+  border: solid 2px grey;
+  font-family: Helvetica, sans-serif;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+button:hover {
+  background-color: rgba(231, 231, 231, 0.43);
+  border: solid 2px white;
+}
+
 a {
   text-decoration: none;
 }
