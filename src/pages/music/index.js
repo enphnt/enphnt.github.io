@@ -51,7 +51,10 @@ const MusicPage = ({ data }) => {
 export const query = graphql`
   query {
     allMdx(
-      filter: {internal: {contentFilePath: {regex: "/blog|projects/"}}}
+      filter: {
+        internal: {contentFilePath: {regex: "/blog|projects/"}}
+        frontmatter: {tags:  {regex: "/music/"}}
+      }
       sort: {frontmatter: {date: DESC}}
     ) {
       nodes {
