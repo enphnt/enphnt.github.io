@@ -123,6 +123,7 @@ In many ways, hooks lower the bar to entry for React and lets devs focus more on
 
           return (
             <button
+              aria-label="Always set Aria Name"
               style={{ background: theme.background, color: theme.foreground }}
             >
               I am styled by theme context!
@@ -253,13 +254,13 @@ In many ways, hooks lower the bar to entry for React and lets devs focus more on
             <>
               <section className="box">
                 <span>{firstVal}</span>
-                <button onClick={incrementFirst}>Click to Add 1</button>
-                <button onClick={decreaseFirst}>Click to Subtract 1</button>
+                <button aria-label="val1 +1" onClick={incrementFirst}>Click to Add 1</button>
+                <button aria-label="val1 -1"onClick={decreaseFirst}>Click to Subtract 1</button>
               </section>
               <section className="box">
                 <span>{secondVal}</span>
-                <button onClick={incrementSecond}>Click to Add 1</button>
-                <button onClick={decreaseSecond}>Click to Subtract 1</button>
+                <button aria-label="val2 +1" onClick={incrementSecond}>Click to Add 1</button>
+                <button aria-label="val2 -1" onClick={decreaseSecond}>Click to Subtract 1</button>
               </section>
               <div className="box">Result: {additionResult}
               </div>

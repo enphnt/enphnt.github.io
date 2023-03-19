@@ -39,10 +39,10 @@ const Review = () => {
       <p className="job">{job}</p>
       <p className="info">'{text}'</p>
       <div className="button-container">
-        <button className="prev-btn" onClick={() => changePerson(-1)}>
+        <button aria-label="prev" className="prev-btn" onClick={() => changePerson(-1)}>
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronLeft} />
         </button>
-        <button className="next-btn" onClick={() => changePerson(1)}>
+        <button aria-label="next" className="next-btn" onClick={() => changePerson(1)}>
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faChevronRight} />
         </button>
       </div>

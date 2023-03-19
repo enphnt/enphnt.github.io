@@ -40,7 +40,7 @@ const Contact = () => {
         <h3>Want to </h3>
         <br />
         <h3>get in touch?</h3>
-        <button type="button" onClick={handleRequestJob}>
+        <button aria-label="Contact Me" type="button" onClick={handleRequestJob}>
           Contact me
         </button>
       </div>
@@ -206,7 +206,7 @@ const Contact = () => {
                   </div>
 
                   {/* only opaque if Email is set... */}
-                  <button type="submit" disabled={state.submitting || !emailAddress} style={{ opacity: emailAddress ? 1 : 0 }}>
+                  <button aria-label="Submit Message" type="submit" disabled={state.submitting || !emailAddress} style={{ opacity: emailAddress ? 1 : 0 }}>
                     {state.submitting ? 'Submitting' : 'Send'}
                   </button>
 

@@ -52,7 +52,7 @@ const About = () => {
               eat {highlight("feedback")} for breakfast.
             </p >
             <a href={data.file.publicURL} download>
-              <button>
+              <button aria-label="Download Resume">
                 Download My Resume
                 <span role="img" aria-label="hugging"> &#129303;</span>
               </button>
