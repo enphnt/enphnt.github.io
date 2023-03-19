@@ -32,7 +32,8 @@
 }
 
 .transitions-container {
-  height: 15em;
+  height: 18em;
+  overflow: hidden;
 }
 
 .transitions-item {
