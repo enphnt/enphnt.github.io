@@ -35,7 +35,7 @@ const Review = () => {
           <FontAwesomeIcon style={{ padding: 6 }} size="lg" icon={faQuoteRight} />
         </span>
       </div>
-      <h4 className="author">{name}</h4>
+      <p className="author">{name}</p>
       <p className="job">{job}</p>
       <p className="info">'{text}'</p>
       <div className="button-container">
