@@ -54,11 +54,12 @@ const Contact = () => {
         id="Reason"
         required
         onChange={changeReason}
+        defaultValue=""
       >
-        <option value="" defaultValue selected disabled>Select a reason</option>
+        <option value="" disabled>Select something</option>
         {
           reasons.map(reason =>
-            <option value={reason}>{reason}</option>
+            <option key={reason} value={reason}>{reason}</option>
           )
         }
       </select>
@@ -84,11 +85,11 @@ const Contact = () => {
       <label htmlFor="Date">
         When do you want to {reasonPretty}?
       </label>
-      <select name="Date" id="Date" required onChange={changeDate}>
-        <option value="" defaultValue selected disabled>Select a time</option>
+      <select name="Date" id="Date" defaultValue="" required onChange={changeDate}>
+        <option value="" disabled>Select a time</option>
         {
           dates.map(date =>
-            <option value={date}>{date}</option>
+            <option key={date} value={date}>{date}</option>
           )
         }
       </select>
