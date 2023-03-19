@@ -41,8 +41,11 @@ const About = () => {
               After studying linguistic anthropology, I'm now a {highlight("software developer")} and {highlight("product owner")}.
             </p>
             <p>
-              I lead a team that leverages Javascript and Java to collect user behavior {highlight("data")} and
+              At work, I lead a team that leverages Javascript and Java to collect user behavior {highlight("data")} and
               visualize {highlight("analytics")}. With the tools I make, businesses are able to identify friction points and respond accordingly.
+            </p>
+            <p>
+              After hours, I'm usually working on some web project, making music or out on the skateboard.
             </p>
             <p>
               I'm passionate about building things that are {highlight("useful")} and {highlight("engaging")} because I
