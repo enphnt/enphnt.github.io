@@ -35,8 +35,10 @@ const Networks = ({ alignRight }) => {
   };
 
   const networks = social().map(network =>
-    <a aria-label={network.url} href={network.url} key={network.name} style={{ paddingRight: 12, color: "#222", width: "25px", }}>
-      {network.icon}
+    <a aria-label={network.url} href={network.url} key={network.name} style={{ paddingRight: 12, color: "#222", width: "48px", }}>
+      <div style={{ padding: 10 }}>
+        {network.icon}
+      </div>
     </a>
   );
 
