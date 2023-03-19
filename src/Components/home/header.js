@@ -17,7 +17,7 @@ import {
 import NextSectionLink from "../next-section-link";
 
 const blue = "rgb(72, 93, 146)";
-const green = "#4DA167";
+const green = "rgb(46, 107, 77)";
 const white = "black";
 
 export default function Header() {

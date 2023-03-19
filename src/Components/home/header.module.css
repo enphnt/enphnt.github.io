@@ -84,7 +84,7 @@
 }
 
 .divider-wrap-faded {
-  opacity: .4;
+  opacity: .2;
   position: absolute;
   top: auto;
   bottom: 0;
@@ -98,7 +98,7 @@
 }
 
 .divider-wrap-faded-more {
-  opacity: .3;
+  opacity: .1;
   position: absolute;
   top: auto;
   bottom: 0;
