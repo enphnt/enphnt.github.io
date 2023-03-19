@@ -38,7 +38,7 @@ const NotFoundPage = () => {
       />
       <p style={paragraphStyles}>Sorry 😔, couldn’t find what you were looking for. </p>
 
-      <Link to="/">{"< "}Back to homepage</Link>.
+      <Link aria-label="Back home" to="/">{"< "}Back to homepage</Link>.
     </main>
   );
 };

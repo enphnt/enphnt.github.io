@@ -124,7 +124,7 @@ const Portfolio = () => (
     <div className={portfolioProjects}>
       {generateTiles(projectData)}
     </div>
-    <Link to="/projects">more projects...</Link>
+    <Link aria-label="more projects" to="/projects">more projects...</Link>
     <div style={{ textAlign: "center" }}>
       <h1>Dead Projects</h1>
       <sub>

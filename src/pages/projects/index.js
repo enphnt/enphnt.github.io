@@ -14,14 +14,14 @@ const ProjectsPage = ({ data }) => {
         <p>
           Here is a list of projects that I have discovered, been
           involved with or built from scratch myself. I also have
-          a <Link className={highlightAnchor} to="/blog">blog</Link> section
+          a <Link aria-label="Blog" className={highlightAnchor} to="/blog">blog</Link> section
           of the site, too.
         </p>
         {
           data.allMdx.nodes.map((node, index) => {
             const thumb = getImage(node.frontmatter.thumbnail);
             return (
-              <Link key={index} to={`/projects/${node.frontmatter.slug}`}>
+              <Link aria-label={node.frontmatter.slug} key={index} to={`/projects/${node.frontmatter.slug}`}>
                 <article className={article} key={node.id}>
                   <div className={thumbnail}>
                     <GatsbyImage

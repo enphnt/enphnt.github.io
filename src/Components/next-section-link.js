@@ -15,7 +15,7 @@ const NextSectionLink = ({ nextSection, size }) => {
 
   return (
     <div style={{ textAlign: "center", position: "relative" }}>
-      <a href={nextSection ? nextSection : "#top"}>
+      <a aria-label={nextSection ? nextSection : "#top"} href={nextSection ? nextSection : "#top"}>
         <FontAwesomeIcon className={svgIcon} style={svgStyles} icon={nextSection ? faChevronCircleDown : faChevronCircleUp} />
       </a>
     </div>

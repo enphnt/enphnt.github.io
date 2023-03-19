@@ -13,13 +13,13 @@ const BlogPage = ({ data }) => {
         <h1>Blog Posts</h1>
         <p>
           A collection of blog posts that I've written on various topics. I also have written
-          about <Link className={highlightAnchor} to="/projects">projects</Link>, too.
+          about <Link aria-label="Over to Projects" className={highlightAnchor} to="/projects">projects</Link>, too.
         </p>
         {
           data.allMdx.nodes.map((node, index) => {
             const thumb = getImage(node.frontmatter.thumbnail);
             return (
-              <Link key={index} to={`/blog/${node.frontmatter.slug}`}>
+              <Link aria-label={node.frontmatter.slug} key={index} to={`/blog/${node.frontmatter.slug}`}>
                 <article className={article} key={node.id}>
                   <div className={thumbnail}>
                     <GatsbyImage
