@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StaticImage } from 'gatsby-plugin-image';
-import { anchorTile, portfolioProjects, portfolio, title } from "./portfolio.module.css";
+import { anchorTile, portfolioProjects, portfolio } from "./portfolio.module.css";
 import NextSectionLink from "../next-section-link";
 import { Link } from "gatsby";
 
@@ -109,7 +109,7 @@ const generateTiles = (data) => data.map(proj =>
     className={anchorTile}
   >
     <div>
-      <label className={title}>{proj.title}</label>
+      <label>{proj.title}</label>
       {proj.image}
       <p>{proj.category}</p>
     </div>
