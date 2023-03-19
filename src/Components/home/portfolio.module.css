@@ -11,6 +11,12 @@
   margin-top: 20px;
 }
 
+.portfolio label {
+  font-size: 1.2em;
+  height: 2.4em;
+  display: block;
+}
+
 .portfolio-projects {
   display: flex;
   flex-wrap: wrap;
