@@ -1,0 +1,150 @@
+.contact {
+  line-height: 1em;
+  transition: all .3s linear;
+  min-height: 45vh;
+  padding: 25px;
+  margin: 25px 0;
+  overflow: hidden;
+}
+
+.contact * {
+  transition: all .3s linear;
+}
+
+.contact form {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-gap: 16px;
+  margin: 2em 0;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+@media (max-width: 700px) {
+  .contact form {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 80%;
+    grid-gap: 0;
+  }
+}
+
+.content input,
+.contact textarea {
+  font-family: "quicksand";
+}
+
+.contact label {
+  margin: 8px 0 2px;
+}
+
+.contactCover {
+  min-height: 40vh;
+  line-height: 2em;
+  transition: all .3s linear;
+  padding: 30px 15%;
+  display: grid;
+  grid-template-columns: 20% 50%;
+  grid-gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(270deg, #007c13, #0b0075);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.contactCover p {
+  line-height: 1em;
+
+  background-color: white;
+  line-height: 1.3em;
+  margin-bottom: 8px;
+  padding: 4px 4px;
+  display: inline-block;
+  box-shadow: 0px 0px 4px rgb(255, 255, 255);
+}
+
+.contactCover li {
+  list-style-type: none;
+}
+
+.contactCover h1,
+.contactCover h3 {
+  display: inline-block;
+  margin: 0;
+  background-color: white;
+  line-height: 1.3em;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-container>* {
+  padding: 6px;
+}
+
+.completed {
+  width: auto;
+  text-align: center;
+}
+
+.rightSide {
+  align-items: center;
+  display: grid;
+  padding: 2px;
+  justify-items: center;
+}
