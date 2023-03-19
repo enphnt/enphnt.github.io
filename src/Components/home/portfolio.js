@@ -45,8 +45,8 @@ const projectData = [
     category: "🙌  I dare you to audit this site to really appreciate the site performance.",
     image: (
       <StaticImage
-        alt={"image of resume-website.jpg"}
-        src={`../../images/portfolio-resume-website.jpg`}
+        alt={"image of website.png"}
+        src={`../../images/portfolio-website.png`}
       />
     ),
     url: "https://github.com/enphnt/enphnt.github.io/tree/develop"
