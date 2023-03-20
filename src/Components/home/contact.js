@@ -207,7 +207,11 @@ const Contact = () => {
                   </div>
 
                   {/* only opaque if Email is set... */}
-                  <button aria-label="Submit Message" type="submit" disabled={state.submitting || !emailAddress} style={{ opacity: emailAddress ? 1 : 0 }}>
+                  <button
+                    aria-label="Submit Message"
+                    type="submit"
+                    disabled={state.submitting || !emailAddress}
+                    style={{ opacity: emailAddress ? 1 : 0, cursor: emailAddress ? "pointer" : "default" }}>
                     {state.submitting ? 'Submitting' : 'Send'}
                   </button>
 
