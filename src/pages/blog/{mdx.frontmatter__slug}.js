@@ -12,6 +12,7 @@ import {
   hero
 } from "./index.module.css";
 import TagLinks from '../../components/tagLinks';
+import TableOfContents from '../../components/tableOfContents';
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -53,6 +54,7 @@ const BlogPost = ({ data, children }) => {
         <TagLinks tags={data.mdx.frontmatter.tags} />
         <h5>{data.mdx.frontmatter.date}</h5>
         <br />
+        <TableOfContents tocs={data.mdx.tableOfContents} />
 
         <div className={content}>
           {children}
@@ -68,6 +70,7 @@ const BlogPost = ({ data, children }) => {
 export const query = graphql`
   query($id: String) {
         mdx(id: {eq: $id}) {
+        tableOfContents
         frontmatter {
           title
           tags

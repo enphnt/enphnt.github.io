@@ -49,6 +49,13 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              extensions: [`.mdx`],
+              isIconAfterHeader: true,
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",

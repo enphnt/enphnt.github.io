@@ -11,14 +11,18 @@ tags: ["css", "animations", "web dev", "weird"]
 ---
 import { cssAnimationContainer, cssAnimation, slideInText} from "./index.module.css"
 
+# CSS can animate?
+
 Maybe you already are somewhat aware, maybe not but CSS is one of the most powerful tools in a web developer's arsenal. It has the power to transform bland and uninteresting webpages into visually stunning works of art. With just a few lines of code, CSS can be used to create intricate animations, dynamic styling and sophisticated visuals that can truly wow your website visitors. Additionally, using CSS makes it easier to create consistent style across multiple pages and devices, ensuring a consistent user experience. Alas, CSS can be pretty amazing at producing interesting eye candy.
 
-<br/>
+# Hypnotic Example
 I wanted to demonstrate one example here:
 
 <div class={cssAnimationContainer}>
   <div class={cssAnimation} />
 </div>
+
+## How it works
 
 "What's going on here?", you ask. A few properties are to be noted:
 - use a class on some element which has a fixed height and width
@@ -75,6 +79,8 @@ I wanted to demonstrate one example here:
 
   ```
 - set the `animation-iteration-count` to `infinite` to make the mesmerizing effect last forever
+
+# Conclusion
 
 This is just a basic example, and things can get even weirder. I'll leave it here for now, but CSS can be applied to all sorts of things, such as animating notifications, button clicks (like in Material UI), or even using it when images are lazy-loaded when scrolled into view.
 
