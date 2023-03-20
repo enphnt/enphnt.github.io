@@ -100,5 +100,30 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sass",
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: ['/tags/*'],
+        serialize: ({ path }) => {
+          const result = {
+            url: `${path}`,
+            changefreq: "weekly",
+          };
+
+          // mark homepage as higher priority
+          if (path === "/") {
+            return {
+              ...result,
+              priority: 0.7,
+            };
+          }
+
+          return {
+            ...result,
+            priority: 0.5,
+          };
+        }
+      },
+    },
   ],
 };
