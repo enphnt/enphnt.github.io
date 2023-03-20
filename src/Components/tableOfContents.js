@@ -13,9 +13,10 @@ const TableOfContents = ({ tocs }) => {
   };
 
   const orderedList = {
-    padding: "16px 2rem",
+    padding: "16px 3rem",
     borderBottom: "solid 1px lightgrey",
     borderRight: "solid 1px lightgrey",
+    borderLeft: "solid 5px lightgrey",
   };
 
   const unorderedList = {
@@ -28,11 +29,13 @@ const TableOfContents = ({ tocs }) => {
   };
 
   const toggleButton = {
-    fontSize: "1.2em",
-    fontWeight: 400,
+    fontSize: "1.1em",
+    fontWeight: 300,
     border: "none",
     borderBottom: "solid 1px lightgrey",
     borderRight: "solid 1px lightgrey",
+    borderTop: "solid 1px lightgrey",
+    borderLeft: "solid 5px lightgrey",
     color: "#222",
     backgroundColor: "transparent",
     display: "flex",
