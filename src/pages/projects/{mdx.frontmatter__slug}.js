@@ -48,6 +48,7 @@ const Projects = ({ data, children }) => {
         <h1>{data.mdx.frontmatter.title}</h1>
         <TagLinks tags={data.mdx.frontmatter.tags} />
         <h5>{data.mdx.frontmatter.date}</h5>
+        <br />
         <TableOfContents tocs={data.mdx.tableOfContents} />
         <br />
         <div className={content}>
