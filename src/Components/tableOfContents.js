@@ -62,11 +62,13 @@ const TableOfContents = ({ tocs }) => {
     }
   };
 
+  const icon = { width: 32, height: 32, };
+
   return (
     <>
       <button style={toggleButton} onClick={toggle}>
         Table of Contents:
-        <FontAwesomeIcon icon={open ? faChevronUp : faChevronDown} />
+        <FontAwesomeIcon style={icon} icon={open ? faChevronUp : faChevronDown} />
       </button>
       {open &&
         <div style={toc}>
