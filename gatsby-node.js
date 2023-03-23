@@ -36,16 +36,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  const posts = result.data.postsRemark.edges;
-
-  // Create post detail pages
-  posts.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter.slug,
-      component: blogPostTemplate,
-    });
-  });
-
   // Extract tag data from query
   const tags = result.data.tagsGroup.group;
 
