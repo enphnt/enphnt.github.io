@@ -42,7 +42,7 @@
 html {
   scroll-padding-top: 70px;
   color: rgb(73, 73, 73);
-  font-family: Helvetica, sans-serif;
+  font-family: "quicksand", sans-serif;
   font-weight: 300;
   /* scroll-behavior: smooth; */
   scrollbar-color: var(--clr-maroon) #cfcfcfbd;
@@ -63,7 +63,7 @@ html {
 html p,
 html sup,
 html sub {
-  font-family: "quicksand", Helvetica, sans-serif;
+  font-family: "quicksand", sans-serif;
   font-weight: 300;
 }
 

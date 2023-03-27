@@ -47,7 +47,7 @@ export default function Header() {
     set([]);
     ref.current.push(
       setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 300)
+        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 200)
     );
     ref.current.push(
       setTimeout(() => set(["Nathan Phennel", "Music Maker"]), 3000)

@@ -4,7 +4,7 @@ import { faGithub, faLinkedin, faGitlab } from "@fortawesome/free-brands-svg-ico
 
 const Networks = ({ alignRight }) => {
   const iconStyles = alignRight ?
-    { color: "#ccc", mixBlendMode: "difference" }
+    { color: "#111" }
     : { mixBlendMode: "normal", color: "rgb(73, 73, 73)" };
   const social = () => [
     {
@@ -28,8 +28,8 @@ const Networks = ({ alignRight }) => {
     display: "flex",
     justifyContent: alignRight ? "start" : "center",
     alignItems: "start",
-    margin: alignRight ? "30px 0" : "10px 0",
-    padding: alignRight ? "30px 0" : "10px 0",
+    margin: "10px 0",
+    padding: "10px 0",
   };
 
   const networks = social().map(network =>

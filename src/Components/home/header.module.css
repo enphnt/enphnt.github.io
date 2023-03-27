@@ -6,9 +6,9 @@
   justify-content: space-between;
   z-index: 0;
   position: relative;
-  background-image: image-set(url("../../images/bg.webp") type("image/webp"),
-      url("../../images/bg.jpg") type("image/jpeg"));
-  /* background: linear-gradient(30deg, #1e1e1e, #442020, var(--clr-maroon)); */
+  /* fall back in case webp not supported */
+  background-image: url("../../images/bg.jpg");
+  background-image: url("../../images/bg.webp");
   background-size: cover;
   -webkit-animation: AnimatedGradient 80s ease infinite;
   -moz-animation: AnimatedGradient 80s ease infinite;
@@ -43,12 +43,12 @@
   display: flex;
   align-items: center;
   font-size: 6em;
-  font-weight: 600;
+  font-weight: 800;
   will-change: transform, opacity, height;
   cursor: pointer;
   line-height: 95px;
   box-sizing: border-box;
-  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.95);
+  cursor: grab;
 }
 
 .transitions-txt {
