@@ -13,7 +13,7 @@ const MusicPage = ({ data }) => {
         <h1>Music Posts</h1>
         <p >
           A collection of posts with original music, playlists and music theory included. I also have written
-          about <Link aria-label="Over to Projects" className={highlightAnchor} to="/projects">projects</Link>, too.
+          about <Link aria-label="Over to Projects" className={highlightAnchor} to="/projects/">projects</Link>, too.
         </p>
         {
           data.allMdx.nodes.map((node, index) => {

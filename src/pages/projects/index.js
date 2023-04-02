@@ -14,7 +14,7 @@ const ProjectsPage = ({ data }) => {
         <p>
           Here is a list of projects that I have discovered, been
           involved with or built from scratch myself. I also have
-          a <Link aria-label="Blog" className={highlightAnchor} to="/blog">blog</Link> section
+          a <Link aria-label="Blog" className={highlightAnchor} to="/blog/">blog</Link> section
           of the site, too.
         </p>
         {

@@ -21,7 +21,7 @@ const TagLinks = ({ tags }) => {
         <>
           <Link
             key={tag}
-            to={`/tags/${tag.replace(/ /g, "-")}`}
+            to={`/tags/${tag.replace(/ /g, "-")}/`}
             style={{
               ...style.normal,
               ...(hover === tag ? style.hover : null)

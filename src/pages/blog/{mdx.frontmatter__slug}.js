@@ -23,7 +23,7 @@ const BlogPost = ({ data, children }) => {
         <div className={breadcrumbs}>
           <Link aria-label="Home" className={breadcrumbLink} to="/">Home</Link>
           <div className={breadcrumbLinkSeparator}>&#187;</div>
-          <Link aria-label="Blog" className={breadcrumbLink} to="/blog">Blog</Link>
+          <Link aria-label="Blog" className={breadcrumbLink} to="/blog/">Blog</Link>
           <div className={breadcrumbLinkSeparator}>&#187;</div>
           <Link aria-label={data.mdx.frontmatter.title} className={breadcrumbLinkHighlight} to={`./`}>{data.mdx.frontmatter.title}</Link>
         </div>
@@ -60,7 +60,7 @@ const BlogPost = ({ data, children }) => {
           {children}
         </div>
         <br />
-        <Link aria-label="Back to Blog" to="/blog">Go back to the blog homepage</Link>
+        <Link aria-label="Back to Blog" to="/blog/">Go back to the blog homepage</Link>
       </div>
       <Seo title={`${data.mdx.frontmatter.title} | Blog`} />
     </Layout>

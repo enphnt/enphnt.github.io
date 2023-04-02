@@ -22,7 +22,7 @@ const Projects = ({ data, children }) => {
         <div className={breadcrumbs}>
           <Link aria-label="Home" className={breadcrumbLink} to="/">Home</Link>
           <div className={breadcrumbLinkSeparator}>&#187;</div>
-          <Link aria-label="Projects" className={breadcrumbLink} to="/projects">Projects</Link>
+          <Link aria-label="Projects" className={breadcrumbLink} to="/projects/">Projects</Link>
           <div className={breadcrumbLinkSeparator}>&#187;</div>
           <Link aria-label={data.mdx.frontmatter.title} className={breadcrumbLink} to={`./`}>{data.mdx.frontmatter.title}</Link>
         </div>
@@ -55,7 +55,7 @@ const Projects = ({ data, children }) => {
           {children}
         </div>
         <br />
-        <Link aria-label="back to Projects" to="/projects">Go back to the projects homepage</Link>
+        <Link aria-label="back to Projects" to="/projects/">Go back to the projects homepage</Link>
       </Layout>
       <Seo title={`${data.mdx.frontmatter.title} | Projects`} />
     </div>
