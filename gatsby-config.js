@@ -1,3 +1,6 @@
+const fs = require("fs");
+const Path = require('path');
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -104,20 +107,40 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         excludes: ['/tags/*'],
+        // filterpages: true means the page is excluded
+        filterPages: ({ path }) => !fs.existsSync(Path.join(__dirname, path)),
         serialize: ({ path }) => {
           const result = {
             url: `${path}`,
-            changefreq: "weekly",
+            changefreq: "daily",
           };
 
           // mark homepage as higher priority
           if (path === "/") {
             return {
               ...result,
+              priority: 0.8,
+            };
+          }
+
+          // rank higher if blog/, projects/, or music/
+          if (path === "/blog/" || path === "/projects/" || path === "/music/") {
+            return {
+              ...result,
               priority: 0.7,
             };
           }
 
+          // slight de-prioritize /tags/
+          if (path === "/tags/") {
+            return {
+              ...result,
+              priority: 0.6,
+            };
+          }
+
+          // uses filterPages to only include canonicals:
+          // path is considered canonical if real filepath exists in src
           return {
             ...result,
             priority: 0.5,
