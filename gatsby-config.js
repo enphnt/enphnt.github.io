@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Path = require('path');
-
+const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/projects/" || path === "/music/";
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -108,7 +108,8 @@ module.exports = {
       options: {
         excludes: ['/tags/*'],
         // filterpages: true means the page is excluded
-        filterPages: ({ path }) => !fs.existsSync(Path.join(__dirname, path)),
+        //   only category and authentic project paths are canon
+        filterPages: ({ path }) => !categoryPath(path) && !fs.existsSync(Path.join(__dirname, path)),
         serialize: ({ path }) => {
           const result = {
             url: `${path}`,
@@ -123,24 +124,16 @@ module.exports = {
             };
           }
 
-          // rank higher if blog/, projects/, or music/
-          if (path === "/blog/" || path === "/projects/" || path === "/music/") {
+          // rank higher if category path
+          if (categoryPath(path)) {
             return {
               ...result,
               priority: 0.7,
             };
           }
 
-          // slight de-prioritize /tags/
-          if (path === "/tags/") {
-            return {
-              ...result,
-              priority: 0.6,
-            };
-          }
-
           // uses filterPages to only include canonicals:
-          // path is considered canonical if real filepath exists in src
+          //   path is considered canonical if real filepath exists in src
           return {
             ...result,
             priority: 0.5,
