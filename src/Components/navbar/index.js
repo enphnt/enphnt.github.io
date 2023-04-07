@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import Logo from "./logo";
 
 const Navigation = styled.nav`
-  height: 6vh;
+  height: 45px;
   min-height: 20px;
   display: flex;
   background-color: #fff;
@@ -18,7 +18,7 @@ const Navigation = styled.nav`
   @media (max-width: 768px) {
     justify-content: space-between;
     position: sticky;
-    height: 6vh;
+    height: 45px;
     top: 0;
     left: 0;
     right: 0;
@@ -50,7 +50,7 @@ const Navbox = styled.div`
     background-color: #fff;
     transition: all 0.3s ease-in;
     border-top: solid;
-    top: 6vh;
+    top: 45px;
     left: ${props => (props.open ? "-100%" : "0")};
   }
 `;
