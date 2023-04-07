@@ -51,12 +51,12 @@ const TableOfContents = ({ tocs }) => {
       padding: 3,
     },
     hover: {
-      backgroundColor: "#35435d",
+      backgroundColor: "rgb(46, 107, 77)",
       color: "#ffffff",
       fontWeight: 400,
     },
     subHover: {
-      backgroundColor: "rgb(46, 107, 77)",
+      backgroundColor: "#35435d",
       color: "#ffffff",
       fontWeight: 400,
     }
@@ -113,6 +113,33 @@ const TableOfContents = ({ tocs }) => {
                               >
                                 {h2.title}
                               </Link>
+                              {
+                                h2.items ?
+                                  <ul style={unorderedList}>
+                                    {
+                                      h2.items.map(h3 =>
+                                        <li>
+                                          <Link
+                                            to={h3.url}
+                                            onMouseEnter={() => {
+                                              setHover(h3.title);
+                                            }}
+                                            onMouseLeave={() => {
+                                              setHover(false);
+                                            }}
+                                            style={{
+                                              ...itemLink.normal,
+                                              ...(hover === h3.title ? itemLink.hover : null)
+                                            }}
+                                          >
+                                            {h3.title}
+                                          </Link>
+                                        </li>
+                                      )
+                                    }
+                                  </ul>
+                                  : null
+                              }
                             </li>
                           )
                         }
