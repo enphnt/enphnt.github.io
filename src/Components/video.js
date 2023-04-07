@@ -1,7 +1,7 @@
 import React from "react";
 
 const Video = ({ videoSrcURL, videoTitle, height, width, ...props }) => (
-  <div className="video" style={{ textAlign: "center" }}>
+  <div className="video" style={{ textAlign: "center", padding: "10px 0" }}>
     <iframe
       src={videoSrcURL}
       title={videoTitle}

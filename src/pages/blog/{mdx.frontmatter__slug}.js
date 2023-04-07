@@ -37,7 +37,7 @@ const BlogPost = ({ data, children }) => {
                 style={{ maxHeight: "40vh" }}
                 className={hero}
               />
-              <p style={{ margin: "2px 0 30px", fontSize: 10, textAlign: "right" }}>
+              <p style={{ margin: "2px 0", fontSize: 10, textAlign: "right" }}>
                 Photo Credit:{" "}
                 <a
                   aria-label={data.mdx.frontmatter.hero_image_credit_link}
