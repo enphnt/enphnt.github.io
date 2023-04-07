@@ -42,6 +42,16 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      mediaType: "audio/mpeg",
+      options: {
+        path: `${__dirname}/audio`,
+        name: 'audio',
+        // Ignore files starting with a dot
+        ignore: [`**/\.*`],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         gatsbyRemarkPlugins: [
