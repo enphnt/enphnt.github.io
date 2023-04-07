@@ -13,9 +13,7 @@ const TableOfContents = ({ tocs }) => {
   };
 
   const orderedList = {
-    padding: "16px 3rem",
-    borderBottom: "solid 1px lightgrey",
-    borderRight: "solid 1px lightgrey",
+    padding: "4px 3rem 16px",
     borderLeft: "solid 5px lightgrey",
   };
 
@@ -24,7 +22,7 @@ const TableOfContents = ({ tocs }) => {
   };
 
   const toc = {
-    marginTop: 0,
+    margin: "0 8px",
     lineHeight: "1.4em",
   };
 
@@ -32,17 +30,14 @@ const TableOfContents = ({ tocs }) => {
     fontSize: "1.1em",
     fontWeight: 300,
     border: "none",
-    borderBottom: "solid 1px lightgrey",
-    borderRight: "solid 1px lightgrey",
-    borderTop: "solid 1px lightgrey",
     borderLeft: "solid 5px lightgrey",
+    borderRadius: "0 23px 23px 0",
     color: "#222",
-    backgroundColor: "transparent",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "0 1.5rem",
-    margin: 0,
+    padding: "0 1.5rem 0 1rem",
+    margin: "0 8px",
   };
 
   const itemLink = {
