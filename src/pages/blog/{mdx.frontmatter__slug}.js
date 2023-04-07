@@ -62,7 +62,7 @@ const BlogPost = ({ data, children }) => {
         <br />
         <Link aria-label="Back to Blog" to="/blog/">Go back to the blog homepage</Link>
       </div>
-      <Seo title={`${data.mdx.frontmatter.title} | Blog`} />
+      <Seo title={`${data.mdx.frontmatter.title}`} />
     </Layout>
   );
 };

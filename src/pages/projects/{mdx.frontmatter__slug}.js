@@ -57,7 +57,7 @@ const Projects = ({ data, children }) => {
         <br />
         <Link aria-label="back to Projects" to="/projects/">Go back to the projects homepage</Link>
       </Layout>
-      <Seo title={`${data.mdx.frontmatter.title} | Projects`} />
+      <Seo title={`${data.mdx.frontmatter.title}`} />
     </div>
   );
 };
