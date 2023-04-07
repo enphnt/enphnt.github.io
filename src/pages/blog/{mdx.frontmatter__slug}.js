@@ -11,8 +11,8 @@ import {
   content,
   hero
 } from "./index.module.css";
-import TagLinks from '../../components/tagLinks';
-import TableOfContents from '../../components/tableOfContents';
+import TagLinks from '../../components/tag-links';
+import TableOfContents from '../../components/table-of-contents';
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
