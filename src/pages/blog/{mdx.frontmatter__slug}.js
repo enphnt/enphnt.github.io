@@ -9,13 +9,11 @@ import {
   breadcrumbLinkHighlight,
   breadcrumbLinkSeparator,
   content,
-  hero
 } from "./index.module.css";
 import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
 // Define some variables for the styles
 const maxHeight = "40vh";
-const overlayPosition = "7%";
 
 const BlogPost = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -38,27 +36,29 @@ const BlogPost = ({ data, children }) => {
                 <GatsbyImage
                   image={heroImage}
                   alt={data.mdx.frontmatter.hero_image_alt}
-                  style={{ maxHeight: maxHeight }}
-                  className={hero}
+                  style={{ maxHeight: maxHeight, borderRadius: 5, boxSizing: "border-box" }}
                 />
                 {/* Use a span element with a style attribute for the overlay text */}
+
                 <span style={{
                   position: "absolute",
-                  top: overlayPosition,
-                  left: overlayPosition,
-                  right: overlayPosition,
-                  bottom: overlayPosition,
+                  top: "10%",
+                  right: "5%",
                   color: "white",
-                  fontSize: "7.5vw",
+                  fontSize: "3vh",
                   textAlign: "right",
                   fontWeight: 600,
-                  textShadow: "2px 2px 6px black"
+                  textShadow: "2px 2px 6px black",
+                  transformOrigin: "bottom",
+                  maxWidth: "80%",
+                  whiteSpace: "pre-wrap",
+                  letterSpacing: ".2rem",
                 }}>
                   {/* Use the hero_image_alt as the overlay text */}
                   {data.mdx.frontmatter.hero_image_alt}
                 </span>
               </div>
-              <p style={{ margin: "2px 0", fontSize: 12, textAlign: "right" }}>
+              <p style={{ margin: "2px 0", fontSize: 12 }}>
                 Photo Credit:{" "}
                 <a
                   aria-label={data.mdx.frontmatter.hero_image_credit_link}
@@ -83,7 +83,7 @@ const BlogPost = ({ data, children }) => {
         <Link aria-label="Back to Blog" to="/blog/">Go back to the blog homepage</Link>
       </div>
       <Seo title={`${data.mdx.frontmatter.title}`} />
-    </Layout>
+    </Layout >
   );
 };
 
