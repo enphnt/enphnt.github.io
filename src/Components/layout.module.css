@@ -109,14 +109,21 @@ button:hover {
 }
 
 a {
-  color: var(--clr-black);
-  text-shadow: darkcyan 0 0 1px;
   text-decoration: none;
+  color: var(--clr-black);
 }
 
-a:hover {
+/* we bypass this rule for all  */
+/* links on nav, index page (using section), nav and footer */
+a:not([class*="postList"] > a):not(section a):not(nav a):not(footer a) {
+  text-shadow: #e0e0e0 1px 1px 0;
+}
+
+a:not([class*="postList"] > a):not(section a):not(nav a):not(footer a):hover {
   color: white;
   background-color: rgb(46, 107, 77);
+  text-shadow: none;
+
 }
 
 p {
