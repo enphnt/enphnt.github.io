@@ -24,10 +24,6 @@
 
 }
 
-.postList a {
-  color: var(--clr-black);
-}
-
 .post h1,
 .post h2,
 .post h5,
@@ -109,17 +105,11 @@
   font-size: .85em;
   padding-right: 2px;
   font-weight: 500;
-  -webkit-text-stroke: 1px rgba(10, 0, 59, 0.592);
-}
-
-.breadcrumbLink:hover,
-.highlightAnchor:hover {
-  -webkit-text-stroke: 1px rgba(10, 0, 59, 0.592);
 }
 
 .breadcrumbLink-separator {
   font-size: .9em;
   margin: 6px;
   font-weight: 200;
-  color: #4DA167;
+  color: rgb(46, 107, 77);
 }

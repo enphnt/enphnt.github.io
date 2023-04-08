@@ -109,7 +109,14 @@ button:hover {
 }
 
 a {
+  color: var(--clr-black);
+  text-shadow: darkcyan 0 0 1px;
   text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: rgb(46, 107, 77);
 }
 
 p {

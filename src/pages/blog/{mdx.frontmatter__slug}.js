@@ -42,8 +42,8 @@ const BlogPost = ({ data, children }) => {
 
                 <span style={{
                   position: "absolute",
-                  top: "10%",
-                  right: "5%",
+                  top: "4%",
+                  right: "4%",
                   color: "white",
                   fontSize: "3vh",
                   textAlign: "right",
