@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { article, post, postList, thumbnail, highlightAnchor } from "../blog/index.module.css";
+import { article, post, postList, thumbnail } from "../blog/index.module.css";
 
 const ProjectsPage = ({ data }) => {
 
@@ -14,7 +14,7 @@ const ProjectsPage = ({ data }) => {
         <p>
           Here is a list of projects that I have discovered, been
           involved with or built from scratch myself. I also have
-          a <Link aria-label="Blog" className={highlightAnchor} to="/blog/">blog</Link> section
+          a <Link aria-label="Blog" to="/blog/">blog</Link> section
           of the site, too.
         </p>
         {

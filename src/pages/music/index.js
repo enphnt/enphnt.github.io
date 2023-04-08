@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { article, post, postList, thumbnail, highlightAnchor } from "./../blog/index.module.css";
+import { article, post, postList, thumbnail } from "./../blog/index.module.css";
 
 const MusicPage = ({ data }) => {
 
@@ -13,7 +13,7 @@ const MusicPage = ({ data }) => {
         <h1>Music Posts</h1>
         <p >
           A collection of posts with original music, playlists and music theory included. I also have written
-          about <Link aria-label="Over to Projects" className={highlightAnchor} to="/projects/">projects</Link>, too.
+          about <Link aria-label="Over to Projects" to="/projects/">projects</Link>, too.
         </p>
         {
           data.allMdx.nodes.map((node, index) => {
