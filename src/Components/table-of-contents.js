@@ -5,7 +5,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const TableOfContents = ({ tocs }) => {
   const { items } = tocs;
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
 
   const toggle = () => {
@@ -22,7 +22,7 @@ const TableOfContents = ({ tocs }) => {
   };
 
   const toc = {
-    margin: "0 8px",
+    margin: 0,
     lineHeight: "1.4em",
   };
 
@@ -32,12 +32,12 @@ const TableOfContents = ({ tocs }) => {
     border: "none",
     borderLeft: "solid 5px lightgrey",
     borderRadius: "0 23px 23px 0",
-    color: "#222",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "0 1.5rem 0 1rem",
-    margin: "0 8px",
+    margin: 0,
+    boxShadow: `5px 5px 95px rgba(183, 183, 183, 0.335) inset`
   };
 
   const itemLink = {
