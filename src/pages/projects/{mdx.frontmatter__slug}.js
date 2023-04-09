@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
-import {
-  breadcrumbs,
-  breadcrumbLink,
-  breadcrumbLinkSeparator,
-  content,
-  hero
-} from "../blog/index.module.css";
 import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
 import RandomProject from '../../components/random-post/project';
+import Breadcrumbs from '../../components/breadcrumbs';
 
 const Projects = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -20,21 +15,14 @@ const Projects = ({ data, children }) => {
   return (
     <div style={{ margin: 12, paddingTop: 40 }}>
       <Layout>
-        <div className={breadcrumbs}>
-          <Link aria-label="Home" className={breadcrumbLink} to="/">Home</Link>
-          <div className={breadcrumbLinkSeparator}>&#187;</div>
-          <Link aria-label="Projects" className={breadcrumbLink} to="/projects/">Projects</Link>
-          <div className={breadcrumbLinkSeparator}>&#187;</div>
-          <Link aria-label={data.mdx.frontmatter.title} className={breadcrumbLink} to={`./`}>{data.mdx.frontmatter.title}</Link>
-        </div>
-
+        <Breadcrumbs title={data.mdx.frontmatter.title} path="projects" />
         {
           heroImage ? (
             <>
               <GatsbyImage
                 image={heroImage}
                 alt={data.mdx.frontmatter.hero_image_alt}
-                className={hero}
+                style={{ boderRadius: 6 }}
               />
               <p>
                 Photo Credit:{" "}
@@ -52,7 +40,7 @@ const Projects = ({ data, children }) => {
         <br />
         <TableOfContents tocs={data.mdx.tableOfContents} />
         <br />
-        <div className={content}>
+        <div>
           {children}
         </div>
         <br />

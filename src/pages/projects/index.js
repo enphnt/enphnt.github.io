@@ -2,14 +2,19 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/layout';
 import Seo from '../../components/seo';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { article, post, postList, thumbnail } from "../blog/index.module.css";
+import ArticleListItem from '../../components/article-list-item';
 
 const ProjectsPage = ({ data }) => {
+  const list = {
+    display: "flex",
+    flexWrap: "wrap",
+    flexDirection: "column",
+    alignItems: "center",
+  };
 
   return (
     <Layout>
-      <div className={postList}>
+      <div style={list}>
         <h1>Projects</h1>
         <p>
           Here is a list of projects that I have discovered, been
@@ -18,27 +23,9 @@ const ProjectsPage = ({ data }) => {
           of the site, too.
         </p>
         {
-          data.allMdx.nodes.map((node, index) => {
-            const thumb = getImage(node.frontmatter.thumbnail);
-            return (
-              <Link aria-label={node.frontmatter.slug} key={index} to={`/projects/${node.frontmatter.slug}`}>
-                <article className={article} key={node.id}>
-                  <div className={thumbnail}>
-                    <GatsbyImage
-                      image={thumb}
-                      alt={`Thumbnail for ${node.frontmatter.title}`}
-                    />
-                  </div>
-                  <div className={post}>
-                    <h2>{node.frontmatter.title}</h2>
-                    <h5>{node.frontmatter.date}</h5>
-                    <p>{node.excerpt}</p>
-                  </div>
-                </article>
-              </Link>
-
-            );
-          })
+          data.allMdx.nodes.map(node =>
+            <ArticleListItem node={node} path={"projects"} />
+          )
         }
       </div>
     </Layout>
@@ -57,6 +44,7 @@ export const query = graphql`
           date(formatString: "MMMM D, YYYY")
           title
           slug
+          tags
           thumbnail {
             childImageSharp {
               gatsbyImageData
