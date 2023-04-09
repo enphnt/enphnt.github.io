@@ -7,16 +7,17 @@ const style = {
     width: "100%",
     alignItems: "start",
     fontFamily: "quicksand",
+    margin: 4
   },
   breadcrumbLink: {
     fontSize: "1em",
     paddingRight: 2,
+    whiteSpace: "nowrap"
   },
   breadcrumbLinkHighlight: {
     paddingRight: 2,
-    fontWeight: 500,
+    fontWeight: 600,
   },
-
   breadcrumbLinkSeparator: {
     fontSize: ".75em",
     fontWeight: 600,
