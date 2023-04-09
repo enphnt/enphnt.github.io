@@ -17,10 +17,10 @@ const TabbedContent = ({ tabs, title }) => {
     flex: '0 1 15px',
     lineHeight: 1.2,
     whiteSpace: "nowrap",
-    margin: '2px',
+    margin: 2,
     padding: '10px 10px',
-    fontSize: '14px',
-    borderRadius: '8px',
+    fontSize: 14,
+    borderRadius: 8,
     boxSizing: "border-box",
     border: 'none',
     backgroundColor: 'white',
@@ -45,9 +45,9 @@ const TabbedContent = ({ tabs, title }) => {
 
   const tabContentStyle = {
     margin: '0px',
-    padding: '20px',
+    padding: 20,
     backgroundColor: '#ffcc00',
-    borderRadius: '20px',
+    borderRadius: 20,
     boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
   };
 

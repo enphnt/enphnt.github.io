@@ -14,13 +14,13 @@ const RandomBlog = ({ data, to }) => {
 
   const styles = {
     blogFooter: {
-      margin: "16px",
-      padding: "16px",
+      margin: 16,
+      padding: 16,
       display: "flex",
       flexDirection: "column",
       alignItems: "start",
       boxShadow: "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
-      borderRadius: "10px",
+      borderRadius: 10,
     },
     blogFooterLink: {
       textDecoration: "none",
@@ -33,25 +33,25 @@ const RandomBlog = ({ data, to }) => {
     },
     blogFooterImageWrap: {
       justifySelf: "center",
-      height: "200px",
+      height: 200,
     },
     blogFooterInfo: {
-      marginLeft: "16px",
+      marginLeft: 16,
     },
     blogFooterGrid: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-      gap: "16px",
+      gap: 16,
     },
     blogFooterTags: {
       display: "flex",
       flexWrap: "wrap",
     },
     blogFooterTag: {
-      margin: "4px",
-      padding: "4px",
+      margin: 4,
+      padding: 4,
       backgroundColor: "#e0e0e0",
-      borderRadius: "4px",
+      borderRadius: 4,
     },
   };
 
