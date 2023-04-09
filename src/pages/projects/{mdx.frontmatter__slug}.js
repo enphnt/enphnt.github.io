@@ -12,7 +12,7 @@ import {
 } from "../blog/index.module.css";
 import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
-import RandomProject from '../../components/random-project-post';
+import RandomProject from '../../components/random-post/project';
 
 const Projects = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
