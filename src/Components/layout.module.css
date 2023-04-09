@@ -123,7 +123,6 @@ a:not([class*="anchor"]):not(section a):not(nav a):not(footer a):not([id="nohigh
   color: white;
   background-color: rgb(46, 107, 77);
   text-shadow: none;
-
 }
 
 p {

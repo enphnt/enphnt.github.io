@@ -27,6 +27,12 @@ const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, da
     },
     heading: {
       marginTop: 0,
+      fontSize: "1.6em",
+      fontWeight: 600,
+      textDecorationLine: "underline",
+      textDecorationStyle: "solid",
+      textDecorationColor: lightColors[1 + colorIndex++ % lightColors.length],
+      textDecorationThickness: 1,
     },
     thumbnailWrapper: {
       margin: "0.5em 0 0 0",
@@ -56,8 +62,8 @@ const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, da
         </div>
 
         <div style={styles.info}>
-          <Link id="nohighlight" aria-label={slug} key={slug} to={`/${path}/${slug}`}>
-            <h2 style={styles.heading}>{title}</h2>
+          <Link aria-label={slug} key={slug} to={`/${path}/${slug}`} style={styles.heading}>
+            {title}
           </Link >
 
           <h5>{date}</h5>
