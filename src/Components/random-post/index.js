@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import ArticleListItem from "../article-list-item";
 
 const RandomBlog = ({ data, to }) => {
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    const url = window.location.href.match(/\/([^\/]+)\/?$/);
+    setCurrentUrl("");
+
+    setCurrentUrl(url[url.length - 1]);
+  }, []);
+
   const styles = {
     blogFooter: {
       margin: "16px",
@@ -46,11 +55,15 @@ const RandomBlog = ({ data, to }) => {
     },
   };
 
-  // Destructure the chosen post data
   const { nodes } = data.allMdx;
-  const { excerpt, frontmatter } = nodes[Math.floor(new Date().getMinutes() / 10) % nodes.length];
-  const { date, title, slug, tags, thumbnail } = frontmatter;
-  const image = getImage(thumbnail);
+
+  // Filter out nodes whose slug matches the current slug
+  const filteredNodes = nodes.filter(node => node.frontmatter.slug !== currentUrl);
+
+  // Choose a random node from the filtered nodes every 10 mins, fallback if none
+  const node = filteredNodes[Math.floor(new Date().getMinutes() / 10) % filteredNodes.length] || nodes[0];
+
+  const { frontmatter } = node;
 
   return (
     <div style={styles.blogFooter}>
@@ -59,27 +72,7 @@ const RandomBlog = ({ data, to }) => {
           Check out other {to === "/blog/" ? "articles" : "projects"}:
         </Link>
       </h3>
-      <h2>
-        <Link to={`${to}${slug}`} style={styles.blogFooterLink}>
-          {title}
-        </Link>
-      </h2>
-      <div style={styles.blogFooterGrid}>
-        <Link to={`${to}${slug}`} id="nohighlight" style={styles.blogFooterImageWrap}>
-          <GatsbyImage image={image} alt={title} style={styles.blogFooterImage} />
-        </Link>
-        <div>
-          <h5>{date}</h5>
-          <p>{excerpt}</p>
-          <div style={styles.blogFooterTags}>
-            {tags.map(tag => (
-              <Link key={tag} to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.blogFooterTag}>
-                {tag}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ArticleListItem node={node} path={to.replace(/\//g, "")} />
     </div>
   );
 };
