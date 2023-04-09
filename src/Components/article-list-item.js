@@ -2,16 +2,18 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-const ArticleListItem = ({ node, path }) => {
-  const thumb = getImage(node.frontmatter.thumbnail);
+const lightColors = ["lightgray", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgreen", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue"];
+let colorIndex = 0;
+
+const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, date, tags }, excerpt }, path }) => {
+  const thumb = getImage(thumbnail);
   const styles = {
     article: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(8em, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(9em, 1fr))",
       gridGap: "1em",
       maxWidth: "99%",
-      padding: "0 1em 2em",
-      justifyItems: "center",
+      padding: "1em 1em",
     },
     tag: {
       padding: 4,
@@ -26,46 +28,52 @@ const ArticleListItem = ({ node, path }) => {
     heading: {
       marginTop: 0,
     },
-    thumbnail: {
-      height: "10em",
-      width: "10em",
-      margin: "0.5em 1em",
+    thumbnailWrapper: {
+      margin: "0.5em 0 0 0",
+      justifySelf: "center"
     },
     info: {
       gridColumnEnd: "span 3"
+    },
+    hr: {
+      color: lightColors[colorIndex++ % lightColors.length],
+      margin: 0,
     }
   };
 
   return (
-    <article style={styles.article} key={node.id}>
-      <div style={styles.thumbnail}>
-        <Link id="nohighlight" aria-label={node.frontmatter.slug} key={node.frontmatter.slug} to={`/${path}/${node.frontmatter.slug}`}>
-          <GatsbyImage
-            image={thumb}
-            alt={`Thumbnail for ${node.frontmatter.title}`}
-          />
-        </Link>
-      </div>
+    <div>
+      <hr style={styles.hr} />
+      <article style={styles.article} key={id}>
 
-      <div style={styles.info}>
-        <Link id="nohighlight" aria-label={node.frontmatter.slug} key={node.frontmatter.slug} to={`/${path}/${node.frontmatter.slug}`}>
-          <h2 style={styles.heading}>{node.frontmatter.title}</h2>
-        </Link >
-
-        <h5>{node.frontmatter.date}</h5>
-        <p>{node.excerpt}</p>
-        <div style={styles.blogFooterTags}>
-          {
-            node.frontmatter.tags.map(tag => (
-              <Link key={tag} to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.tag}>
-                {tag}
-              </Link>
-            ))
-          }
+        <div style={styles.thumbnailWrapper}>
+          <Link id="nohighlight" aria-label={slug} key={slug} to={`/${path}/${slug}`}>
+            <GatsbyImage
+              image={thumb}
+              alt={`Thumbnail for ${title}`}
+            />
+          </Link>
         </div>
-      </div>
-    </article>
 
+        <div style={styles.info}>
+          <Link id="nohighlight" aria-label={slug} key={slug} to={`/${path}/${slug}`}>
+            <h2 style={styles.heading}>{title}</h2>
+          </Link >
+
+          <h5>{date}</h5>
+          <p>{excerpt}</p>
+          <div style={styles.blogFooterTags}>
+            {
+              tags.map(tag => (
+                <Link key={tag} to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.tag}>
+                  {tag}
+                </Link>
+              ))
+            }
+          </div>
+        </div>
+      </article>
+    </div>
   );
 };
 
