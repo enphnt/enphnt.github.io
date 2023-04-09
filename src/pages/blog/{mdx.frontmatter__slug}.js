@@ -12,7 +12,7 @@ import {
 } from "./index.module.css";
 import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
-import RandomPost from '../../components/random-blog-post';
+import RandomBlog from '../../components/random-blog-post';
 // Define some variables for the styles
 const maxHeight = "40vh";
 
@@ -81,7 +81,7 @@ const BlogPost = ({ data, children }) => {
           {children}
         </div>
         <br />
-        <RandomPost />
+        <RandomBlog />
       </div>
       <Seo title={`${data.mdx.frontmatter.title}`} />
     </Layout >

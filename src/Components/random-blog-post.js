@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const BlogFooter = () => {
+const RandomBlog = () => {
   const styles = {
     blogFooter: {
       padding: "16px",
@@ -100,7 +100,7 @@ const BlogFooter = () => {
             <p>{excerpt}</p>
             <div style={styles.blogFooterTags}>
               {tags.map(tag => (
-                <Link to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.blogFooterTag}>
+                <Link key={tag} to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.blogFooterTag}>
                   {tag}
                 </Link>
               ))}
@@ -112,4 +112,4 @@ const BlogFooter = () => {
   );
 };
 
-export default BlogFooter;
+export default RandomBlog;
