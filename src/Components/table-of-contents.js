@@ -72,11 +72,12 @@ const TableOfContents = ({ tocs }) => {
               items.map(item =>
                 <li key={item.title}>
                   <Link
+                    key={item.title}
                     style={{
                       ...itemLink.normal,
                       ...(hover === item.title ? itemLink.hover : null)
                     }}
-                    key={item.title}
+
                     to={item.url}
                     onMouseEnter={() => {
                       setHover(item.title);
@@ -92,8 +93,9 @@ const TableOfContents = ({ tocs }) => {
                       <ul style={unorderedList}>
                         {
                           item.items.map(h2 =>
-                            <li>
+                            <li key={h2.url}>
                               <Link
+                                key={h2.url}
                                 to={h2.url}
                                 onMouseEnter={() => {
                                   setHover(h2.title);
@@ -113,8 +115,9 @@ const TableOfContents = ({ tocs }) => {
                                   <ul style={unorderedList}>
                                     {
                                       h2.items.map(h3 =>
-                                        <li>
+                                        <li key={h3.url}>
                                           <Link
+                                            key={h3.url}
                                             to={h3.url}
                                             onMouseEnter={() => {
                                               setHover(h3.title);

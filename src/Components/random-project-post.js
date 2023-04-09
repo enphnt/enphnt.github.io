@@ -100,7 +100,7 @@ const RandomProject = () => {
             <p>{excerpt}</p>
             <div style={styles.footerTags}>
               {tags.map(tag => (
-                <Link to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.footerTag}>
+                <Link key={tag} to={`/tags/${tag.replace(/ /g, "-")}/`} style={styles.footerTag}>
                   {tag}
                 </Link>
               ))}
