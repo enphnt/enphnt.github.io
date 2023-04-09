@@ -6,7 +6,7 @@ const RandomBlog = ({ data, to }) => {
   const [currentUrl, setCurrentUrl] = useState("");
 
   useEffect(() => {
-    const url = window.location.href.match(/\/([^\/]+)\/?$/);
+    const url = window.location.href.match(/([^/]+)\/?$/);
     setCurrentUrl("");
 
     setCurrentUrl(url[url.length - 1]);
@@ -62,8 +62,6 @@ const RandomBlog = ({ data, to }) => {
 
   // Choose a random node from the filtered nodes every 10 mins, fallback if none
   const node = filteredNodes[Math.floor(new Date().getMinutes() / 10) % filteredNodes.length] || nodes[0];
-
-  const { frontmatter } = node;
 
   return (
     <div style={styles.blogFooter}>
