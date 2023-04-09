@@ -18,7 +18,7 @@ const TagLinks = ({ tags }) => {
     Tags:{" "}
     {
       tags.map((tag, index) =>
-        <>
+        <span key={tag}>
           <Link
             key={tag}
             to={`/tags/${tag.replace(/ /g, "-")}/`}
@@ -38,7 +38,7 @@ const TagLinks = ({ tags }) => {
           {
             index === tags.length - 1 ? <></> : <>,{" "}</>
           }
-        </>
+        </span>
       )
     }
   </p>;

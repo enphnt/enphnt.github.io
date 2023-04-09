@@ -12,6 +12,7 @@ import {
 } from "../blog/index.module.css";
 import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
+import RandomProject from '../../components/random-project-post';
 
 const Projects = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
@@ -55,7 +56,7 @@ const Projects = ({ data, children }) => {
           {children}
         </div>
         <br />
-        <Link aria-label="back to Projects" to="/projects/">Go back to the projects homepage</Link>
+        <RandomProject />
       </Layout>
       <Seo title={`${data.mdx.frontmatter.title}`} />
     </div>

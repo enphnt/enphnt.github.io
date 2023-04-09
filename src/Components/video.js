@@ -1,11 +1,11 @@
 import React from "react";
 
-const Video = ({ videoSrcURL, videoTitle, height, width, ...props }) => (
+const Video = ({ src, title, height, width, ...props }) => (
   <div className="video" style={{ textAlign: "center", padding: "10px 0" }}>
     <iframe
-      src={videoSrcURL}
-      title={videoTitle}
-      id={videoSrcURL}
+      src={src}
+      title={title}
+      id={src}
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       webkitallowfullscreen="true"
       mozallowfullscreen="true"
