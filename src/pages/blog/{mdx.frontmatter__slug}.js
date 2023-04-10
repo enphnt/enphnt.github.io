@@ -8,6 +8,7 @@ import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
 import RandomBlog from '../../components/random-post/blog';
 import Breadcrumbs from '../../components/breadcrumbs';
+import BackToTop from '../../components/back-to-top';
 
 const maxHeight = "40vh";
 
@@ -72,6 +73,7 @@ const BlogPost = ({ data, children }) => {
         <h5>{date}</h5>
         <br />
         <TableOfContents tocs={tableOfContents} />
+        <BackToTop />
         <div>
           {children}
         </div>

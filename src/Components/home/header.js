@@ -1,35 +1,66 @@
-import React, { useState, useCallback, useRef, useEffect } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import Networks from "../networks";
-import {
-  background,
-  wrapper,
-  container,
-  containerItem,
-  dividerWrap,
-  dividerWrapFaded,
-  dividerWrapFadedMore,
-  transitionsContainer,
-  transitionsItem,
-  transitionsTxt
-} from "./header.module.css";
-
 import NextSectionLink from "../next-section-link";
+import styled, { keyframes } from "styled-components";
 
-const blue = "rgb(72, 93, 146)";
-const green = "rgb(46, 107, 77)";
+const name = "Nathan Phennel";
+const music = "Music Maker";
+const dev = "Software Dev";
+
+const blue = "rgb(72,93,146)";
+const green = "rgb(46,107,77)";
 const white = "black";
 
+const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: max(85vh, 700px);
+  padding: 0 3vw;
+`;
+
+const TransitionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  height: 18em;
+`;
+
+const TransitionsItem = styled(animated.div)`
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 6em;
+  text-shadow: 1px 1px 3px lightgray;
+  font-weight: 800;
+  will-change: transform, opacity, height;
+  cursor: pointer;
+  line-height: 95px;
+  box-sizing: border-box;
+`;
+
+const TransitionsTxt = styled(animated.div)`
+    overflow: hidden;
+    min-width: 410px;
+`;
+
 export default function Header() {
+  const init = [
+    <span style={{ color: "black" }}>Nathan Phennel</span>,
+    <span style={{ color: green }}>Software Dev</span>,
+    <span style={{ color: blue }}>Music Maker</span>
+  ];
   const ref = useRef([]);
-  const [items, set] = useState([]);
+  const [items, set] = useState(init);
 
   const transitions = useTransition(items, {
     from: {
       opacity: 0,
       height: 0,
       innerHeight: 0,
-      transform: "perspective(600px) rotateX(0deg)",
       color: blue
     },
     enter: [
@@ -42,74 +73,38 @@ export default function Header() {
   });
 
   const reset = useCallback(() => {
+    set([]);
     ref.current.forEach(clearTimeout);
     ref.current = [];
-    set([]);
-    ref.current.push(
-      setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 200)
-    );
-    ref.current.push(
-      setTimeout(() => set(["Nathan Phennel", "Music Maker"]), 3000)
-    );
-    ref.current.push(
-      setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 5000)
-    );
-    ref.current.push(
-      setTimeout(() => set(["Nathan Phennel", "Software Dev"]), 6000)
-    );
-    ref.current.push(
-      setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 7500)
-    );
-    ref.current.push(
-      setTimeout(
-        () => set(["Nathan Phennel"]), 8500)
-    );
-    ref.current.push(
-      setTimeout(
-        () => set(["Nathan Phennel", "Software Dev", "Music Maker"]), 10000)
-    );
+    const timeouts = [
+      [500, []],
+      [2000, [name, music]],
+      [3500, [name, dev, music]],
+      [5000, [name, dev]],
+      [6500, [name, dev, music]],
+      [8000, [name]],
+      [9000, init]
+    ];
+    timeouts.forEach(([delay, value]) => {
+      ref.current.push(setTimeout(() => set(value), delay));
+    });
   }, []);
 
-  useEffect(() => {
-    reset();
-    return () => ref.current.forEach(clearTimeout);
-  }, [reset]);
-
   return (
-    // id=top needed for smoothcroll workaround
-    <section id="top">
-      <div className={wrapper}>
-        <div className={background}>
-
-          <div className={container}>
-            <div className={containerItem}>
-
-              <div className={transitionsContainer}>
-                {transitions(({ innerHeight, ...rest }, item) => (
-                  <animated.div
-                    className={transitionsItem}
-                    style={rest}
-                    onClick={reset}
-                  >
-                    <animated.div className={transitionsTxt} style={{ height: innerHeight }}>
-                      {item}
-                    </animated.div>
-                  </animated.div>
-                ))}
-              </div>
-              <Networks alignRight />
-            </div>
-            <div className={dividerWrapFadedMore} />
-            <div className={dividerWrapFaded} />
-            <div className={dividerWrap} />
-          </div>
-        </div>
-        <NextSectionLink nextSection="/#about" size={120} />
-      </div>
-
+    <section>
+      <Wrapper>
+        <TransitionsContainer>
+          {transitions(({ innerHeight, ...rest }, item) =>
+            <TransitionsItem style={rest} onClick={reset}>
+              <TransitionsTxt style={{ height: innerHeight }}>
+                {item}
+              </TransitionsTxt>
+            </TransitionsItem>
+          )}
+        </TransitionsContainer>
+        <Networks />
+      </Wrapper>
+      <NextSectionLink nextSection="/#about" size={120} />
     </section>
   );
 }
