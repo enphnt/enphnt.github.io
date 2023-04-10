@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import Networks from "../networks";
 import NextSectionLink from "../next-section-link";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const name = "Nathan Phennel";
 const music = "Music Maker";
@@ -24,6 +24,7 @@ const Wrapper = styled.section`
 const TransitionsContainer = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   align-items: center;  
   height: 18em;
 `;
@@ -78,17 +79,18 @@ export default function Header() {
     ref.current = [];
     const timeouts = [
       [500, []],
-      [2000, [name, music]],
-      [3500, [name, dev, music]],
-      [5000, [name, dev]],
-      [6500, [name, dev, music]],
-      [8000, [name]],
-      [9000, init]
+      [1500, [name, music]],
+      [2500, [name, dev, music]],
+      [4000, [name, dev]],
+      [5000, [name, dev, music]],
+      [6500, [name]],
+      [7500, []],
+      [8000, init]
     ];
     timeouts.forEach(([delay, value]) => {
       ref.current.push(setTimeout(() => set(value), delay));
     });
-  }, []);
+  }, [init]);
 
   return (
     <section>
