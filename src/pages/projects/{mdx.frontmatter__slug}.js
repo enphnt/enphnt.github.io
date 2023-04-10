@@ -18,19 +18,19 @@ const Projects = ({ data, children }) => {
         <Breadcrumbs title={data.mdx.frontmatter.title} path="projects" />
         {
           heroImage ? (
-            <>
+            <div style={{ textAlign: "right" }}>
               <GatsbyImage
                 image={heroImage}
                 alt={data.mdx.frontmatter.hero_image_alt}
                 style={{ boderRadius: 6 }}
               />
               <p>
-                Photo Credit:{" "}
+                Photo:{" "}
                 <a href={data.mdx.frontmatter.hero_image_credit_link}>
                   {data.mdx.frontmatter.hero_image_credit_text}
                 </a>
               </p>
-            </>
+            </div>
           )
             : null
         }

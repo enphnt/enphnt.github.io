@@ -20,7 +20,7 @@ const BlogPost = ({ data, children }) => {
         <Breadcrumbs title={data.mdx.frontmatter.title} path="blog" />
         {
           heroImage && (
-            <>
+            <div style={{ textAlign: "right" }}>
               <div style={{ position: "relative", maxHeight: maxHeight }}>
                 <GatsbyImage
                   image={heroImage}
@@ -45,8 +45,8 @@ const BlogPost = ({ data, children }) => {
                   {data.mdx.frontmatter.hero_image_alt}
                 </span>
               </div>
-              <p style={{ margin: "2px 0", fontSize: 12 }}>
-                Photo Credit:{" "}
+              <p style={{ margin: 0, fontSize: 12 }}>
+                Photo:{" "}
                 <a
                   aria-label={data.mdx.frontmatter.hero_image_credit_link}
                   href={data.mdx.frontmatter.hero_image_credit_link}
@@ -54,7 +54,7 @@ const BlogPost = ({ data, children }) => {
                   {data.mdx.frontmatter.hero_image_credit_text}
                 </a>
               </p>
-            </>
+            </div>
           )
         }
         <h1>{data.mdx.frontmatter.title}</h1>

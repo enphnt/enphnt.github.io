@@ -1,5 +1,5 @@
 ---
-title: "Uprading this very Gatsby blog (v1 => v4)"
+title: "Upgrading this very Gatsby blog (v1 => v4)"
 date: "2023-02-02"
 slug: gatsby-upgrades
 thumbnail: "./thumbnail.jpg"
@@ -11,7 +11,7 @@ tags: ["gatsby", "upgrades", "web dev"]
 
 ---
 
-First of all, I'm running such an old version of Gatsby that I can't use any of its newest features. In order to use SEO tools, I need to upgrade to `gatsby@4.19.0`.
+First of all, I'm running such an old version of Gatsby that I can't use any of its newest features. To use SEO tools, I need to upgrade to `gatsby@4.19.0`.
 
 My notes from performing the upgrade are included in this post. 
 
@@ -26,9 +26,9 @@ I'll try just setting package.json version to 2.0.0:
 
 ```
 
-After running `npm i`, I needed to update all the peers of gatsby to a higher version too. After doing that, `react` and `react-dom` packages were added because in v1 these were bundled inside gatsby but no longer are.
+After running `npm i`, I needed to update all the peers of Gatsby to a higher version too. After doing that, `react` and `react-dom` packages were added because in v1 these were bundled inside Gatsby but no longer are.
 
-I was able to finish the install of new packages and render the site successfully using my package script: `npm run develop`
+I was able to finish the installation of new packages and render the site successfully using my package script: `npm run develop`
 
 However, now I see massive layout issues and I will move on to restructuring my react components so that they no longer use the `layout.js` as a root component.
 
@@ -38,13 +38,13 @@ After the following steps, which are thankfully documented in the [migration gui
   2. Mv `layouts/index.js` to `src/components/layout.js` (optional, but recommended)
   3. Import then wrap pages with layout component
   4. Pass history, location, and match props to layout (didn't do this actually)
-  5. Change the query to use StaticQuery (now getting false pos warn about `'maxWidth'` in query)
+  5. Change the query to use StaticQuery (now getting false positive warn about `'maxWidth'` in query)
 
 ## v2 Done
-We made it. Things so far have remained straightforward. Next I'll continue upgrading to v4 now from v2.
+We made it. Things so far have remained straightforward. Next, I'll continue upgrading to v4 now from v2.
 
 # v2 to v4 upgrade
-For this migration, I skipped 3 altogether as I saw few breaking changes that would affect me. In fact, it looks like none! Even further migrating to v4 shows no apparent breaking changes i'll need to address.
+For this migration, I skipped 3 altogether as I saw very few breaking changes that would affect me. Even further migrating to v4 shows no apparent breaking changes I'll need to address.
 
 I updated the package.json to the latest release for v4 according to npm:
   ```json
@@ -54,7 +54,7 @@ I updated the package.json to the latest release for v4 according to npm:
 
   ```
 
-After that, I updated all the gatsby plugin and peers to their latest v4 versions (using npm versions page as my reference):
+After that, I updated all the Gatsby plugin and peers to their latest v4 versions (using npm versions page as my reference):
 ```json
     
     "gatsby-plugin-catch-links": "^4.25.0",
@@ -85,7 +85,7 @@ File: .cache/find-path.js:1:0
 
 ```
 
-To overcome these, I found that its necessary to add gatsby peer deps to the `package.json` for some unknown reason. I saw there was a bit of chatter about deps issues on gatsby's github [issues](https://github.com/gatsbyjs/gatsby/discussions/35313). [Here](https://github.com/gatsbyjs/gatsby/issues/25708), I saw I could just bypass issues with the transient deps and just specify compatible versions myself in the `package.json` like so:
+To overcome these, I found that it's necessary to add Gatsby peer dependencies to the `package.json` for some unknown reason. I saw there was a bit of chatter about dependencies issues on Gatsby's Github [issues](https://github.com/gatsbyjs/gatsby/discussions/35313). [Here](https://github.com/gatsbyjs/gatsby/issues/25708), I saw I could just bypass issues with the transient dependencies and just specify compatible versions myself in the `package.json` like so:
 
 ```javascript
 
@@ -111,7 +111,7 @@ After this update, I ran the following:
 
 ```
 
-Upon completely reseting all the deps for v4, things were back up and running. Only one small issue noticeable in the terminal remains when running `gatsby develop`:
+Upon completely resetting all the dependencies for v4, things were back up and running. Only one small issue noticeable in the terminal remains when running `gatsby develop`:
 ```
 
 warn Warning: there are unknown plugin options for "gatsby-source-filesystem": fastHash

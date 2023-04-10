@@ -51,8 +51,6 @@ const TabbedContent = ({ tabs, title }) => {
     boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
   };
 
-  console.log("title", title);
-
   return (
     <div>
       <div style={tabContentStyle}>
