@@ -10,7 +10,7 @@ const SpotifyPlaylist = ({ src, title, height, width, ...props }) => (
       height={height ? height : "524"}
       frameBorder="0"
       allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
     />
   </div>

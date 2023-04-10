@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
+import Seo from "../components/seo";
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -27,6 +28,8 @@ const Tags = ({ pageContext, data }) => {
       </ul>
       <br />
       <Link to="/tags/">Show all tags</Link>
+      <Seo title={`Tagged with: '${tag}'`} />
+
     </Layout>
   );
 };

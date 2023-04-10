@@ -24,7 +24,7 @@ const ProjectsPage = ({ data }) => {
         </p>
         {
           data.allMdx.nodes.map(node =>
-            <ArticleListItem node={node} path={"projects"} />
+            <ArticleListItem key={node.id} node={node} path={"projects"} />
           )
         }
       </div>

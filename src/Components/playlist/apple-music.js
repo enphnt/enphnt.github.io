@@ -4,7 +4,7 @@ const AppleMusic = ({ src, title, height, width, ...props }) => (
   <div className="video" style={{ textAlign: "center", padding: "10px 0" }}>
     <iframe
       title={title}
-      allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+      allow="encrypted-media *; fullscreen *; clipboard-write"
       frameBorder="0"
       width={width ? width : "100%"}
       height={height ? height : "460"}

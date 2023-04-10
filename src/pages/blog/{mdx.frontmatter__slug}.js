@@ -68,6 +68,7 @@ const BlogPost = ({ data, children }) => {
         <br />
         <RandomBlog />
       </div>
+      {/* // todo export const Head = () => <Seo title="Blog" />; */}
       <Seo title={`${data.mdx.frontmatter.title}`} />
     </Layout >
   );

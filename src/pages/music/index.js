@@ -22,7 +22,7 @@ const MusicPage = ({ data }) => {
         </p>
         {
           data.allMdx.nodes.map(node =>
-            <ArticleListItem node={node} path={"blog"} />
+            <ArticleListItem key={node.id} node={node} path={"blog"} />
           )
         }
       </div>
