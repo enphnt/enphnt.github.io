@@ -87,8 +87,6 @@ const Playlist = ({ apple, youtube, spotify, title }) => {
     { label: 'YouTube', content: <YouTubePlaylist src={youtube} title={title} /> },
   ];
 
-  console.log("title", title);
-
   return (
     <div style={{ padding: 8 }}>
       <br />
