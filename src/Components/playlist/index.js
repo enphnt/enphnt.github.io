@@ -24,7 +24,6 @@ const TabbedContent = ({ tabs, title }) => {
     boxSizing: "border-box",
     border: 'none',
     backgroundColor: 'white',
-    boxShadow: '0px 3px 3px rgba(0, 0, 0, 0.3)',
     transition: 'flex 0.3s ease-in-out',
     opacity: .95
   };
@@ -32,7 +31,9 @@ const TabbedContent = ({ tabs, title }) => {
   const hoveredTabButtonStyle = {
     ...tabButtonStyle,
     backgroundColor: "rgb(46, 107, 77)",
-    color: "white"
+    color: "white",
+    boxShadow: '0px 3px 3px rgba(0, 0, 0, 0.3)',
+
   };
 
   const activeTabButtonStyle = {
