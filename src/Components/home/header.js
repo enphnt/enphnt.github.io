@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback, useRef, useMemo } from "react";
 import { useTransition, animated } from "@react-spring/web";
 import Networks from "../networks";
 import NextSectionLink from "../next-section-link";
@@ -49,11 +49,11 @@ const TransitionsTxt = styled(animated.div)`
 `;
 
 export default function Header() {
-  const init = [
+  const init = useMemo(() => [
     <span style={{ color: "black" }}>Nathan Phennel</span>,
     <span style={{ color: green }}>Software Dev</span>,
     <span style={{ color: blue }}>Music Maker</span>
-  ];
+  ], []);
   const ref = useRef([]);
   const [items, set] = useState(init);
 
