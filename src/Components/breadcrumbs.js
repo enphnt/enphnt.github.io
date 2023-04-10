@@ -5,7 +5,7 @@ const style = {
   breadcrumbs: {
     display: "flex",
     width: "100%",
-    alignItems: "start",
+    alignItems: "baseline",
     fontFamily: "quicksand",
     margin: 4
   },
