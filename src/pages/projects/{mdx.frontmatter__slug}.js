@@ -10,35 +10,45 @@ import RandomProject from '../../components/random-post/project';
 import Breadcrumbs from '../../components/breadcrumbs';
 
 const Projects = ({ data, children }) => {
-  const heroImage = getImage(data.mdx.frontmatter.hero_image);
+  const {
+    mdx: {
+      frontmatter: {
+        title, tags, date, slug,
+        hero_image, hero_image_alt, hero_image_credit_link, hero_image_credit_text,
+      },
+      excerpt,
+      tableOfContents
+    }
+  } = data;
+  const heroImage = getImage(hero_image);
 
   return (
     <div style={{ margin: 12, paddingTop: 20 }}>
       <Layout>
-        <Breadcrumbs title={data.mdx.frontmatter.title} path="projects" />
+        <Breadcrumbs title={title} path="projects" />
         {
           heroImage ? (
             <div style={{ textAlign: "right" }}>
               <GatsbyImage
                 image={heroImage}
-                alt={data.mdx.frontmatter.hero_image_alt}
+                alt={hero_image_alt}
                 style={{ boderRadius: 6 }}
               />
               <p>
                 Photo:{" "}
-                <a href={data.mdx.frontmatter.hero_image_credit_link}>
-                  {data.mdx.frontmatter.hero_image_credit_text}
+                <a href={hero_image_credit_link}>
+                  {hero_image_credit_text}
                 </a>
               </p>
             </div>
           )
             : null
         }
-        <h1>{data.mdx.frontmatter.title}</h1>
-        <TagLinks tags={data.mdx.frontmatter.tags} />
-        <h5>{data.mdx.frontmatter.date}</h5>
+        <h1>{title}</h1>
+        <TagLinks tags={tags} />
+        <h5>{date}</h5>
         <br />
-        <TableOfContents tocs={data.mdx.tableOfContents} />
+        <TableOfContents tocs={tableOfContents} />
         <br />
         <div>
           {children}
@@ -46,7 +56,8 @@ const Projects = ({ data, children }) => {
         <br />
         <RandomProject />
       </Layout>
-      <Seo title={`${data.mdx.frontmatter.title}`} />
+      {/* // todo export const Head = () => <Seo title="Blog" />; */}
+      <Seo title={title} excerpt={excerpt} slug={slug} hero_image={hero_image} />
     </div>
   );
 };
@@ -55,9 +66,11 @@ export const query = graphql`
   query($id: String) {
     mdx(id: {eq: $id}) {
       tableOfContents
+      excerpt(pruneLength: 200)
       frontmatter {
         title
         tags
+        slug
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         hero_image_credit_link

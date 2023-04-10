@@ -12,19 +12,29 @@ import Breadcrumbs from '../../components/breadcrumbs';
 const maxHeight = "40vh";
 
 const BlogPost = ({ data, children }) => {
-  const heroImage = getImage(data.mdx.frontmatter.hero_image);
+  const {
+    mdx: {
+      frontmatter: {
+        title, tags, date, slug,
+        hero_image, hero_image_alt, hero_image_credit_link, hero_image_credit_text,
+      },
+      excerpt,
+      tableOfContents
+    }
+  } = data;
+  const heroImage = getImage(hero_image);
 
   return (
     <Layout >
       <div style={{ paddingTop: 20 }}>
-        <Breadcrumbs title={data.mdx.frontmatter.title} path="blog" />
+        <Breadcrumbs title={title} path="blog" />
         {
           heroImage && (
             <div style={{ textAlign: "right" }}>
               <div style={{ position: "relative", maxHeight: maxHeight }}>
                 <GatsbyImage
                   image={heroImage}
-                  alt={data.mdx.frontmatter.hero_image_alt}
+                  alt={hero_image_alt}
                   style={{ maxHeight: maxHeight, borderRadius: 5, boxSizing: "border-box" }}
                 />
                 <span style={{
@@ -42,26 +52,26 @@ const BlogPost = ({ data, children }) => {
                   letterSpacing: ".2rem",
                 }}>
                   {/* Use the hero_image_alt as the overlay text */}
-                  {data.mdx.frontmatter.hero_image_alt}
+                  {hero_image_alt}
                 </span>
               </div>
               <p style={{ margin: 0, fontSize: 12 }}>
                 Photo:{" "}
                 <a
-                  aria-label={data.mdx.frontmatter.hero_image_credit_link}
-                  href={data.mdx.frontmatter.hero_image_credit_link}
+                  aria-label={hero_image_credit_link}
+                  href={hero_image_credit_link}
                 >
-                  {data.mdx.frontmatter.hero_image_credit_text}
+                  {hero_image_credit_text}
                 </a>
               </p>
             </div>
           )
         }
-        <h1>{data.mdx.frontmatter.title}</h1>
-        <TagLinks tags={data.mdx.frontmatter.tags} />
-        <h5>{data.mdx.frontmatter.date}</h5>
+        <h1>{title}</h1>
+        <TagLinks tags={tags} />
+        <h5>{date}</h5>
         <br />
-        <TableOfContents tocs={data.mdx.tableOfContents} />
+        <TableOfContents tocs={tableOfContents} />
         <div>
           {children}
         </div>
@@ -69,7 +79,7 @@ const BlogPost = ({ data, children }) => {
         <RandomBlog />
       </div>
       {/* // todo export const Head = () => <Seo title="Blog" />; */}
-      <Seo title={`${data.mdx.frontmatter.title}`} />
+      <Seo title={title} excerpt={excerpt} slug={slug} hero_image={hero_image} />
     </Layout >
   );
 };
@@ -78,9 +88,11 @@ export const query = graphql`
   query ($id: String) {
     mdx(id: {eq: $id}) {
       tableOfContents
+      excerpt(pruneLength: 200)
       frontmatter {
         title
         tags
+        slug
         date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         hero_image_credit_link
