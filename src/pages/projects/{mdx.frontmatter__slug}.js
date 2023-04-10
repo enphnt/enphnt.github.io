@@ -8,6 +8,7 @@ import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
 import RandomProject from '../../components/random-post/project';
 import Breadcrumbs from '../../components/breadcrumbs';
+import BackToTop from '../../components/back-to-top';
 
 const Projects = ({ data, children }) => {
   const {
@@ -49,6 +50,7 @@ const Projects = ({ data, children }) => {
         <h5>{date}</h5>
         <br />
         <TableOfContents tocs={tableOfContents} />
+        <BackToTop />
         <br />
         <div>
           {children}
