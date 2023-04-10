@@ -16,4 +16,3 @@ const AppleMusic = ({ src, title, height, width, ...props }) => (
   </div>
 );
 export default AppleMusic;
-
