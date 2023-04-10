@@ -13,7 +13,7 @@ const Projects = ({ data, children }) => {
   const heroImage = getImage(data.mdx.frontmatter.hero_image);
 
   return (
-    <div style={{ margin: 12, paddingTop: 40 }}>
+    <div style={{ margin: 12, paddingTop: 20 }}>
       <Layout>
         <Breadcrumbs title={data.mdx.frontmatter.title} path="projects" />
         {

@@ -16,7 +16,7 @@ const BlogPost = ({ data, children }) => {
 
   return (
     <Layout >
-      <div style={{ paddingTop: 40 }}>
+      <div style={{ paddingTop: 20 }}>
         <Breadcrumbs title={data.mdx.frontmatter.title} path="blog" />
         {
           heroImage && (
