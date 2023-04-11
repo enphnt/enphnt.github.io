@@ -1,0 +1,279 @@
+---
+slug: seo-gatsby-component
+date: "2023-04-03"
+title: "Setting up a SEO React component for your Gatsby site"
+thumbnail: "./thumbnail.jpeg"
+hero_image: "./hero.jpg"
+hero_image_alt: "searching for your site when you have poor SEO"
+hero_image_credit_text: "Oleksandr Pidvalnyi"
+hero_image_credit_link: "https://www.pexels.com/photo/orange-safety-ring-on-man-shoulder-near-body-of-water-319930/"
+tags: ["seo", "web dev", "search", "gatsby"]
+
+---
+## SEO & Gatsby
+Handling SEO (Search Engine Optimization) in a Gatsby 5 project can be overwhelming at first. There are many aspects to cover. In this post, I'll take a look at an example implementation of an SEO component that sets you up for social media link sharing and other meta tags. 
+
+Before building an SEO component in Gatsby 5, it's important to understand why metadata such as title and description tags are important for helping search engines understand your content and decide when to surface it in search results. Gatsby 5 includes the Head API, which offers native support for SEO.
+
+### Why you should care about metatags
+Metatags provide information about your site to search engines and social media platforms. This information helps them understand your content and decide when to surface it in search results or when someone shares your website.
+
+### What Gatsby gives you for SEO metatags
+Gatsby provides drop-in support for server rendering of metadata, which helps your site perform better in search engines. You can use the Gatsby Head API to change the document head of your pages. It's also good practice to store site metadata in `gatsby-config.js` and create an SEO component that leverages the metadata for inclusion in site pages at build time.
+
+You can learn more about adding an SEO component to a Gatsby project by reading the [official documentation](https://www.gatsbyjs.com/docs/how-to/adding-common-features/adding-seo-component/) or this [tutorial on DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-boost-seo-using-gatsby-s-seo-component-and-gatsby-react-helmet).
+
+## The SEO component
+Let's take a look at how it all fits together.
+
+The component returns a set of meta tags that provide information about the page to search engines and social media platforms.
+
+```javascript
+
+  import React from "react";
+  import { useStaticQuery, graphql } from "gatsby";
+  import { getImage, getSrc } from "gatsby-plugin-image";
+
+  const Seo = ({ excerpt, title, slug, hero_image }) => {
+    const data = useStaticQuery(graphql`
+      query SiteMetadata {
+        site {
+          siteMetadata {
+            title
+            description
+            image
+            siteUrl
+          }
+        }
+      }
+    `);
+
+    const { 
+      title: siteTitle, 
+      description: siteDescription, 
+      image: siteImage, siteUrl 
+    } = data.site.siteMetadata;
+
+    const currentUrl = typeof window !== 'undefined' 
+      ? window.location.href 
+      : siteUrl;
+
+    const blurb = excerpt || siteDescription;
+    const heroImage = hero_image || null;
+
+    const heroImageObject = getImage(heroImage);
+    const heroImageUrl = getSrc(heroImageObject);
+
+    const fullTitle = `${title.replace("/", "")} ⍟ ${siteTitle}`;
+    const fullImageUrl = heroImageUrl ? `${siteUrl}${heroImageUrl}` : `${siteUrl}${siteImage}`;
+
+    return (
+      <>
+        <html lang="en" />
+        <meta name="description" content={blurb} />
+        {/* title of page */}
+        <meta property="og:title" content={fullTitle} />
+        {/* type of page */}
+        <meta property="og:type" content={slug ? "article" : "website"} />
+        {/* canonical URL of page */}
+        <meta property="og:url" content={currentUrl} />
+        {/* description of page */}
+        <meta property="og:description" content={blurb} />
+        {/* image of page */}
+        <meta property="og:image" content={fullImageUrl} />
+        {/* name of website */}
+        <meta property="og:site_name" content={siteTitle} />
+        <title>{fullTitle}</title>
+      </>
+    );
+  };
+
+  export default Seo;
+
+
+```
+### How it works:
+The component takes in `excerpt`, `title`, `slug`, and `hero_image` as props but also has fallbacks for when the props aren't supplied. Generally, this component treats actual posts as 'article' type and any other paths are considered as 'website' type and use the site metadata instead of page-specific data. 
+
+The component uses the `useStaticQuery` hook to query the site's metadata, which includes the site's title, description, image, and URL. This data is then destructured into their respective variables.
+
+The component also defines several variables:
+#### currentUrl
+  The current URL of the page. If the window object is not undefined (i.e., if the code is being run in a browser), it uses the current window location. Otherwise, it uses the site's URL from the metadata.
+#### blurb
+  The page's description. If an excerpt is provided as a prop, it uses that. Otherwise, it uses the site's description from the metadata.
+  
+#### heroImage
+  The hero image of the page. If a hero image is provided as a prop, it uses that. Otherwise, it is set to null.
+  
+#### heroImageObject
+  An object representing the hero image using Gatsby's `getImage` function.
+ 
+#### heroImageUrl
+  The URL of the hero image using Gatsby's `getSrc` function.
+  
+#### fullTitle
+  The full title of the page. It concatenates the page title (with any forward slashes removed) with the site title, separated by a "⍟" symbol.
+  
+#### fullImageUrl
+  The full URL of the hero image. If a hero image URL is available, it concatenates the site URL with the hero image URL. Otherwise, it concatenates the site URL with the site image from the metadata.
+
+The component returns a fragment containing several meta tags and a title tag for SEO purposes:
+#### lang="en"
+  This specifies the language of the page content. It helps search engines understand the intended audience for the page and can improve the page's ranking for users searching in that language.
+
+  We set the language of the page to English in this example:
+  ```jsx
+  
+  <html lang="en" />
+  
+  
+  ```
+#### title
+This specifies the title of the page as it should appear in search engine results and in the browser tab. It's one of the most important factors in helping search engines understand what the page is about and can improve the page's ranking for relevant keywords.
+
+I've set the title of the page to the value of `fullTitle`.
+  ```jsx
+
+  <title>{fullTitle}</title>
+
+
+  ```
+#### og:title
+This specifies the title of the page as it should appear when shared on social media platforms like Facebook and Twitter. It's often displayed as the main title of the shared content.
+  
+We set the Open Graph title of the page to the value of `fullTitle`.
+  ```jsx
+  
+  <meta property="og:title" content={fullTitle} />
+  
+  
+  ```
+#### name="description" 
+This provides a brief description of the page content. It's often displayed in search engine results as a snippet below the page title and can help users decide if the page is relevant to their search.
+
+In this example, we set the page's description to the value of `blurb`.
+  ```jsx
+  
+  <meta name="description" content={blurb} />
+  
+  
+  ```
+#### og:description
+This provides a brief description of the page content as it should appear when shared on social media platforms. It's often displayed as a snippet below the title of the shared content.
+
+I've set the Open Graph description of the page to the value of `blurb`.
+  ```jsx
+  
+  <meta property="og:description" content={blurb} />
+  
+  
+  ```
+#### og:type
+This specifies the type of content on the page (e.g., “article” or “website”). It helps social media platforms understand how to display the shared content.
+
+  Set the Open Graph type of the page to "article" if a slug is provided as a prop; otherwise, it sets it to "website".
+  ```jsx
+  
+  <meta property="og:type" content={slug ? "article" : "website"} />
+  
+  
+  ```
+#### og:url
+This specifies the canonical URL of the page. It helps social media platforms understand where to direct users when they click on the shared content.
+
+Set the Open Graph URL of the page to the value of `currentUrl`.
+  ```jsx
+  
+  <meta property="og:url" content={currentUrl} />
+  
+  
+  ```
+#### og:image
+This specifies an image to be displayed when the page is shared on social media platforms. It helps make the shared content more visually appealing and can improve engagement.
+
+Here, I set the Open Graph image of the page to the value of `fullImageUrl`.
+  ```jsx
+  
+  <meta property="og:image" content={fullImageUrl} />
+  
+  
+  ```
+#### og:site_name
+This specifies the name of the website as it should appear when the page is shared on social media platforms. It helps users understand where the shared content is coming from.
+
+I use `siteTitle` to set the Open Graph site name.
+  ```jsx
+  
+  <meta property="og:site_name" content={siteTitle} />
+  
+  
+  ```
+
+
+### Using the component
+Here's an example of how you can use the SEO component within a template page file for an MDX post (ie. `{mdx.frontmatter__slug}.js`) with a GraphQL query to get the frontmatter data:
+
+```jsx
+
+  import Seo from "../components/Seo";
+
+  export const query = graphql`
+    query($slug: String!) {
+      mdx(frontmatter: { slug: { eq: $slug } }) {
+        frontmatter {
+          excerpt
+          title
+          slug
+          hero_image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const PostTemplate = ({ data }) => {
+    const { excerpt, title, slug, hero_image } = data.mdx.frontmatter;
+
+    return (
+      <>
+        <Seo excerpt={excerpt} title={title} slug={slug} hero_image={hero_image} />
+        {/* Page content here */}
+      </>
+    );
+  };
+
+  export default PostTemplate;
+
+
+```
+
+You can still use this component when the page in question is not an MDX file. Here's an example of how you can use the Seo component with only the title prop set:
+
+```jsx
+
+  import Seo from "./Seo";
+
+  const Page = () => {
+    return (
+      <>
+        <Seo title="Page Title" />
+        {/* Page content here */}
+      </>
+    );
+  };
+
+
+```
+## How to test
+To test if your SEO metatags are working as expected, you can use online tools like [Meta Tags](https://metatags.io/), [Meta Tag Analyzer](https://checkserp.com/meta-tag-analyzer/), or [Meta Tags Checker](https://seomator.com/meta-tags-checker/) to preview how your webpage will look on different platforms. 
+
+You can also view the source code of your webpage and look for the tags in the head section, or use web developer tools built into most web browsers.
+
+## Conclusion
+I hope this helps you get all the necessary data in place for all your pages and posts.
+
+By including a component to set these meta tags in your pages, you can provide search engines and social media platforms with important information about your content, which can help improve your site's visibility and engagement.

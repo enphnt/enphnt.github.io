@@ -5,7 +5,7 @@ const BackToTopButton = styled.button`
   position: fixed;
   bottom: calc(12% - 30px);
   right: 0;
-  z-index: 1;
+  z-index: 2;
   font-size: 18px;
   border: none;
   outline: none;
