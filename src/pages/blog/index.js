@@ -15,10 +15,10 @@ const ArticleList = ({ data }) => {
   return (
     <Layout>
       <div style={list}>
-        <h1>"Blog Posts"</h1>
+        <h1>All Blog Posts</h1>
         <p>
-          A collection of posts that I've written on various topics. I also have written
-          about <Link aria-label={`Over to Projects`} to={"/projects/"}>projects</Link>, too.
+          A collection of posts that I've written on various topics. I also have split these posts into topics for
+          <Link aria-label={`Over to code`} to={"/code/"}>code</Link> and <Link aria-label={`Over to Music`} to={"/music/"}>music</Link>, too.
         </p>
         {
           data.allMdx.nodes.map(node =>

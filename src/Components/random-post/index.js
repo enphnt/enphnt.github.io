@@ -67,7 +67,7 @@ const RandomBlog = ({ data, to }) => {
     <div style={styles.blogFooter}>
       <h3>
         <Link to={to} style={styles.blogFooterLink}>
-          Check out other {to === "/blog/" ? "articles" : "projects"}:
+          Check out other {to === "/blog/" ? "articles" : "code"}:
         </Link>
       </h3>
       <ArticleListItem node={node} path={to.replace(/\//g, "")} />

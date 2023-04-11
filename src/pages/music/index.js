@@ -17,8 +17,8 @@ const MusicPage = ({ data }) => {
       <div style={list}>
         <h1>Music Posts</h1>
         <p >
-          A collection of posts with original music, playlists and music theory included. I also have written
-          about <Link aria-label="Over to Projects" to="/projects/">projects</Link>, too.
+          A collection of posts with original music, playlists and music theory included. In addition to post about
+          music I also write about <Link aria-label="Over to code" to="/code/">code</Link>, too.
         </p>
         {
           data.allMdx.nodes.map(node =>
@@ -30,12 +30,11 @@ const MusicPage = ({ data }) => {
   );
 };
 
-// TODO: make it find any post about music from projects and blog folders
 export const query = graphql`
   query {
     allMdx(
       filter: {
-        internal: {contentFilePath: {regex: "/blog|projects/"}}
+        internal: {contentFilePath: {regex: "/blog/"}}
         frontmatter: {tags:  {regex: "/music/"}}
       }
       sort: {frontmatter: {date: DESC}}

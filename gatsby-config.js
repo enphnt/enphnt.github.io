@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Path = require('path');
-const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/projects/" || path === "/music/";
+const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/code/" || path === "/music/";
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -25,13 +25,6 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/blog`,
-      }
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `projects`,
-        path: `${__dirname}/projects`,
       }
     },
     {

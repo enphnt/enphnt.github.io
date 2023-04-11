@@ -147,8 +147,8 @@ const Navbar = () => {
         <Navbox>
           <NavItem onClick={() => setNavbarOpen(false)} to="/#top">Home</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/#about">About</NavItem>
-          <NavItem onClick={() => setNavbarOpen(false)} to="/projects/">Projects</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/blog/">Blog</NavItem>
+          <NavItem onClick={() => setNavbarOpen(false)} to="/code/">Code</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/music/">Music</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/#contact">Contact</NavItem>
         </Navbox>
@@ -156,8 +156,8 @@ const Navbar = () => {
         <Navbox open>
           <NavItem to="/#top">Home</NavItem>
           <NavItem to="/#about">About</NavItem>
-          <NavItem to="/projects/">Projects</NavItem>
           <NavItem to="/blog/">Blog</NavItem>
+          <NavItem to="/code/">Code</NavItem>
           <NavItem to="/music/">Music</NavItem>
           <NavItem to="/#contact">Contact</NavItem>
         </Navbox>

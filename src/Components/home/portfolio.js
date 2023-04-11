@@ -11,11 +11,11 @@ const projectData = [
     image: (
       <StaticImage
         alt={"image of Referral Bot"}
-        src={`../../../projects/bot-is-love/thumbnail.png`}
+        src={`../../../blog/bot-is-love/thumbnail.png`}
         height={111}
       />
     ),
-    url: "/projects/bot-is-love"
+    url: "/blog/bot-is-love"
   },
   {
     title: "Banterer",
@@ -125,7 +125,7 @@ const Portfolio = () => (
     <div className={portfolioProjects}>
       {generateTiles(projectData)}
     </div>
-    <Link aria-label="more projects" to="/projects/">more projects...</Link>
+    <Link aria-label="more projects" to="/code/">more projects...</Link>
     <div style={{ textAlign: "center" }}>
       <h1>Dead Projects</h1>
       <sub>

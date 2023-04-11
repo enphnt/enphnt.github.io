@@ -4,7 +4,7 @@ import Layout from '../../components/layout';
 import Seo from '../../components/seo';
 import ArticleListItem from '../../components/article-list-item';
 
-const ProjectsPage = ({ data }) => {
+const MusicPage = ({ data }) => {
   const list = {
     display: "flex",
     flexWrap: "wrap",
@@ -15,16 +15,14 @@ const ProjectsPage = ({ data }) => {
   return (
     <Layout>
       <div style={list}>
-        <h1>Projects</h1>
-        <p>
-          Here is a list of projects that I have discovered, been
-          involved with or built from scratch myself. I also have
-          a <Link aria-label="Blog" to="/blog/">blog</Link> section
-          of the site, too.
+        <h1>Code Posts</h1>
+        <p >
+          A collection of posts with original music, playlists and music theory included. In addition to post about
+          code I also write about <Link aria-label={`Over to Music`} to={"/music/"}>music</Link>, too.
         </p>
         {
           data.allMdx.nodes.map(node =>
-            <ArticleListItem key={node.id} node={node} path={"projects"} />
+            <ArticleListItem key={node.id} node={node} path={"blog"} />
           )
         }
       </div>
@@ -35,7 +33,10 @@ const ProjectsPage = ({ data }) => {
 export const query = graphql`
   query {
     allMdx(
-      filter: {internal: {contentFilePath: {regex: "/projects/"}}}
+      filter: {
+        internal: {contentFilePath: {regex: "/blog/"}}
+        frontmatter: {tags:  {regex: "/web dev/"}}
+      }
       sort: {frontmatter: {date: DESC}}
     ) {
       nodes {
@@ -52,11 +53,14 @@ export const query = graphql`
           }
         }
         id
+        internal {
+          contentFilePath
+        }
       }
     }
   }
 `;
 
-export const Head = () => <Seo title="Projects" />;
+export const Head = () => <Seo title="Music" />;
 
-export default ProjectsPage;
+export default MusicPage;
