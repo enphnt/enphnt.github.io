@@ -1,0 +1,134 @@
+---
+slug: seo-gatsby-sitemap-robots
+date: "2023-04-02"
+title: "Sitemap and robots.txt for your Gatsby site"
+thumbnail: "./thumbnail.jpeg"
+hero_image: "./hero.jpg"
+hero_image_alt: "explaining to marketing why we want robots on our site"
+hero_image_credit_text: "RODNAE"
+hero_image_credit_link: "https://www.pexels.com/photo/men-and-women-in-a-meeting-7889216/"
+tags: ["seo", "web dev", "search", "gatsby"]
+
+---
+
+## Assessing your current situation
+Before creating a sitemap and robots.txt for your Gatsby v5 blog, you may want to check if you already have them and how they look. You can do this by visiting your website's URL followed by `/sitemap.xml` and `/robots.txt`, respectively. For example, if your website is `https://example.com`, you can check your sitemap at `https://example.com/sitemap.xml` and your robots.txt at `https://example.com/robots.txt`.
+
+A sitemap is an XML file that lists all the pages on your website along with some metadata, such as when they were last modified and how often they change. 
+
+The robots.txt is a plain text file that tells search engines which pages or directories they can or cannot crawl and index.
+
+If you don't have a sitemap or robots.txt, or if you want to improve them, you can use the following plugins to generate them automatically.
+
+## Gatsby sitemap plugin
+
+The [gatsby-plugin-sitemap](https://www.gatsbyjs.com/docs/how-to/adding-common-features/creating-a-sitemap/) plugin is the official plugin for creating sitemaps in Gatsby. To use it, start by installing it with the following command:
+
+```sh
+npm install gatsby-plugin-sitemap
+```
+
+Then, you need to add it to your `gatsby-config.js` file in the root folder of your project. You also need to specify the `siteUrl` property in your `siteMetadata` object, which is the base URL of your website. For example:
+
+```js
+module.exports = {
+  siteMetadata: {
+    siteUrl: `https://example.com`,
+  },
+  plugins: [`gatsby-plugin-sitemap`],
+}
+```
+
+The plugin will generate a sitemap file (or multiple files if your site has more than 50,000 URLs) in the `public` folder when you run `gatsby build`. By default, the sitemap URL is `/sitemap/sitemap-index.xml`, but you can change it with the `output` option. You can also customize other aspects of the sitemap, such as the priority, changefreq, and exclude properties. See the [plugin documentation](https://www.gatsbyjs.com/plugins/gatsby-plugin-sitemap/?=sitemap#options) for more details.
+
+Here's an example implementation: 
+```js
+
+  const isCategory = path => 
+    path === "/tags/" || 
+    path === "/blog/" || 
+    path === "/projects/" || 
+    path === "/music/";
+
+  {
+    resolve: 'gatsby-plugin-sitemap',
+    options: {
+      excludes: ['/tags/*'],
+      // filterpages: true means the page is excluded
+      //   only category and authentic project paths are canon
+      filterPages: ({ path }) => 
+        !isCategory(path) && 
+        !fs.existsSync(Path.join(__dirname, path)),
+      serialize: ({ path }) => {
+        const result = {
+          url: `${path}`,
+          changefreq: "daily",
+        };
+
+        // mark homepage as higher priority
+        if (path === "/") {
+          return {
+            ...result,
+            priority: 0.8,
+          };
+        }
+
+        // rank higher if category path
+        if (isCategory(path)) {
+          return {
+            ...result,
+            priority: 0.7,
+          };
+        }
+
+        // uses filterPages to only include canonicals:
+        //   path is considered canonical if real filepath exists in src
+        return {
+          ...result,
+          priority: 0.5,
+        };
+      }
+    },
+  }
+
+
+```
+
+## Gatsby robots.txt plugin
+
+The [gatsby-plugin-robots-txt](https://www.gatsbyjs.com/plugins/gatsby-plugin-robots-txt/) plugin is a third-party plugin for creating robots.txt in Gatsby. To use it, you need to start by installing it:
+
+```sh
+npm install gatsby-plugin-robots-txt
+```
+
+Then, you need to add it to your `gatsby-config.js` file in the root folder of your project. You also need to provide some options to the plugin.
+
+The plugin will generate a robots.txt file in the `public` folder when you run `gatsby build`. By default, the robots.txt URL is `/robots.txt`. You can also customize other aspects of the robots.txt, such as adding environment-specific rules or resolving conflicts. See the [plugin documentation](https://www.gatsbyjs.com/plugins/gatsby-plugin-robots-txt/?=robots#options) for more details.
+
+## Adding to your site
+
+After installing and configuring both plugins, you need to run the Gatsby `build` script. This will create a production-ready version of your site in the `public` folder, along with the sitemap and robots.txt files. You can then deploy your site using the `deploy` script. 
+
+## Verify on localhost
+To verify that the gatsby plugins for sitemap and robots.txt are working as expected locally, you need to follow these steps:
+- Run `gatsby develop` in your terminal to start a local development server. You should see a message that says `You can now view your site in the browser.` followed by a URL such as `http://localhost:8000`.
+- Open a new tab in your browser and go to the URL of your local site followed by `/sitemap.xml`. For example, if your local site is `http://localhost:8000`, go to `http://localhost:8000/sitemap.xml`. You should see an XML file that lists all the pages on your site along with some metadata.
+- Open another tab in your browser and go to the URL of your local site followed by `/robots.txt`. For example, if your local site is `http://localhost:8000`, go to `http://localhost:8000/robots.txt`. You should see a plain text file that tells web crawlers which pages or directories they can or cannot crawl and index. You should also see a line that points to your sitemap file, such as `Sitemap: http://localhost:8000/sitemap.xml`.
+
+## Verify live site
+In addition to checking the file now exists on your live site, as we did on `localhost`, you can go further and look into how Google is handling things. 
+
+Verify your site with [Google Search Console](https://search.google.com) by starting [here](https://support.google.com/webmasters/topic/9455938?hl=en&ref_topic=4558844). After verifying your site, you can check the following things in Search Console related to robots.txt and sitemaps:
+    - Check if Google has discovered and indexed your sitemap in the Sitemaps report. You can also see the number of URLs submitted and indexed, and any errors or warnings that Google encountered when processing your sitemap.
+    - See if Google has encountered any issues when crawling or indexing your site in the Coverage report. You can also see the status of each URL on your site, such as whether it's valid, excluded, or has errors or warnings.
+    - Determine if Google has detected any manual actions or security issues on your site in the Manual Actions and Security Issues reports. These can affect how your site appears in search results and may require you to take action to fix them.
+    - Review how your site performs in Google Search in the Performance report. You can see metrics such as impressions, clicks, click-through rate, and average position for your site's pages and queries. You can also filter and compare data by various dimensions, such as device, country, page, or search appearance.
+
+Next, let's look at each of the new files.
+
+### Verify live sitemap
+Submit your sitemap to Google using the Sitemaps report in Search Console. You can also use the Search Console API or the ping tool to submit your sitemap. See [this guide](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap) for more details.
+
+### Verify live robots.txt 
+Test your robots.txt file with the robots.txt Tester tool in Search Console. You can also use the URL Inspection tool to see how Googlebot crawls a specific URL on your site. See [this help page](https://support.google.com/webmasters/answer/6062598?hl=en) for more information.
