@@ -150,7 +150,7 @@ const Navbar = () => {
           <NavItem onClick={() => setNavbarOpen(false)} to="/blog/">Blog</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/code/">Code</NavItem>
           <NavItem onClick={() => setNavbarOpen(false)} to="/music/">Music</NavItem>
-          <NavItem onClick={() => setNavbarOpen(false)} to="/#contact">Contact</NavItem>
+          <NavItem onClick={() => setNavbarOpen(false)} to="/#contact">Contact Me</NavItem>
         </Navbox>
       ) : (
         <Navbox open>
@@ -159,7 +159,7 @@ const Navbar = () => {
           <NavItem to="/blog/">Blog</NavItem>
           <NavItem to="/code/">Code</NavItem>
           <NavItem to="/music/">Music</NavItem>
-          <NavItem to="/#contact">Contact</NavItem>
+          <NavItem to="/#contact">Contact Me</NavItem>
         </Navbox>
       )}
     </Navigation>
