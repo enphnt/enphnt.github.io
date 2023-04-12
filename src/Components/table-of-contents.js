@@ -13,8 +13,12 @@ const TableOfContents = ({ tocs }) => {
   };
 
   const orderedList = {
-    padding: "4px 3rem 16px",
+    padding: "8px 2.5rem 16px",
     borderLeft: "solid 5px lightgrey",
+  };
+
+  const orderedListItem = {
+    fontWeight: 600,
   };
 
   const unorderedList = {
@@ -23,7 +27,7 @@ const TableOfContents = ({ tocs }) => {
 
   const toc = {
     margin: 0,
-    lineHeight: "1.4em",
+    lineHeight: "1.75em",
   };
 
   const toggleButton = {
@@ -43,17 +47,15 @@ const TableOfContents = ({ tocs }) => {
   const itemLink = {
     normal: {
       color: "#35435d",
-      padding: 3,
+      textDecoration: "none"
     },
     hover: {
       backgroundColor: "rgb(46, 107, 77)",
       color: "#ffffff",
-      fontWeight: 400,
     },
     subHover: {
       backgroundColor: "#35435d",
       color: "#ffffff",
-      fontWeight: 400,
     }
   };
 
@@ -86,7 +88,7 @@ const TableOfContents = ({ tocs }) => {
                       setHover(false);
                     }}
                   >
-                    {item.title}
+                    <span style={orderedListItem}>{item.title}</span>
                   </Link>
                   {
                     item.items ?
