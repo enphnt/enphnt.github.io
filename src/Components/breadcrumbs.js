@@ -4,19 +4,18 @@ import * as React from 'react';
 const style = {
   breadcrumbs: {
     display: "flex",
-    width: "100%",
     alignItems: "baseline",
-    fontFamily: "quicksand",
-    margin: 4
+    margin: 4,
+    fontSize: "max(.85vw, .9em)",
   },
   breadcrumbLink: {
-    fontSize: "1em",
     paddingRight: 2,
-    whiteSpace: "nowrap"
+    whiteSpace: "nowrap",
+    textDecoration: "none"
   },
   breadcrumbLinkHighlight: {
-    paddingRight: 2,
     fontWeight: 600,
+    textDecoration: "none"
   },
   breadcrumbLinkSeparator: {
     fontSize: ".75em",
