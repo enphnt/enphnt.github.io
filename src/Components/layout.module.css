@@ -117,6 +117,8 @@ a {
 /* links on nav, index page (using section), nav and footer */
 a:not([class*="anchor"]):not(section a):not(nav a):not(footer a):not([id="nohighlight"]) {
   text-shadow: #e0e0e0 1px 1px 0;
+  text-decoration-line: underline;
+  text-decoration-thickness: .01mm;
 }
 
 a:not([class*="anchor"]):not(section a):not(nav a):not(footer a):not([id="nohighlight"]):hover {
@@ -172,7 +174,7 @@ h5 {
 }
 
 .note {
-  background-color: lavender;
+  background: lavender;
   padding: 14px;
   border-radius: 4px;
   width: auto;
