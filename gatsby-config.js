@@ -144,5 +144,13 @@ module.exports = {
         }
       },
     },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `58473581453`,
+        access_token: "EAAyg8Ek3HPgBAFSZBmNbPZAF4YYudi2eW7mRZCgIh7tg0yRmWIZAza5pOBnEqVSxUyuqEpeeRtjQxHSChiFqylJir7djNCQDWP69U9ZAY267FsDc71GYIZB8kjQYg0Cewyv5OSADsUX2R1MPouEFdIPJID1cMBNdtley1ITVvF84EacsUnHpEu",
+        instagram_id: "108929502172675",
+      },
+    },
   ],
 };
