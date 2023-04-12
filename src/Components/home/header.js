@@ -17,9 +17,9 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: max(85vh, 700px);
+  min-height: max(85vh, 600px);
   padding: 0 3vw;
-`;
+  `;
 
 const TransitionsContainer = styled.div`
   display: flex;
@@ -34,7 +34,6 @@ const TransitionsItem = styled(animated.div)`
   width: 100%;
   display: flex;
   align-items: center;
-  font-size: 6em;
   text-shadow: 1px 1px 3px lightgray;
   font-weight: 800;
   will-change: transform, opacity, height;
@@ -45,7 +44,8 @@ const TransitionsItem = styled(animated.div)`
 
 const TransitionsTxt = styled(animated.div)`
     overflow: hidden;
-    min-width: 410px;
+    font-size: min(6em, 20vw);
+    min-width: 310px;
 `;
 
 export default function Header() {
@@ -79,8 +79,8 @@ export default function Header() {
     ref.current = [];
     const timeouts = [
       [500, []],
-      [1500, [name, music]],
-      [2500, [name, dev, music]],
+      [1000, [name, music]],
+      [1500, [name, dev, music]],
       [4000, [name, dev]],
       [5000, [name, dev, music]],
       [6500, [name]],
