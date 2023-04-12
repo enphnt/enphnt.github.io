@@ -17,24 +17,20 @@ import { note } from "../../src/components/layout.module.css";
 
 SEO (Search Engine Optimization) is a complex and challenging task for any Gatsby project. You need to consider many factors to optimize your site. One of the key elements of SEO is sitemap and robots.txt files. These files help search engines to crawl your site and index your pages according to your preferences and instructions.
 
-<div className={note}>
-  <div>
-  This article is outdated and no longer as relevant as it once was. It uses Gatsby v4, which has since been replaced with Gatsby v5. I have since documented my progress in newer articles:
-  </div>
-   <Link 
-      aria-label="seo-gatsby-sitemap-robots"
-      to={"/blog/seo-gatsby-sitemap-robots/"}
-    >
-      - Sitemap and robots.txt for your Gatsby site
-    </Link>
-    <Link 
-      aria-label="seo-gatsby-component"
-      to={"/blog/seo-gatsby-component/"}
-    >
-      - Setting up a SEO React component for your Gatsby site
-    </Link>
-    
-</div>
+<ul className={note}>
+This article is outdated and no longer as relevant as it once was. It uses Gatsby v4, which has since been replaced with Gatsby v5. I have since documented my progress in newer articles:
+  <Link 
+    aria-label="seo-gatsby-component"
+    to={"/blog/seo-gatsby-component/"}
+    children={`Setting up a SEO React component for your Gatsby site`}
+  />
+  <br/>
+  <Link
+    aria-label="seo-gatsby-sitemap-robots"
+    to={"/blog/seo-gatsby-sitemap-robots/"}
+    children={`Sitemap and robots.txt for your Gatsby site`}
+  />
+</ul>
 
 Today, I'll be following along the [Gatsby SEO guide](https://www.gatsbyjs.com/docs/how-to/adding-common-features/adding-seo-component/#seo-with-gatsby). I'll be following these steps:
 
