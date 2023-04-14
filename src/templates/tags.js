@@ -2,34 +2,30 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import ArticleListItem from "../components/article-list-item";
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMdx;
   const tagHeader =
     `Found ${totalCount} post${totalCount === 1 ? "" : "s"} tagged with "${tag}"`;
-
+  const AllTags = () =>
+    <div style={{ textAlign: "center", margin: 16 }}>
+      <Link to="/tags/">Show all tags</Link>
+    </div>;
   return (
     <Layout>
-      <h1>Tag: "{tag}"</h1>
-      <h2>{tagHeader}</h2>
-      <ul>
-        {edges.map(({ node }) => {
-          const { title, slug } = node.frontmatter;
-          const path = node.internal.contentFilePath.replace(`/${slug}/index.mdx`, "");
-          const urlFolder = path.substring(path.lastIndexOf('/'));
-
-          return (
-            <li key={slug}>
-              <Link to={`${urlFolder}/${slug}`}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+        <h1>Tag: "{tag}"</h1>
+        <h2>{tagHeader}</h2>
+        <AllTags />
+      </div>
+      {
+        edges.map(({ node }) => <ArticleListItem key={node.id} node={node} />)
+      }
       <br />
-      <Link to="/tags/">Show all tags</Link>
+      <AllTags />
       <Seo title={`Tagged with: '${tag}'`} />
-
     </Layout>
   );
 };
@@ -43,13 +39,19 @@ export const pageQuery = graphql`
       sort: { frontmatter: { date: DESC }}
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
-      
       totalCount
       edges {
-        node {
+        node {excerpt(pruneLength: 180)
           frontmatter {
+            date(formatString: "MMMM D, YYYY")
             title
             slug
+            tags
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           internal {
             contentFilePath

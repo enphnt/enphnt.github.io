@@ -5,7 +5,7 @@ import Layout from '../../components/layout';
 import Seo from '../../components/seo';
 import TagLinks from '../../components/tag-links';
 import TableOfContents from '../../components/table-of-contents';
-import RandomBlog from '../../components/random-post/blog';
+import RandomPost from '../../components/random-post';
 import Breadcrumbs from '../../components/breadcrumbs';
 import BackToTop from '../../components/back-to-top';
 import HeroImage from '../../components/hero-image';
@@ -48,7 +48,7 @@ const BlogPost = ({ data, children }) => {
           {children}
         </div>
         <br />
-        <RandomBlog />
+        <RandomPost />
       </div>
       {/* // todo export const Head = () => <Seo title="Blog" />; */}
       <Seo title={title} excerpt={excerpt} slug={slug} hero_image={hero_image} />

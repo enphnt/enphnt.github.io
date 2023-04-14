@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const lightColors = ["lightgray", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow", "lightgreen", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue"];
 let colorIndex = 0;
 
-const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, date, tags }, excerpt }, path }) => {
+const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, date, tags }, excerpt } }) => {
   const thumb = getImage(thumbnail);
   const styles = {
     article: {
@@ -19,6 +19,7 @@ const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, da
       padding: 4,
       margin: "4px",
       backgroundColor: "#e0e0e0",
+      color: "inherit",
       borderRadius: "4px",
       textDecoration: "none",
     },
@@ -54,7 +55,7 @@ const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, da
       <article style={styles.article} key={id}>
 
         <div style={styles.thumbnailWrapper}>
-          <Link id="nohighlight" aria-label={slug} key={slug} to={`/${path}/${slug}`}>
+          <Link id="nohighlight" aria-label={slug} key={slug} to={`/blog/${slug}/`}>
             <GatsbyImage
               image={thumb}
               alt={`Thumbnail for ${title}`}
@@ -63,7 +64,7 @@ const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, da
         </div>
 
         <div style={styles.info}>
-          <Link aria-label={slug} key={slug} to={`/${path}/${slug}`} style={styles.heading}>
+          <Link aria-label={slug} key={slug} to={`/blog/${slug}/`} style={styles.heading}>
             {title}
           </Link >
 
