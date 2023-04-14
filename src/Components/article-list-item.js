@@ -20,6 +20,7 @@ const ArticleListItem = ({ node: { id, frontmatter: { thumbnail, slug, title, da
       margin: "4px",
       backgroundColor: "#e0e0e0",
       borderRadius: "4px",
+      textDecoration: "none",
     },
     blogFooterTags: {
       display: "flex",
