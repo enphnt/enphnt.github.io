@@ -1,0 +1,640 @@
+---
+slug: css-clip-path-shape-outside
+date: "2021-04-14"
+title: "Getting started with css-clip-path-shape-outside"
+thumbnail: "./thumbnail.png"
+hero_image: "./hero.jpg"
+hero_image_alt: "axxxne"
+hero_image_credit_text: "xxx"
+hero_image_credit_link: "https://www.pexels.com/photo/photo-of-golden-cogwheel-on-black-background-3785935/"
+tags: ["css"]
+
+---
+import Video from "../../src/components/video";
+import ComponentRenderer from "../../src/components/component-renderer";
+
+The clip-path and shape-outside properties are CSS features that allow you to create interesting effects with shapes and images. 
+
+The CSS clip-path property lets you cut out a part of an element and show only that part. The shape-outside property lets you change how the text flows around a floated element. 
+
+An analogy for this is like cutting out a shape from a piece of paper and placing it on another piece of paper with some text. The clip-path property is like using scissors to cut out the shape you want. The shape-outside property is like using a pencil to draw a line around the shape and tell the text where to go. The text will avoid crossing the line and stay inside or outside the shape.
+
+- Both `clip-path` and `shape-outside` create shapes using CSS functions, but they have different purposes.
+- `clip-path` creates a mask that hides parts of an element that are outside the shape.
+- `shape-outside` creates a shape that affects how inline content wraps around a floated element.
+- The shape functions can be one of the following: `circle()`, `inset()`, `polygon()`, `ellipse()`, or `path()`.
+- The shape functions take parameters that define the size and position of the shape relative to the element's bounding box.
+- The shape functions can be combined with a `<geometry-box>` value to specify the reference box for the shape.
+
+## Circle it
+For example, you can use: 
+```css
+clip-path: circle(50%),
+shape-outside: circle(50%)
+```
+
+Clip-path will draw a circle and shape-outside will make the text wrap confined to the circle.
+
+<ComponentRenderer 
+  height={200}
+  code={`
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    backgroundColor: "lightblue"
+  }}>
+    <div style={{
+      width: 100,
+      height: 100,
+      backgroundColor: "pink",
+      clipPath: "circle(50%)",
+      shapeOutside: "circle(50%)"
+    }}>
+      <p style={{
+        textAlign: "center",
+        margin: 0,
+        lineHeight: "100px",
+        color: "white"
+      }}>
+        Circle
+      </p>
+    </div>
+  </div>
+  `}
+  component={
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      backgroundColor: "lightblue"
+    }}>
+      <div style={{
+        width: 100,
+        height: 100,
+        backgroundColor: "pink",
+        clipPath: "circle(50%)",
+        shapeOutside: "circle(50%)"
+      }}>
+        <p style={{
+          textAlign: "center",
+          margin: 0,
+          lineHeight: "100px",
+          color: "white"
+        }}>
+          Circle
+        </p>
+      </div>
+    </div>
+  }
+/>
+
+## Inset shapes
+The `inset()` function creates a rectangular shape with rounded corners that is smaller than the element's size. You can specify how much to inset the shape from the top, right, bottom, and left edges of the element, and how much to round the corners.
+
+For example, in the code displayed next on the screen, we have:
+```css
+inset(8px 5% round 40px 100px 0px 40px)
+```
+
+This means that the shape will be:
+- 8 pixels smaller from the top edge and bottom edge
+- 5% smaller from the right and left edge
+- The round keyword indicates that the corners will be rounded
+- The values after round specify how much to round each corner: top-left corner,  top-right corner,  bottom-right corner,  bottom-left corner
+- So we have:
+  - 40 pixels for the top-left corner
+  - 100 pixels for the top-right corner
+  - 0 pixels for the bottom-right corner
+  - 40 pixels for the bottom-left corner
+
+<ComponentRenderer 
+  height={200}
+  code={`
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    backgroundColor: "lightgreen",
+    boxSizing: "border-box"
+  }}>
+    <div style={{
+      width: "100px",
+      height: "100px",
+      backgroundColor: "purple",
+      shapeOutside: "inset(8px 5% round 40px 100px 0px 40px)",
+      clipPath: "inset(8px 5% round 40px 100px 0px 40px)"
+    }}>
+      <p style={{
+        textAlign: "center",
+        lineHeight: "80px",
+        color: "white",
+      }}>
+        Inset
+      </p>
+    </div>
+  </div>
+  `}
+  component={
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      backgroundColor: "lightgreen",
+      boxSizing: "border-box"
+    }}>
+      <div style={{
+        width: "100px",
+        height: "100px",
+        backgroundColor: "purple",
+        shapeOutside: "inset(8px 5% round 40px 100px 0px 40px)",
+        clipPath: "inset(8px 5% round 40px 100px 0px 40px)"
+      }}>
+        <p style={{
+          textAlign: "center",
+          lineHeight: "80px",
+          color: "white",
+        }}>
+          Inset
+        </p>
+      </div>
+    </div>
+  }
+/>
+
+## Diamonds are forever
+The `polygon()` function creates a shape with three or more sides. You can specify the coordinates of each vertex of the shape with percentages or lengths. `clip-path: polygon()` cuts out this shape from the element and hides the rest. And `shape-outside: polygon()` makes the text flow around this shape when the element is floated.
+
+For example, in the code displayed next on the screen, we have:
+```css
+polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+```
+
+This means that the shape will have four vertices at these coordinates:
+- The first vertex is at the top center (50% width, 0% height).
+- The second vertex is at the right center (100% width, 50% height).
+- The third vertex is at the bottom center (50% width, 100% height).
+- The fourth vertex is at the left center (0% width, 50% height).
+
+The shape results in a diamond or a rotated square.
+
+<ComponentRenderer 
+  height={200}
+  code={`
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "orange",
+    height: "100%",
+  }}>
+    <div style={{
+      width: 100,
+      height: 100,
+      backgroundColor: "yellow",
+      clipPath: "polygon(
+        50% 0%, 
+        100% 50%, 
+        50% 100%, 
+        0% 50%
+      )",
+      shapeOutside: "polygon(
+        50% 0%, 
+        100% 50%, 
+        50% 100%, 
+        0% 50%
+      )"
+    }}>
+      <p style={{
+        textAlign: "center",
+        margin: 0,
+        lineHeight: "100px"
+      }}>
+        Diamond
+      </p>
+    </div>
+  </div>
+  `}
+  component={
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "orange",
+      height: "100%",
+    }}>
+      <div style={{
+        width: 100,
+        height: 100,
+        backgroundColor: "yellow",
+        clipPath: `polygon(
+          50% 0%, 
+          100% 50%, 
+          50% 100%, 
+          0% 50%
+        )`,
+        shapeOutside: `polygon(
+          50% 0%, 
+          100% 50%, 
+          50% 100%, 
+          0% 50%
+        )`
+      }}>
+        <p style={{
+          textAlign: "center",
+          margin: 0,
+          lineHeight: "100px"
+        }}>
+          Diamond
+        </p>
+      </div>
+    </div>
+  }
+/>
+
+## Elliptical orbits
+The `ellipse()` function creates an elliptical shape with four parameters: 
+- horizontal radius,
+- vertical radius,
+- horizontal position,
+- and vertical position
+
+For this component, the parameters are:
+```css
+ellipse(75px 50% at 50% 50%)
+```
+
+- Horizontal radius: 75 pixels. This makes the shape now 150 pixels in width.
+- Vertical radius: 50% of element's height. So, the shape height is the same as the element's (100 pixels).
+- Horizontal position: 50% of element's width. The shape will be centered horizontally within the element.
+- Vertical position: 50% of element's height. The shape will be centered vertically within the element.
+- The `rotate: -27deg` property rotates the element counter-clockwise by 27 degrees around its center. The rotate property is part of the CSS transform property, which modifies the element's appearance without changing its layout.
+- The p element inside the div has a `rotate: 27deg` property to undo the rotation of its parent and keep the text horizontal.
+
+<ComponentRenderer 
+  height={200}
+  code={`
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    backgroundColor: "red"
+  }}>
+    <div style={{
+      width: 150,
+      height: 100,
+      border: "solid 5px darkblue",
+      backgroundColor: "blue",
+      clipPath: "ellipse(75px 50% at 50% 50%)",
+      shapeOutside: "ellipse(75px 50% at 50% 50%)",
+      rotate: "-27deg"
+    }}>
+      <p style={{
+        textAlign: "center",
+        margin: 0,
+        rotate: "27deg",
+        lineHeight: "65px",
+        color: "white"
+      }}>Ellipse</p>
+    </div>
+  </div>
+  `}
+  component={
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      backgroundColor: "red"
+    }}>
+      <div style={{
+        width: 150,
+        height: 100,
+        border: "solid 5px darkblue",
+        backgroundColor: "blue",
+        clipPath: "ellipse(75px 50% at 50% 50%)",
+        shapeOutside: "ellipse(75px 50% at 50% 50%)",
+        rotate: "-27deg"
+      }}>
+        <p style={{
+          textAlign: "center",
+          margin: 0,
+          rotate: "27deg",
+          lineHeight: "65px",
+          color: "white"
+        }}>Ellipse</p>
+      </div>
+    </div>
+  }
+/>
+
+## Drawing compound shapes:
+Here are some more complex patterns that can be achieved with a bit of math and tinkering:
+### Star shape  
+<ComponentRenderer 
+  code={`
+  <div style={{ padding: "40px", backgroundColor: "#f0f0f0" }}>
+    <div style={{
+      width: "100%",
+      height: "100%",
+      minHeight: "360px",
+      backgroundColor: "orange",
+      clipPath: 'polygon(50% 0%, 
+        65.45% 19.09%, 
+        100% 19.09%, 
+        73.53% 38.18%, 
+        80.9% 61.82%, 
+        50% 50%, 
+        19.09% 61.82%, 
+        26.46% 38.18%, 
+        0% 19.09%, 
+        34.55% 19.09%)',
+      shapeOutside: 'polygon(50% 0%, 
+        65.45% 19.09%, 
+        100% 19.09%, 
+        73.53% 38.18%, 
+        80.9% 61.82%, 
+        50% 50%, 
+        19.09% 61.82%, 
+        26.46% 38.18%, 
+        0% 19.09%, 
+        34.55% 19.09%)'
+    }} />
+  </div>
+  `}
+  component={
+    <div style={{ height: "100%", display: "flex", padding: "40px", backgroundColor: "#f0f0f0" }}>
+          <div style={{
+            flex: 1, 
+            width: "100%",
+            height: "100%",
+            minHeight: "360px",
+            backgroundColor: "orange",
+            clipPath: `polygon(50% 0%, 
+              65.45% 19.09%, 
+              100% 19.09%, 
+              73.53% 38.18%, 
+              80.9% 61.82%, 
+              50% 50%, 
+              19.09% 61.82%, 
+              26.46% 38.18%, 
+              0% 19.09%, 
+              34.55% 19.09%)`,
+            shapeOutside: `polygon(50% 0%, 
+              65.45% 19.09%, 
+              100% 19.09%, 
+              73.53% 38.18%, 
+              80.9% 61.82%, 
+              50% 50%, 
+              19.09% 61.82%, 
+              26.46% 38.18%, 
+              0% 19.09%, 
+              34.55% 19.09%)`
+          }} />
+        </div>
+  }
+/>
+### Clipped Spriral
+<ComponentRenderer 
+  code={`
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      backgroundColor: "#f0f0f0",
+    }}
+  >
+    {[300, 200, 150, 100, 70, 50, 35, 25, 15]
+      .map((size, index) =>
+        <div
+          key={index}
+          style={{
+            width: size,
+            height: size,
+            border: "solid 10px",
+            clipPath: "circle(50%)",
+            shapeOutside: "circle(50%)",
+            position: "absolute",
+          }}>
+        </div>
+      )}
+  </div>`
+  } 
+  component={
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+        backgroundColor: "#f0f0f0",
+      }}
+    >
+      {[300, 200, 150, 100, 70, 50, 35, 25, 15]
+        .map((size, index) =>
+          <div
+            key={index}
+            style={{
+              width: size,
+              height: size,
+              border: "solid 10px",
+              clipPath: "circle(50%)",
+              shapeOutside: "circle(50%)",
+              position: "absolute",
+            }}>
+          </div>
+        )}
+    </div>
+  }/>
+
+## Face?!
+<ComponentRenderer 
+  code={`
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    backgroundColor: "#f0f0f0"
+  }}>
+    <div style={{
+      width: "100%",
+      height: "300px",
+      backgroundColor: "pink",
+      borderRadius: "50%",
+      clipPath: "circle(50%)",
+      shapeOutside: "circle(50%)"
+    }}>
+      <div style={{
+        display: "flex",
+        justifyContent: "space-around"
+      }}>
+        <div style={{
+          width: "50px",
+          height: "50px",
+          backgroundColor: "white",
+          borderRadius: "50%",
+          clipPath: "circle(50%)",
+          shapeOutside: "circle(50%)"
+        }}>
+          <div style={{
+            width:"20px",
+            height:"20px",
+            backgroundColor:"black",
+            borderRadius:"50%",
+            clipPath:"circle(50%)",
+            shapeOutside:"circle(50%)",
+            margin:"25px"
+          }}></div>
+        </div>
+        <div style={{
+          width:"50px",
+          height:"50px",
+          backgroundColor:"white",
+          borderRadius:"50%",
+          clipPath:"circle(50%)",
+          shapeOutside:"circle(50%)"
+        }}>
+          <div style={{
+            width:"20px",
+            height:"20px",
+            backgroundColor:"black",
+            borderRadius:"50%",
+            clipPath:"circle(50%)",
+            shapeOutside:"circle(50%)",
+            margin:"25px"
+          }}></div>
+        </div>
+      </div>
+      <div style={{
+        display:"flex",
+        justifyContent:"center"
+      }}>
+        <div style={{
+          width:"40px",
+          height:"40px",
+          backgroundColor:"#f0f0f0",
+          borderRadius: 15,
+          clipPath:"polygon(0% 100%, 100% 100%, 50% 0%)",
+          shapeOutside:"polygon(0% 100%, 100% 100%, 50% 0%)"
+        }}>
+          <p style={{textAlign:"center"}}></p>
+        </div>
+      </div>
+      <div style={{
+        display:"flex",
+        justifyContent:"center"
+      }}>
+        <div style={{
+          width:"60%",
+          height:"40%",
+          marginTop: 40,
+          backgroundColor:"#000000", // changed color to black
+          borderRadius:"50%",
+          clipPath:"circle(50%)",
+          shapeOutside:"circle(50%)"
+        }}>
+          <p style={{textAlign:"center"}}></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  `} 
+  component={
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    backgroundColor: "#f0f0f0"
+  }}>
+    <div style={{
+      width: "100%",
+      height: "300px",
+      backgroundColor: "pink",
+      borderRadius: "50%",
+      clipPath: "circle(50%)",
+      shapeOutside: "circle(50%)"
+    }}>
+      <div style={{
+        display: "flex",
+        justifyContent: "space-around"
+      }}>
+        <div style={{
+          width: "50px",
+          height: "50px",
+          backgroundColor: "white",
+          borderRadius: "50%",
+          clipPath: "circle(50%)",
+          shapeOutside: "circle(50%)"
+        }}>
+          <div style={{
+            width:"20px",
+            height:"20px",
+            backgroundColor:"black",
+            borderRadius:"50%",
+            clipPath:"circle(50%)",
+            shapeOutside:"circle(50%)",
+            margin:"25px"
+          }}></div>
+        </div>
+        <div style={{
+          width:"50px",
+          height:"50px",
+          backgroundColor:"white",
+          borderRadius:"50%",
+          clipPath:"circle(50%)",
+          shapeOutside:"circle(50%)"
+        }}>
+          <div style={{
+            width:"20px",
+            height:"20px",
+            backgroundColor:"black",
+            borderRadius:"50%",
+            clipPath:"circle(50%)",
+            shapeOutside:"circle(50%)",
+            margin:"25px"
+          }}></div>
+        </div>
+      </div>
+      <div style={{
+        display:"flex",
+        justifyContent:"center"
+      }}>
+        <div style={{
+          width:"40px",
+          height:"40px",
+          backgroundColor:"#f0f0f0",
+          borderRadius: 15,
+          clipPath:"polygon(0% 100%, 100% 100%, 50% 0%)",
+          shapeOutside:"polygon(0% 100%, 100% 100%, 50% 0%)"
+        }}>
+          <p style={{textAlign:"center"}}></p>
+        </div>
+      </div>
+      <div style={{
+        display:"flex",
+        justifyContent:"center"
+      }}>
+        <div style={{
+          width:"60%",
+          height:"40%",
+          marginTop: 40,
+          backgroundColor:"#000000", // changed color to black
+          borderRadius:"50%",
+          clipPath:"circle(50%)",
+          shapeOutside:"circle(50%)"
+        }}>
+          <p style={{textAlign:"center"}}></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  }/>
