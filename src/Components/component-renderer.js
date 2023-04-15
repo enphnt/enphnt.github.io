@@ -2,6 +2,97 @@
 import React from 'react';
 import Prism from 'prismjs';
 
+const commonStyles = {
+  container: {
+    display: 'flex',
+    overflow: 'hidden',
+    borderRadius: 20,
+    margin: "24px 0",
+    boxSizing: "border-box",
+    boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
+  },
+  code: {
+    background: 'white',
+  },
+  component: {
+    display: 'flex',
+    position: 'relative',
+    zIndex: -1,
+  },
+  button: {
+    width: '10px',
+    backgroundColor: '#d1d1d1',
+    margin: 0,
+    border: "none",
+  },
+  codeMarginBottom: {
+    marginBottom: -15,
+  },
+  grayColor: {
+    backgroundColor: '#d1d1d1',
+  },
+};
+
+const styles = {
+  desktop: {
+    flexContainer: {
+      ...commonStyles.container,
+    },
+    code: {
+      ...commonStyles.code,
+      ...commonStyles.codeMarginBottom,
+      overflow: "hidden",
+    },
+    button: {
+      ...commonStyles.button,
+    },
+    buttonDiv: {
+      rotate: '90deg',
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    span: {
+      fontSize: 15,
+      paddingBottom: 1.5,
+      paddingLeft: ".5em",
+    },
+    component: {
+      ...commonStyles.component,
+      flex: 1,
+    },
+  },
+  mobile: {
+    wrapper: {
+      ...commonStyles.container,
+      flexDirection: 'column',
+      border: 'solid 10px #d1d1d1'
+    },
+    label: {
+      ...commonStyles.grayColor,
+      textAlign: 'center',
+      padding: 8
+    },
+    code: {
+      ...commonStyles.code,
+      ...commonStyles.codeMarginBottom,
+      height: 500,
+      overflowY: 'scroll',
+      margin: 0,
+      marginRight: -15,
+    },
+    componentWrapper: {
+      ...commonStyles.component,
+      minHeight: 500
+    },
+    component: {
+      flex: '1',
+      position: 'relative',
+      zIndex: -1
+    }
+  }
+};
+
 class ComponentRenderer extends React.Component {
   constructor(props) {
     super(props);
@@ -87,22 +178,9 @@ class ComponentRenderer extends React.Component {
     // if the screen width is less than 600px, render a mobile layout
     if (isMobile) {
       return (
-        <div style={{
-          display: 'flex', flexDirection: 'column', overflow: 'hidden', margin: '24px 0px',
-          borderRadius: 20,
-          boxSizing: "border-box",
-          boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
-          border: "solid 10px #d1d1d1",
-        }}>
-          <div
-            style={{
-              backgroundColor: '#d1d1d1',
-              textAlign: "center",
-              padding: 8,
-            }}
-            children="CODE"
-          />
-          <div ref={this.codeRef} style={{ height: 500, overflowY: 'scroll', background: 'white', margin: 0, marginRight: -15, marginBottom: -10.5, }}>
+        <div style={styles.mobile.wrapper}>
+          <div style={styles.mobile.label} children="CODE" />
+          <div ref={this.codeRef} style={styles.mobile.code}>
             <pre>
               <code
                 className="language-jsx"
@@ -110,16 +188,9 @@ class ComponentRenderer extends React.Component {
               />
             </pre>
           </div>
-          <div
-            style={{
-              padding: 8,
-              backgroundColor: '#d1d1d1',
-              textAlign: "center",
-            }}
-            children="COMPONENT"
-          />
-          <div style={{ flex: '1', position: 'relative', display: 'flex', zIndex: -1, minHeight: 500 }}>
-            <div style={{ flex: '1', position: 'relative', zIndex: -1 }}>{component}</div>
+          <div style={styles.mobile.label} children="COMPONENT" />
+          <div style={styles.mobile.componentWrapper}>
+            <div style={styles.mobile.component}>{component}</div>
           </div>
         </div>
       );
@@ -127,13 +198,8 @@ class ComponentRenderer extends React.Component {
 
     // otherwise, render a desktop layout
     return (
-      <div style={{
-        display: 'flex', overflow: 'hidden', borderRadius: 20, margin: "24px 0",
-        boxSizing: "border-box",
-        boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
-        border: "solid 10px #d1d1d1",
-      }}>
-        <div ref={this.codeRef} style={{ width: `${width}px`, background: 'white', marginBottom: -15, overflow: "hidden" }}>
+      <div style={styles.desktop.flexContainer}>
+        <div ref={this.codeRef} style={{ ...styles.desktop.code, width: `${width}px` }}>
           <pre>
             <code
               className="language-jsx"
@@ -143,36 +209,24 @@ class ComponentRenderer extends React.Component {
         </div>
         <button
           ref={this.resizerRef}
-          style={{
-            width: '10px',
-            cursor: 'col-resize',
-            backgroundColor: '#d1d1d1',
-            margin: 0,
-            border: "none",
-          }}
+          style={{ ...styles.desktop.button, cursor: 'col-resize' }}
           onMouseDown={this.handleMouseDown}
         >
-          <div style={{ rotate: '90deg', display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={styles.desktop.buttonDiv}>
             CODE
-            <span style={{ fontSize: 15, paddingBottom: 1.5, paddingLeft: ".5em" }}>↕</span>
+            <span style={styles.desktop.span}>↕</span>
           </div>
         </button>
-        <div style={{ display: 'flex', flex: 1, position: 'relative', zIndex: -1 }}>
+        <div style={styles.desktop.component}>
           <div style={{ flex: '1', position: 'relative', zIndex: -1 }}>{component}</div>
         </div>
         <button
           ref={this.resizerRef}
-          style={{
-            width: '10px',
-            cursor: 'default',
-            backgroundColor: '#d1d1d1',
-            margin: 0,
-            border: "none",
-          }}
+          style={{ ...styles.desktop.button, cursor: 'default' }}
         >
-          <div style={{ rotate: '90deg', display: "flex", alignItems: "center", justifyContent: "center" }}>COMPONENT</div>
+          <div style={styles.desktop.buttonDiv}>COMPONENT</div>
         </button>
-      </div >
+      </div>
     );
   }
 }
