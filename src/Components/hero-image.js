@@ -34,7 +34,7 @@ const HeroImage = ({
       </span>
     </div>
     <p style={{ margin: 0, fontSize: 12 }}>
-      Photo:{" "}
+      Image:{" "}
       <a
         aria-label={link}
         href={link}
