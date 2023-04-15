@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const TableOfContents = ({ tocs }) => {
-  const { items } = tocs;
+  const { items } = tocs ? tocs : { items: [] };
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
 

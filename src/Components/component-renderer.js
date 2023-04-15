@@ -84,7 +84,7 @@ class ComponentRenderer extends React.Component {
   };
 
   render() {
-    const { component, code } = this.props;
+    const { component, code, height } = this.props;
     const { width, isMobile } = this.state;
     const highlightedCode = Prism.highlight(code, Prism.languages.js, 'jsx');
     const styles = {
@@ -97,7 +97,7 @@ class ComponentRenderer extends React.Component {
           boxSizing: "border-box",
           boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
           border: "solid 10px #d1d1d1",
-          maxHeight: 400
+          maxHeight: height ? height : 400,
         },
         code: {
           width: `${width}px`,
@@ -133,7 +133,8 @@ class ComponentRenderer extends React.Component {
           borderRadius: 20,
           boxSizing: 'border-box',
           boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
-          border: 'solid 10px #d1d1d1'
+          border: 'solid 10px #d1d1d1',
+          height: height ? height * 3 : 1000
         },
         label: {
           backgroundColor: '#d1d1d1',
@@ -141,7 +142,7 @@ class ComponentRenderer extends React.Component {
           padding: 8
         },
         code: {
-          height: 500,
+          height: height ? height * 2.5 : 500,
           overflowY: 'scroll',
           background: 'white',
           margin: 0,
@@ -152,7 +153,7 @@ class ComponentRenderer extends React.Component {
           position: 'relative',
           display: 'flex',
           zIndex: -1,
-          minHeight: 500
+          minHeight: height ? height : 500
         },
         component: {
           flex: '1',
@@ -166,6 +167,15 @@ class ComponentRenderer extends React.Component {
     if (isMobile) {
       return (
         <div style={styles.mobile.wrapper}>
+
+
+
+
+          <div style={styles.mobile.label} children="COMPONENT" />
+          <div style={styles.mobile.componentWrapper}>
+            <div style={styles.mobile.component}>{component}</div>
+          </div>
+
           <div style={styles.mobile.label} children="CODE" />
           <div ref={this.codeRef} style={styles.mobile.code}>
             <pre>
@@ -174,10 +184,6 @@ class ComponentRenderer extends React.Component {
                 dangerouslySetInnerHTML={{ __html: highlightedCode }}
               />
             </pre>
-          </div>
-          <div style={styles.mobile.label} children="COMPONENT" />
-          <div style={styles.mobile.componentWrapper}>
-            <div style={styles.mobile.component}>{component}</div>
           </div>
         </div>
       );
