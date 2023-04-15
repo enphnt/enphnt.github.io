@@ -100,7 +100,6 @@ class ComponentRenderer extends React.Component {
               textAlign: "center",
               padding: 8,
             }}
-            onMouseDown={this.handleMouseDown}
             children="CODE"
           />
           <div ref={this.codeRef} style={{ height: 500, overflowY: 'scroll', background: 'white', margin: 0, marginRight: -15, marginBottom: -10.5, }}>
@@ -134,7 +133,7 @@ class ComponentRenderer extends React.Component {
         boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
         border: "solid 10px #d1d1d1",
       }}>
-        <div ref={this.codeRef} style={{ width: `${width}px`, background: 'white', marginBottom: -15 }}>
+        <div ref={this.codeRef} style={{ width: `${width}px`, background: 'white', marginBottom: -15, overflow: "hidden" }}>
           <pre>
             <code
               className="language-jsx"
@@ -142,32 +141,38 @@ class ComponentRenderer extends React.Component {
             />
           </pre>
         </div>
-        <div
+        <button
           ref={this.resizerRef}
           style={{
             width: '10px',
             cursor: 'col-resize',
-            backgroundColor: '#d1d1d1'
+            backgroundColor: '#d1d1d1',
+            margin: 0,
+            border: "none",
           }}
           onMouseDown={this.handleMouseDown}
-          children={
-            <div style={{ rotate: '90deg', display: "flex", alignItems: "center" }}>
-              CODE
-              <span style={{ fontSize: 15, paddingBottom: 1.5, paddingLeft: ".5em" }}>↕</span>
-            </div>}
-        />
+        >
+          <div style={{ rotate: '90deg', display: "flex", alignItems: "center", justifyContent: "center" }}>
+            CODE
+            <span style={{ fontSize: 15, paddingBottom: 1.5, paddingLeft: ".5em" }}>↕</span>
+          </div>
+        </button>
         <div style={{ display: 'flex', flex: 1, position: 'relative', zIndex: -1 }}>
           <div style={{ flex: '1', position: 'relative', zIndex: -1 }}>{component}</div>
         </div>
-        <div
+        <button
+          ref={this.resizerRef}
           style={{
             width: '10px',
-            cursor: 'col-resize',
-            backgroundColor: '#d1d1d1'
+            cursor: 'default',
+            backgroundColor: '#d1d1d1',
+            margin: 0,
+            border: "none",
           }}
-          children={<div style={{ rotate: '90deg' }}>COMPONENT</div>}
-        />
-      </div>
+        >
+          <div style={{ rotate: '90deg', display: "flex", alignItems: "center", justifyContent: "center" }}>COMPONENT</div>
+        </button>
+      </div >
     );
   }
 }
