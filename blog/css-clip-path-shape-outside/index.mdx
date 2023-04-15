@@ -1,19 +1,19 @@
 ---
 slug: css-clip-path-shape-outside
-date: "2021-04-14"
-title: "Getting started with css-clip-path-shape-outside"
+date: "2023-04-14"
+title: "Make shapes with CSS clip-path & shape-outline"
 thumbnail: "./thumbnail.png"
 hero_image: "./hero.jpg"
-hero_image_alt: "axxxne"
-hero_image_credit_text: "xxx"
-hero_image_credit_link: "https://www.pexels.com/photo/photo-of-golden-cogwheel-on-black-background-3785935/"
-tags: ["css"]
+hero_image_alt: "shapes plz..."
+hero_image_credit_text: "antonè"
+hero_image_credit_link: "https://www.flickr.com/photos/50946938@N03/6358195963/in/photostream/"
+tags: ["css", "web dev", "creative coding", "geometry", "tutorial"]
 
 ---
 import Video from "../../src/components/video";
 import ComponentRenderer from "../../src/components/component-renderer";
 
-The clip-path and shape-outside properties are CSS features that allow you to create interesting effects with shapes and images. 
+The clip-path and shape-outside properties are CSS features that allow you to create interesting effects with shapes and images. I couldn't resist including the dog image references, the [thumbnail](https://www.flickr.com/photos/25797459@N06/32312514736/) was a random find. 
 
 The CSS clip-path property lets you cut out a part of an element and show only that part. The shape-outside property lets you change how the text flows around a floated element. 
 
@@ -269,9 +269,9 @@ ellipse(75px 50% at 50% 50%)
 ```
 
 - Horizontal radius: 75 pixels. This makes the shape now 150 pixels in width.
-- Vertical radius: 50% of element's height. So, the shape height is the same as the element's (100 pixels).
-- Horizontal position: 50% of element's width. The shape will be centered horizontally within the element.
-- Vertical position: 50% of element's height. The shape will be centered vertically within the element.
+- Vertical radius: 50% of the element's height. So, the shape height is the same as the element's (100 pixels).
+- Horizontal position: 50% of the element's width. The shape will be centered horizontally within the element.
+- Vertical position: 50% of the element's height. The shape will be centered vertically within the element.
 - The `rotate: -27deg` property rotates the element counter-clockwise by 27 degrees around its center. The rotate property is part of the CSS transform property, which modifies the element's appearance without changing its layout.
 - The p element inside the div has a `rotate: 27deg` property to undo the rotation of its parent and keep the text horizontal.
 
@@ -334,8 +334,9 @@ ellipse(75px 50% at 50% 50%)
 />
 
 ## Drawing compound shapes:
-Here are some more complex patterns that can be achieved with a bit of math and tinkering:
+Here are some more complex patterns. 
 ### Star shape  
+A star can be achieved with a bit of math and tinkering.
 <ComponentRenderer 
   code={`
   <div style={{ padding: "40px", backgroundColor: "#f0f0f0" }}>
@@ -399,7 +400,8 @@ Here are some more complex patterns that can be achieved with a bit of math and 
         </div>
   }
 />
-### Clipped Spriral
+### Clipped Spiral
+I made a cool thing.
 <ComponentRenderer 
   code={`
   <div
@@ -455,6 +457,7 @@ Here are some more complex patterns that can be achieved with a bit of math and 
   }/>
 
 ## Face?!
+Please resize this face to see some inadvertent humor.
 <ComponentRenderer 
   code={`
   <div style={{
