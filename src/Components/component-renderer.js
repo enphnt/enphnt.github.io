@@ -2,96 +2,7 @@
 import React from 'react';
 import Prism from 'prismjs';
 
-const commonStyles = {
-  container: {
-    display: 'flex',
-    overflow: 'hidden',
-    borderRadius: 20,
-    margin: "24px 0",
-    boxSizing: "border-box",
-    boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
-  },
-  code: {
-    background: 'white',
-  },
-  component: {
-    display: 'flex',
-    position: 'relative',
-    zIndex: -1,
-  },
-  button: {
-    width: '10px',
-    backgroundColor: '#d1d1d1',
-    margin: 0,
-    border: "none",
-  },
-  codeMarginBottom: {
-    marginBottom: -15,
-  },
-  grayColor: {
-    backgroundColor: '#d1d1d1',
-  },
-};
 
-const styles = {
-  desktop: {
-    flexContainer: {
-      ...commonStyles.container,
-    },
-    code: {
-      ...commonStyles.code,
-      ...commonStyles.codeMarginBottom,
-      overflow: "hidden",
-    },
-    button: {
-      ...commonStyles.button,
-    },
-    buttonDiv: {
-      rotate: '90deg',
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    span: {
-      fontSize: 15,
-      paddingBottom: 1.5,
-      paddingLeft: ".5em",
-    },
-    component: {
-      ...commonStyles.component,
-      flex: 1,
-    },
-  },
-  mobile: {
-    wrapper: {
-      ...commonStyles.container,
-      flexDirection: 'column',
-      border: 'solid 10px #d1d1d1'
-    },
-    label: {
-      ...commonStyles.grayColor,
-      textAlign: 'center',
-      padding: 8
-    },
-    code: {
-      ...commonStyles.code,
-      ...commonStyles.codeMarginBottom,
-      height: 500,
-      overflowY: 'scroll',
-      margin: 0,
-      marginRight: -15,
-    },
-    componentWrapper: {
-      ...commonStyles.component,
-      minHeight: 500
-    },
-    component: {
-      flex: '1',
-      position: 'relative',
-      zIndex: -1
-    }
-  }
-};
 
 class ComponentRenderer extends React.Component {
   constructor(props) {
@@ -106,6 +17,8 @@ class ComponentRenderer extends React.Component {
     this.startX = 0; // initial x position of the mouse when dragging starts
     this.startWidth = 0; // initial width of the code div when dragging starts
   }
+
+
 
   componentDidMount() {
     // add event listeners for mouse move and mouse up
@@ -174,6 +87,80 @@ class ComponentRenderer extends React.Component {
     const { component, code } = this.props;
     const { width, isMobile } = this.state;
     const highlightedCode = Prism.highlight(code, Prism.languages.js, 'jsx');
+    const styles = {
+      desktop: {
+        container: {
+          display: 'flex',
+          overflow: 'hidden',
+          borderRadius: 20,
+          margin: "24px 0",
+          boxSizing: "border-box",
+          boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
+          border: "solid 10px #d1d1d1",
+          maxHeight: 400
+        },
+        code: {
+          width: `${width}px`,
+          background: 'white',
+          marginBottom: -15,
+          overflow: "auto"
+        },
+        resizer: {
+          width: '15px',
+          backgroundColor: '#d1d1d1',
+          margin: 0,
+          border: "none",
+        },
+        resizerText: {
+          rotate: '90deg',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        },
+        component: {
+          display: 'flex',
+          flex: 1,
+          position: 'relative',
+          zIndex: -1
+        }
+      },
+      mobile: {
+        wrapper: {
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+          margin: '24px 0px',
+          borderRadius: 20,
+          boxSizing: 'border-box',
+          boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.3)',
+          border: 'solid 10px #d1d1d1'
+        },
+        label: {
+          backgroundColor: '#d1d1d1',
+          textAlign: 'center',
+          padding: 8
+        },
+        code: {
+          height: 500,
+          overflowY: 'scroll',
+          background: 'white',
+          margin: 0,
+          marginBottom: -10.5
+        },
+        componentWrapper: {
+          flex: '1',
+          position: 'relative',
+          display: 'flex',
+          zIndex: -1,
+          minHeight: 500
+        },
+        component: {
+          flex: '1',
+          position: 'relative',
+          zIndex: -1
+        }
+      }
+    };
 
     // if the screen width is less than 600px, render a mobile layout
     if (isMobile) {
@@ -198,8 +185,8 @@ class ComponentRenderer extends React.Component {
 
     // otherwise, render a desktop layout
     return (
-      <div style={styles.desktop.flexContainer}>
-        <div ref={this.codeRef} style={{ ...styles.desktop.code, width: `${width}px` }}>
+      <div style={styles.desktop.container}>
+        <div ref={this.codeRef} style={styles.desktop.code}>
           <pre>
             <code
               className="language-jsx"
@@ -209,12 +196,12 @@ class ComponentRenderer extends React.Component {
         </div>
         <button
           ref={this.resizerRef}
-          style={{ ...styles.desktop.button, cursor: 'col-resize' }}
+          style={{ ...styles.desktop.resizer, cursor: 'col-resize' }}
           onMouseDown={this.handleMouseDown}
         >
-          <div style={styles.desktop.buttonDiv}>
+          <div style={styles.desktop.resizerText}>
             CODE
-            <span style={styles.desktop.span}>↕</span>
+            <span style={{ fontSize: 15, paddingBottom: 1.5, paddingLeft: ".5em" }}>↕</span>
           </div>
         </button>
         <div style={styles.desktop.component}>
@@ -222,9 +209,9 @@ class ComponentRenderer extends React.Component {
         </div>
         <button
           ref={this.resizerRef}
-          style={{ ...styles.desktop.button, cursor: 'default' }}
+          style={{ ...styles.desktop.resizer, cursor: 'default' }}
         >
-          <div style={styles.desktop.buttonDiv}>COMPONENT</div>
+          <div style={styles.desktop.resizerText}>COMPONENT</div>
         </button>
       </div>
     );

@@ -45,7 +45,7 @@ html {
   font-family: "quicksand", sans-serif;
   font-weight: 300;
   /* scroll-behavior: smooth; */
-  scrollbar-color: var(--clr-maroon) #cfcfcfbd;
+  scrollbar-color: #c3c3c346 transparent;
   animation: .5s ease 1s normal forwards 1 fadein;
   -webkit-animation: .5s ease 1s normal forwards 1 fadein;
   opacity: 0
