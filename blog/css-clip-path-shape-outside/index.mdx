@@ -12,13 +12,23 @@ tags: ["css", "web dev", "creative coding", "geometry", "tutorial"]
 ---
 import Video from "../../src/components/video";
 import ComponentRenderer from "../../src/components/component-renderer";
+import gif from "./paper-pencil.gif"
 
 # CSS clip-path and shape-outside 
-  The clip-path and shape-outside properties are CSS features that allow you to create interesting effects with shapes and images.
+  With the clip-path and shape-outside properties, you can unleash your creativity and create custom shapes and effects with elements.
 
-  The CSS clip-path property lets you cut out a part of an element to show only that part. The shape-outside property lets you change how the text flows around a floated element. 
+  To be specific, the CSS clip-path property lets you cut out a part of an element to show only that part. While the shape-outside property lets you change how the text flows in or around the element. 
+
+  <div style={{display: "flex", justifyContent: "center", margin: "1em"}}>
+    <img
+      alt="paper-pencil.gif"
+      src={gif}
+      height={350}
+    />
+  </div>
 
   An analogy for this is like cutting out a shape from a piece of paper and placing it on another piece of paper with some text. 
+
   - ✄ clip-path is like using scissors to cut out the shape you want.
   - ✐ shape-outside is like using a pencil to draw a line around the shape and tell the text where to go.  The text will avoid crossing the line and stay inside or outside the shape.
 
