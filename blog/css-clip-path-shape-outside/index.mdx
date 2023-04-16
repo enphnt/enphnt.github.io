@@ -91,81 +91,6 @@ Clip-path will draw a circle and shape-outside will make the text wrap confined 
   }
 />
 
-## Inset shapes
-The `inset()` function creates a rectangular shape with rounded corners that is smaller than the element's size. You can specify how much to inset the shape from the top, right, bottom, and left edges of the element, and how much to round the corners.
-
-For example, in the code displayed next on the screen, we have:
-```css
-inset(8px 5% round 40px 100px 0px 40px)
-```
-
-This means that the shape will be:
-- 8 pixels smaller from the top edge and bottom edge
-- 5% smaller from the right and left edge
-- The round keyword indicates that the corners will be rounded
-- The values after round specify how much to round each corner: top-left corner,  top-right corner,  bottom-right corner,  bottom-left corner
-- So we have:
-  - 40 pixels for the top-left corner
-  - 100 pixels for the top-right corner
-  - 0 pixels for the bottom-right corner
-  - 40 pixels for the bottom-left corner
-
-<ComponentRenderer 
-  height={200}
-  code={`
-  <div style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
-    backgroundColor: "lightgreen",
-    boxSizing: "border-box"
-  }}>
-    <div style={{
-      width: "100px",
-      height: "100px",
-      backgroundColor: "purple",
-      shapeOutside: "inset(8px 5% round 40px 100px 0px 40px)",
-      clipPath: "inset(8px 5% round 40px 100px 0px 40px)"
-    }}>
-      <p style={{
-        textAlign: "center",
-        lineHeight: "80px",
-        color: "white",
-      }}>
-        Inset
-      </p>
-    </div>
-  </div>
-  `}
-  component={
-    <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "100%",
-      backgroundColor: "lightgreen",
-      boxSizing: "border-box"
-    }}>
-      <div style={{
-        width: "100px",
-        height: "100px",
-        backgroundColor: "purple",
-        shapeOutside: "inset(8px 5% round 40px 100px 0px 40px)",
-        clipPath: "inset(8px 5% round 40px 100px 0px 40px)"
-      }}>
-        <p style={{
-          textAlign: "center",
-          lineHeight: "80px",
-          color: "white",
-        }}>
-          Inset
-        </p>
-      </div>
-    </div>
-  }
-/>
-
 ## Diamonds are forever
 The `polygon()` function creates a shape with three or more sides. You can specify the coordinates of each vertex of the shape with percentages or lengths. `clip-path: polygon()` cuts out this shape from the element and hides the rest. And `shape-outside: polygon()` makes the text flow around this shape when the element is floated.
 
@@ -256,6 +181,81 @@ The shape results in a diamond or a rotated square.
   }
 />
 
+## Inset shapes
+The `inset()` function creates a rectangular shape with rounded corners that is smaller than the element's size. You can specify how much to inset the shape from the top, right, bottom, and left edges of the element, and how much to round the corners.
+
+For example, in the code displayed next on the screen, we have:
+```css
+inset(8px 5% round 40px 100px 0px 40px)
+```
+
+This means that the shape will be:
+- 8 pixels smaller from the top edge and bottom edge
+- 5% smaller from the right and left edge
+- The round keyword indicates that the corners will be rounded
+- The values after round specify how much to round each corner: top-left corner,  top-right corner,  bottom-right corner,  bottom-left corner
+- So we have:
+  - 40 pixels for the top-left corner
+  - 100 pixels for the top-right corner
+  - 0 pixels for the bottom-right corner
+  - 40 pixels for the bottom-left corner
+
+<ComponentRenderer 
+  height={200}
+  code={`
+  <div style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    backgroundColor: "lightgreen",
+    boxSizing: "border-box"
+  }}>
+    <div style={{
+      width: "100px",
+      height: "100px",
+      backgroundColor: "purple",
+      shapeOutside: "inset(8px 5% round 40px 100px 0px 40px)",
+      clipPath: "inset(8px 5% round 40px 100px 0px 40px)"
+    }}>
+      <p style={{
+        textAlign: "center",
+        lineHeight: "80px",
+        color: "white",
+      }}>
+        Inset
+      </p>
+    </div>
+  </div>
+  `}
+  component={
+    <div style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "100%",
+      backgroundColor: "lightgreen",
+      boxSizing: "border-box"
+    }}>
+      <div style={{
+        width: "100px",
+        height: "100px",
+        backgroundColor: "purple",
+        shapeOutside: "inset(8px 5% round 40px 100px 0px 40px)",
+        clipPath: "inset(8px 5% round 40px 100px 0px 40px)"
+      }}>
+        <p style={{
+          textAlign: "center",
+          lineHeight: "80px",
+          color: "white",
+        }}>
+          Inset
+        </p>
+      </div>
+    </div>
+  }
+/>
+
 ## Elliptical orbits
 The `ellipse()` function creates an elliptical shape with four parameters: 
 - horizontal radius,
@@ -335,6 +335,7 @@ ellipse(75px 50% at 50% 50%)
 
 ## Drawing compound shapes:
 Here are some more complex patterns. 
+
 ### Star shape  
 A star can be achieved with a bit of math and tinkering.
 <ComponentRenderer 
