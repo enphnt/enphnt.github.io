@@ -2,8 +2,6 @@
 import React from 'react';
 import Prism from 'prismjs';
 
-
-
 class ComponentRenderer extends React.Component {
   constructor(props) {
     super(props);
@@ -17,8 +15,6 @@ class ComponentRenderer extends React.Component {
     this.startX = 0; // initial x position of the mouse when dragging starts
     this.startWidth = 0; // initial width of the code div when dragging starts
   }
-
-
 
   componentDidMount() {
     // add event listeners for mouse move and mouse up
@@ -167,10 +163,6 @@ class ComponentRenderer extends React.Component {
     if (isMobile) {
       return (
         <div style={styles.mobile.wrapper}>
-
-
-
-
           <div style={styles.mobile.label} children="COMPONENT" />
           <div style={styles.mobile.componentWrapper}>
             <div style={styles.mobile.component}>{component}</div>
