@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import image from "../../blog/nirvana-drain-you/thumbnail.webp";
 
 const pad = (n) => (n < 10 ? "0" : "") + n;
 const formatTime = (timeInSeconds) => {
@@ -9,14 +8,104 @@ const formatTime = (timeInSeconds) => {
   return `${pad(minutes)}:${pad(seconds)}`;
 };
 
-const AudioPlayer = ({ src, songName = '', artist = '' }) => {
-  const [audio] = useState(new Audio(src));
+const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
+  const [audio] = useState(window !== 'undefined' ? new Audio(src) : null);
   const [playing, setPlaying] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
   const [hover, setHover] = useState(false);
+  const styles = {
+    wrapper: {
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+    },
+    container: {
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+    },
+    bigContainer: {
+      flex: "3 1 400px",
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'start',
+      flexDirection: 'column',
+      marginLeft: 8,
+      marginRight: 8,
+    },
+    paper: {
+      padding: 16,
+      margin: '1.5em 0px',
+      display: 'flex',
+      flexWrap: "wrap",
+      alignItems: 'center',
+      background: "var(--clr-grey-10)",
+      borderRadius: 15,
+      justifyContent: 'center',
+      boxShadow:
+        '0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)',
+    },
+    playButton: {
+      normal: {
+        transition: "all .1s ease-in",
+        fontSize: '100px',
+        width: 250,
+        height: 250,
+        borderRadius: 10,
+        textAlign: "right",
+        margin: 10,
+        overflow: "hidden",
+        background: "transparent",
+        padding: "40px 20px 0 10px",
+        backgroundSize: "cover",
+        backgroundImage: `url(${image})`,
+        color: "white",
+        transform: "rotate(-2deg)",
+        border: "solid .5mm black",
+        boxShadow:
+          `0px 3px 1px -3px rgba(0,0,0,0.2),
+           0px 2px 2px 0px rgba(0,0,0,0.14),
+           0px 1px 5px 0px rgba(0,0,0,0.12)`,
+      },
+      hover: {
+        transform: "scale(1.02)",
+        fontSize: 102,
+        boxShadow: "none",
+      }
+    },
+    slider: {
+      WebkitAppearance: "none",
+      width: "100%",
+      height: "16px",
+      border: "solid 3px var(--clr-grey-4)",
+      backgroundColor: "#fff",
+      color: "black",
+      borderRadius: "7px",
+      outline: "none",
+      opacity: "0.7",
+      transition: "opacity .2s",
+      cursor: "pointer"
+    },
+    sliderSml: {
+      WebkitAppearance: "none",
+      width: "100%",
+      maxWidth: 180,
+      height: "10px",
+      backgroundColor: "#777",
+      border: "solid 1px black",
+      borderRadius: "7px",
+      outline: "none",
+      opacity: "0.7",
+      transition: "opacity .2s",
+      cursor: "pointer",
+      marginBottom: 16
+    }
+  };
 
   const handlePlaybackRateChange = (e) => {
     setPlaybackRate(e.target.value);
@@ -46,23 +135,25 @@ const AudioPlayer = ({ src, songName = '', artist = '' }) => {
     <div style={styles.wrapper}>
       <div style={styles.paper}>
         <div style={styles.container}>
-          <button
-            onClick={togglePlay}
-            onMouseEnter={() => {
-              setHover("play");
-            }}
-            onMouseLeave={() => {
-              setHover(false);
-            }}
-            style={{
-              ...styles.playButton.normal,
-              ...(hover === "play" || playing ?
-                styles.playButton.hover
-                : null)
-            }}
-          >
-            {playing ? '⍿⍿' : '▷'}
-          </button>
+          <div>
+            <button
+              onClick={togglePlay}
+              onMouseEnter={() => {
+                setHover("play");
+              }}
+              onMouseLeave={() => {
+                setHover(false);
+              }}
+              style={{
+                ...styles.playButton.normal,
+                ...(hover === "play" || playing ?
+                  styles.playButton.hover
+                  : null)
+              }}
+            >
+              {playing ? '⍿⍿' : '▷'}
+            </button>
+          </div>
           <h5>Playback Speed: ({playbackRate}x)</h5>
           <input
             type="range"
@@ -93,7 +184,7 @@ const AudioPlayer = ({ src, songName = '', artist = '' }) => {
               setCurrentTime(e.target.value);
               audio.currentTime = e.target.value;
             }}
-            style={{ width: '100%' }}
+            style={styles.slider}
           />
           <span style={{ alignSelf: "end", paddingBottom: 16 }}>
             {
@@ -119,70 +210,6 @@ const AudioPlayer = ({ src, songName = '', artist = '' }) => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  wrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  container: {
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  bigContainer: {
-    flex: "3 1 400px",
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'start',
-    flexDirection: 'column',
-    marginLeft: 8,
-    marginRight: 8,
-  },
-  paper: {
-    padding: '8px 16px',
-    margin: '1.5em 0px',
-    display: 'flex',
-    flexWrap: "wrap",
-    alignItems: 'center',
-    background: "var(--clr-grey-8)",
-    borderRadius: 15,
-    justifyContent: 'center',
-    boxShadow:
-      '0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)',
-  },
-  playButton: {
-    normal: {
-      transition: "all .1s ease-in",
-      fontSize: '100px',
-      width: 250,
-      height: 250,
-      borderRadius: 10,
-      textAlign: "right",
-      margin: 10,
-      background: "transparent",
-      padding: "40px 20px 0 10px",
-      backgroundSize: "cover",
-      backgroundImage: `url(${image})`,
-      color: "white",
-      transform: "rotate(-2deg)",
-      border: "solid .5mm black",
-      boxShadow:
-        `0px 3px 1px -3px rgba(0,0,0,0.2),
-         0px 2px 2px 0px rgba(0,0,0,0.14),
-         0px 1px 5px 0px rgba(0,0,0,0.12)`,
-    },
-    hover: {
-      transform: "scale(1.02)",
-      fontSize: 102,
-      boxShadow: "none",
-    }
-  },
-  sliderSml: { width: '100%', maxWidth: 200, minWidth: 100, paddingBottom: 16 }
 };
 
 export default AudioPlayer;
