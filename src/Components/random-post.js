@@ -82,7 +82,7 @@ const RandomBlog = () => {
     // Find the node that matches the current slug
     const node = data.allMdx.nodes.find(node => node.frontmatter.slug === currentSlug);
     setCurrentNode(node);
-  }, [currentSlug]);
+  }, [currentSlug, data.allMdx.nodes]);
 
   const { nodes } = data.allMdx;
 
@@ -119,7 +119,7 @@ const RandomBlog = () => {
             Check out other articles:
           </Link>
         </h3>
-        <h5>With tags: {currentNode.frontmatter.tags.join(", ")}</h5>
+        <h5>Similar tags:</h5>
         <ArticleListItem node={taggedNode} />
         <h5>Maybe something else: </h5>
         <ArticleListItem node={otherNode} />
