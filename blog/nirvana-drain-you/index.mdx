@@ -12,6 +12,7 @@ tags: ["music", "guitar tabs", "songs", "songwriting"]
 ---
 import Video from "../../src/components/video";
 import Audio from "../../src/components/audio";
+import AudioPlayer from "../../src/components/audio-player";
 import slowVersion from "../../audio/nirvana - drain you (slowed).mp3"
 
 # About the song
@@ -104,9 +105,10 @@ This method is very effective when learning but don't forget to practice without
 ## Practice Track
 The practice track includes a click track and is slowed down to about 50% of the song's recorded speed.
 
-<Audio
+<AudioPlayer
   src={slowVersion}
-  text="Practice along with the track slowed down:"
+  artist={"Nirvana"}
+  songName={"Drain You (practice track)"}
 />
 
 I highly recommend practicing slowly and deliberately, ideally with a metronome. 
