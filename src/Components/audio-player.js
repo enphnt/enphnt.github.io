@@ -77,7 +77,9 @@ const AudioPlayer = ({ src, songName = '', artist = '' }) => {
         <div style={styles.bigContainer}>
           {
             playing ?
+              /* eslint-disable jsx-a11y/no-distracting-elements */
               <marquee> <h1>{songName}</h1></marquee>
+              /* eslint-enable jsx-a11y/no-distracting-elements */
               : <h1>{songName}</h1>
           }
           <h3>{artist}</h3>
