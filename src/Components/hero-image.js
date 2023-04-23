@@ -10,11 +10,15 @@ const HeroImage = ({
   link,
 }) =>
   <div style={{ textAlign: "right" }}>
-    <div style={{ position: "relative", maxHeight: maxHeight, borderRadius: 5 }}>
+    <div style={{
+      position: "relative",
+      maxHeight: maxHeight,
+      borderRadius: "5px",
+      overflow: "hidden",
+    }}>
       <GatsbyImage
         image={getImage(image)}
         alt={alt}
-        style={{ maxHeight: maxHeight, borderRadius: 5, boxSizing: "border-box" }}
       />
       <span style={{
         position: "absolute",
@@ -35,7 +39,7 @@ const HeroImage = ({
         {alt}
       </span>
     </div>
-    <p style={{ margin: 0, fontSize: 12 }}>
+    <p style={{ margin: 0, marginTop: 2, fontSize: 12 }}>
       Image:{" "}
       <a
         aria-label={link}
