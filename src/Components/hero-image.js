@@ -21,7 +21,7 @@ const HeroImage = ({
         top: "4%",
         right: "4%",
         color: "white",
-        fontSize: "max(3.5vh, 2.7vw)",
+        fontSize: "max(3vh, 2.3vw)",
         textAlign: "right",
         fontWeight: 600,
         textShadow: "0px 1px 8px black",
