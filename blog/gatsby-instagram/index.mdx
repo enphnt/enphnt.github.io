@@ -107,27 +107,27 @@ Query the Instagram data using GraphQL. You can use the allInstaNode query to ge
 
 ```graphql
 
-query {
-  allInstaNode {
-    edges {
-      node {
-        id
-        caption
-        likes
-        comments
-        localFile {
-          childImageSharp {
-            gatsbyImageData(
-              layout: CONSTRAINED, 
-              placeholder: BLURRED
-            )
+  query {
+    allInstaNode {
+      edges {
+        node {
+          id
+          caption
+          likes
+          comments
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                layout: CONSTRAINED, 
+                placeholder: BLURRED
+              )
+            }
           }
+          hashtags
         }
-        hashtags
       }
     }
   }
-}
 
 
 ```
@@ -173,7 +173,44 @@ You could use the createPage API in `gatsby-node.js` to programmatically create 
         context: { instagramData: result.data.allInstaNode },
       })
 
+
     ```
+
+Then you'll want a component that receives the data via context.
+
+Here's a simple page component:
+
+```jsx
+
+  import React from "react";
+  import { GatsbyImage } from "gatsby-plugin-image";
+
+  const InstagramPage = ({ pageContext }) => {
+    const { instagramData } = pageContext
+
+    return (
+      <div>
+        {instagramData.edges.map(({ node }) => (
+          <div key={node.id}>
+            <GatsbyImage
+              image={node.localFile.childImageSharp.gatsbyImageData}
+              alt={node.caption}
+            />
+            <p>{node.caption}</p>
+            <p>{node.likes}</p>
+            <p>{node.comments}</p>
+            <p>{node.hashtags}</p>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  export default InstagramPage;
+  
+```
+
+You can copy and paste this code into your `./src/pages/instagram.js` file.
 
 ## Create an Instagram component
 
