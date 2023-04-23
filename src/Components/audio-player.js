@@ -164,7 +164,7 @@ const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
           <h5>Playback Speed: ({playbackRate}x)</h5>
           <input
             type="range"
-            min="0.01"
+            min="0.15"
             max="7.5"
             step="0.01"
             value={playbackRate}
