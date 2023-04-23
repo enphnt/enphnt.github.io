@@ -4,7 +4,7 @@ date: "2023-04-12"
 title: "Include your Instagram feed in a Gatsby site"
 thumbnail: "./thumbnail.png"
 hero_image: "./hero.png"
-hero_image_alt: "instagram + gatsby = gatinstagramsby?"
+hero_image_alt: "I don't really understand the Twitter and the Instagram. -Mia Goth"
 hero_image_credit_text: "me"
 hero_image_credit_link: "https://www.enphnt.github.io/"
 tags: ["instagram", "web dev", "gatsby"]
@@ -13,13 +13,15 @@ tags: ["instagram", "web dev", "gatsby"]
 # Gatsby & instagram 
 Do you want your Gatsby site to display your Instagram posts with images, captions, likes, comments and hashtags?
 
-In this blog post, I will show you how to add an Instagram feed to your Gatsby site using [gatsby-source-instagram](https://www.gatsbyjs.com/plugins/gatsby-source-instagram/) plugin. 
+Check out my example here: [Instagram Gatsby Page](/instagram/)
+
+In this blog post, I will show you how to create this example. We will leverage the existing [gatsby-source-instagram](https://www.gatsbyjs.com/plugins/gatsby-source-instagram/) plugin. 
 
 ## Limitations and FYI
 This plugin allows you to source data from Instagram using either built-in scraping for user posts, hashtag pages and user profile scraping or [Graph API](https://developers.facebook.com/docs/instagram-api/). 
-- The plugin will refetch for nodes every time the develop server is restarted, which means lots of requests repeat unnecessarily. This may cause performance issues or rate limits by Instagram. [Source](https://www.npmjs.com/package/gatsby-source-instagram)
+- The plugin will re-fetch for nodes every time the develop server is restarted, which means lots of requests repeat unnecessarily. This may cause performance issues or rate limits by Instagram. [Source](https://www.npmjs.com/package/gatsby-source-instagram)
 - The [public scraping](https://www.gatsbyjs.com/plugins/gatsby-source-instagram/) method can only get the last 12 photos from an Instagram account or a hashtag page. It does not require an access token, but it may be blocked by Instagram if it detects too many requests from the same IP address.
-- The [Graph API](https://www.gatsbyjs.com/plugins/@theowenyoung/gatsby-source-instagram/) method requires an access token and an instagram id. It can get more data than public scraping, such as likes, comments, hashtags, media type, etc. It also has a paginate parameter to control the limit of the api call and a maxPosts parameter to limit the maximum number of posts to store. 
+- The [Graph API](https://www.gatsbyjs.com/plugins/@theowenyoung/gatsby-source-instagram/) method requires an access token and an instagram id. It can get more data than public scraping, such as likes, comments, hashtags, media type, etc. It also has a paginate parameter to control the limit of the API call and a maxPosts parameter to limit the maximum number of posts to store. 
 - The plugin will use public scraping as a fallback if the Graph API throws any exception and the username is provided.
 - If many sites that are served from the same domain are using the Instagram APIs, it may trigger Instagram to enforce rate limits for the domain. This may affect the availability of the plugin for those sites.
 
@@ -59,9 +61,9 @@ I followed the current processes documented in the [plugin's github](https://www
 
 If you intend to use the public scraping method then you need to pass the concerning username id.
 You can determine it by taking the following steps:
-1. Open a browser and go to the Instagram page of the user – e.g. https://www.instagram.com/oasome.blog/
-1. Right-click on the web page to open the right-click context menu and select Page Source / View page source / Show Page Source. Safari users, please make sure that the developer tools are enabled – see [Enabling Web Inspector - Apple Developer](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/Web_Inspector_Tutorial/EnableWebInspector/EnableWebInspector.html)
-1. Search for `profilePage_`. The number that follows is the username id. If you view the page source of https://www.instagram.com/username/, you will find `profilePage_8556131572`. So, `8556131572` is the username id of the username `username`.
+1. Open a browser and go to the Instagram page of the user - e.g. https://www.instagram.com/user/
+1. Right-click on the web page to open the right-click context menu and select Page Source / View page source / Show Page Source. Safari users, please make sure that the developer tools are enabled - see [Enabling Web Inspector - Apple Developer](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/Web_Inspector_Tutorial/EnableWebInspector/EnableWebInspector.html)
+1. Search for `profilePage_`. The number that follows is the username id. If you view the page source of https://www.instagram.com/user/, you will find `profilePage_8556131572`. So, `8556131572` is the username id of the username `user`.
 
 <br/>
 
@@ -93,7 +95,7 @@ If you intend to use Graph API for more reliability (note the plugin will fallba
     1. You should see this token now never expires but sometimes 3 months is the maximum and the cause is not clear
     1. Copy this new token (we will call this `access_token`)
 
-Now you will need to find a safe place to store your keys. If you're using github or similar, you should use the secure variables settings for the project. 
+Now you will need to find a safe place to store your keys. If you're using GitHub or similar, you should use the secure variables settings for the project. 
 
 Do not accidentally push these keys to a public repo. If that happens, immediately [revoke the keys by following this guide](https://developers.facebook.com/docs/permissions/reference#revoking).
 
@@ -278,6 +280,8 @@ If you are facing issues, double check your routing and gatsby-config. In my cas
 On loading the page, you'll see the instagram posts for the user you're targetting:
 
 ![rendered instagram posts](./hero.png)
+
+Check out my example here: [Instagram Gatsby Page](/instagram/)
 
 # Conclusion
 In the end, this library does what it says on the tin. However, I think we would have more options and more resilient retrieval if we could incorporate the Graph API. It would make things even easier to have a premium account from what I understand. I'll be reading up on how free accounts can use facebook apps and hope to revisit with a future blog post where I address the issues faced here. 
