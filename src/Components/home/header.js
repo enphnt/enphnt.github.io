@@ -93,7 +93,7 @@ export default function Header() {
   }, [init]);
 
   return (
-    <section>
+    <section id="top">
       <Wrapper>
         <TransitionsContainer>
           {transitions(({ innerHeight, ...rest }, item) =>
