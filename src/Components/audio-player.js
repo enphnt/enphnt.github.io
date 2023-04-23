@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const pad = (n) => (n < 10 ? "0" : "") + n;
 const formatTime = (timeInSeconds) => {
@@ -9,7 +9,7 @@ const formatTime = (timeInSeconds) => {
 };
 
 const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
-  const [audio] = useState(window !== 'undefined' ? new Audio(src) : null);
+  const [audio, setAudio] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [playbackRate, setPlaybackRate] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
@@ -107,6 +107,12 @@ const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
     }
   };
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setAudio(new Audio(src));
+    }
+  }, [src]);
+
   const handlePlaybackRateChange = (e) => {
     setPlaybackRate(e.target.value);
     audio.playbackRate = e.target.value;
@@ -131,6 +137,7 @@ const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
     audio.pause();
     setPlaying(false);
   };
+
   return (
     <div style={styles.wrapper}>
       <div style={styles.paper}>
