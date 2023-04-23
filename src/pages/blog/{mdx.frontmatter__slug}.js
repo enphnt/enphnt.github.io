@@ -10,8 +10,6 @@ import Breadcrumbs from '../../components/breadcrumbs';
 import BackToTop from '../../components/back-to-top';
 import HeroImage from '../../components/hero-image';
 
-const maxHeight = "40vh";
-
 const BlogPost = ({ data, children }) => {
   const {
     mdx: {
@@ -33,7 +31,6 @@ const BlogPost = ({ data, children }) => {
           <HeroImage
             image={hero_image}
             alt={hero_image_alt}
-            maxHeight={maxHeight}
             credit={hero_image_credit_text}
             link={hero_image_credit_link}
           />

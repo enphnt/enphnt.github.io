@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Path = require('path');
-const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/code/" || path === "/music/";
+const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/instagram/" || path === "/code/" || path === "/music/";
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -142,6 +142,14 @@ module.exports = {
             priority: 0.5,
           };
         }
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        // nathans: 58473581453
+        // alans:   profilePage_1211830592
+        username: `58473581453`,
       },
     },
   ],

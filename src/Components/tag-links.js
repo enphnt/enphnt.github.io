@@ -7,6 +7,7 @@ const TagLinks = ({ tags }) => {
     normal: {
       color: "#35435d",
       fontWeight: 600,
+      textDecoration: "none",
     },
     hover: {
       backgroundColor: "#35435d",

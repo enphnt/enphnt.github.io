@@ -1,15 +1,16 @@
 import * as React from "react";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
+const maxHeight = "45vh";
+
 const HeroImage = ({
   image,
   alt,
-  maxHeight,
   credit,
   link,
 }) =>
   <div style={{ textAlign: "right" }}>
-    <div style={{ position: "relative", maxHeight: maxHeight }}>
+    <div style={{ position: "relative", maxHeight: maxHeight, borderRadius: 5 }}>
       <GatsbyImage
         image={getImage(image)}
         alt={alt}
@@ -20,13 +21,14 @@ const HeroImage = ({
         top: "4%",
         right: "4%",
         color: "white",
-        fontSize: "max(3vh, 2.2vw)",
+        fontSize: "max(3.5vh, 2.7vw)",
         textAlign: "right",
         fontWeight: 600,
-        textShadow: "2px 2px 6px black",
+        textShadow: "0px 1px 8px black",
         transformOrigin: "bottom",
         maxWidth: "80%",
         whiteSpace: "pre-wrap",
+        wordBreak: "break-word",
         letterSpacing: ".2rem",
       }}>
         {/* Use the alt as the overlay text */}
