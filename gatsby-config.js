@@ -1,6 +1,6 @@
 const fs = require("fs");
 const Path = require('path');
-const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/code/" || path === "/music/";
+const categoryPath = path => path === "/tags/" || path === "/blog/" || path === "/instagram/" || path === "/code/" || path === "/music/";
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -147,9 +147,9 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram`,
       options: {
+        // nathans: 58473581453
+        // alans:   profilePage_1211830592
         username: `58473581453`,
-        access_token: "EAAyg8Ek3HPgBAFSZBmNbPZAF4YYudi2eW7mRZCgIh7tg0yRmWIZAza5pOBnEqVSxUyuqEpeeRtjQxHSChiFqylJir7djNCQDWP69U9ZAY267FsDc71GYIZB8kjQYg0Cewyv5OSADsUX2R1MPouEFdIPJID1cMBNdtley1ITVvF84EacsUnHpEu",
-        instagram_id: "108929502172675",
       },
     },
   ],

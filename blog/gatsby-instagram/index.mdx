@@ -3,8 +3,11 @@ slug: gatsby-instagram
 date: "2023-04-12"
 title: "Include your Instagram feed in a Gatsby site"
 thumbnail: "./thumbnail.png"
+hero_image: "./hero.png"
+hero_image_alt: "instagram + gatsby = gatinstagramsby?"
+hero_image_credit_text: "me"
+hero_image_credit_link: "https://www.enphnt.github.io/"
 tags: ["instagram", "web dev", "gatsby"]
-
 ---
 
 # Gatsby & instagram 
@@ -51,14 +54,14 @@ To configure the plugin, you need to provide your username, access token and ins
 
 ```
 ## Getting your config details
-I followed the current processes documented in the plugin's github. For reference, I followed these steps:
+I followed the current processes documented in the [plugin's github](https://www.gatsbyjs.com/plugins/gatsby-source-instagram/). For reference, I followed these steps:
 ### For public content scraping
 
 If you intend to use the public scraping method then you need to pass the concerning username id.
 You can determine it by taking the following steps:
 1. Open a browser and go to the Instagram page of the user – e.g. https://www.instagram.com/oasome.blog/
 1. Right-click on the web page to open the right-click context menu and select Page Source / View page source / Show Page Source. Safari users, please make sure that the developer tools are enabled – see [Enabling Web Inspector - Apple Developer](https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/Web_Inspector_Tutorial/EnableWebInspector/EnableWebInspector.html)
-1. Search for `profilePage_`. The number that follows is the username id. If you view the page source of https://www.instagram.com/oasome.blog/, you will find `profilePage_8556131572`. So, `8556131572` is the username id of the username `oasome.blog`.
+1. Search for `profilePage_`. The number that follows is the username id. If you view the page source of https://www.instagram.com/username/, you will find `profilePage_8556131572`. So, `8556131572` is the username id of the username `username`.
 
 <br/>
 
@@ -90,6 +93,13 @@ If you intend to use Graph API for more reliability (note the plugin will fallba
     1. You should see this token now never expires but sometimes 3 months is the maximum and the cause is not clear
     1. Copy this new token (we will call this `access_token`)
 
+Now you will need to find a safe place to store your keys. If you're using github or similar, you should use the secure variables settings for the project. 
+
+Do not accidentally push these keys to a public repo. If that happens, immediately [revoke the keys by following this guide](https://developers.facebook.com/docs/permissions/reference#revoking).
+
+### Graph API unsuccessful
+I found that despite following the instructions, I was never able to successfully use the Graph API. I may revisit it in the future if I have a good reason but working in the Facebook dev area was a very disconnected and confusing experience. 
+
 # Query the Instagram data
 Query the Instagram data using GraphQL. You can use the allInstaNode query to get all the posts from your Instagram account. You can access fields such as id, caption, likes, comments, localFile (for image processing) and hashtags. Here is an example of how to query the data:
 
@@ -120,96 +130,156 @@ query {
 
 ```
 
-# Create a page component
-Create a page component called instagram-feed.js that displays the Instagram data. You can use Gatsby Image to render the images with optimal performance and quality. You can also style the component with CSS or a UI framework of your choice. Here is an example of how to create the component:
-
-```js
-
-// In src/pages/instagram-feed.js
-import React from "react"
-import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-
-export default function InstagramFeed({ data }) {
-  return (
-    <div className="instagram-feed">
-      {data.allInstaNode.edges.map(edge => (
-        <div className="instagram-post" key={edge.node.id}>
-          <GatsbyImage
-            image={edge.node.localFile.childImageSharp.gatsbyImageData}
-            alt={edge.node.caption}
-          />
-          <div className="instagram-info">
-            <p>{edge.node.caption}</p>
-            <p>Likes: {edge.node.likes}</p>
-            <p>Comments: {edge.node.comments}</p>
-            <p>Hashtags: {edge.node.hashtags.join(" ")}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-export const query = graphql`
-  query {
-    allInstaNode {
-      edges {
-        node {
-          id
-          caption
-          likes
-          comments
-          localFile {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-            }
-          }
-          hashtags
-        }
-      }
-    }
-  }
-`
-
-```
-
 # Add the component to your site
-Use the createPage API in gatsby-node.js to programmatically create a page for your Instagram feed. You can also pass the Instagram data as context to the component. Here is an example of how to do that:
+There are 2 approaches you can take: 
+- create the page using gatsby-node.js 
+- create a react component
 
-```js
+## Create via gatsby-node.js
+You could use the createPage API in `gatsby-node.js` to programmatically create a page for your Instagram feed. You can also pass the Instagram data as context to the component. Here is an example of how to do that:
 
-// In gatsby-node.js
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  ```js
 
-  const result = await graphql(`
-    query {
-      allInstaNode {
-        edges {
-          node {
-            id
-            caption
-            likes
-            comments
-            localFile {
-              childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    // In gatsby-node.js
+    exports.createPages = async ({ graphql, actions }) => {
+      const { createPage } = actions
+
+      const result = await graphql(`
+        query {
+          allInstaNode {
+            edges {
+              node {
+                id
+                caption
+                likes
+                comments
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+                  }
+                }
+                hashtags
               }
             }
-            hashtags
           }
         }
-      }
-    }
-  `)
+      `)
 
-  createPage({
-    path: "/instagram-feed",
-    component: require.resolve("./src/pages/instagram-feed.js"),
-    context: { instagramData: result.data.allInstaNode },
-  })
-}
+      createPage({
+        path: "/instagram-feed",
+        component: require.resolve("./src/pages/instagram.js"),
+        context: { instagramData: result.data.allInstaNode },
+      })
+
+    ```
+
+## Create an Instagram component
+
+Alternatively, you can add a react component and include the GraphQL directly in the same file. Here's an example of that: 
+
+  ```jsx
+
+      // In components or pages folder, create your instagram component
+      import React from "react";
+      import { useStaticQuery, graphql } from "gatsby";
+      import { GatsbyImage } from "gatsby-plugin-image";
+
+      const Instagram = () => {
+        const data = useStaticQuery(graphql`
+        query {
+          allInstaNode {
+            edges {
+              node {
+                id
+                caption
+                timestamp
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }`);
+
+        const styles = {
+          container: {
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
+          },
+          node: {
+            height: 300,
+            width: 300,
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "end",
+            alignItems: "center",
+            margin: 2,
+          },
+          title: {
+            textAlign: "center",
+            margin: 16,
+          },
+          overlay: {
+            background: "transparent"
+          }
+        };
+
+        return (
+          <div style={styles.title}>
+            <h1>Instagram Posts</h1>
+            <div style={styles.container}>
+              {data.allInstaNode.edges.map(({ node }) => (
+                <>
+                  <a href={`https://www.instagram.com/p/${node.id}/`}>
+                    <div key={node.id} style={styles.node}>
+
+                      <GatsbyImage
+                        image={node.localFile.childImageSharp.gatsbyImageData}
+                        alt={node.timestamp}
+                      />
+                      <div style={styles.overlay}>
+                        {node.caption}
+                        {new Date(node.timestamp * 1000).toLocaleString()}
+                      </div>
+
+                    </div>
+                  </a>
+                </>
+              ))}
+            </div>
+          </div>
+        );
+      };
+
+      export default Instagram;
 
 
+  ```
+
+# Run the dev build
+Run `gatsby develop` via your npm scripts and monitor the console. If you have settings for Graph API set, then you may see the fallback message if it fails to connect. This is what I saw each time:
+```sh
+  warn Could not get instagram posts using the Graph API. 
+  Error status Error: Request failed with status code 400
+  warn Falling back to public scraping... with 1234567892
 ```
+
+# Render the results
+
+Assuming you've named your react component or gatsby-node as 'instagram', we can now navigate to the path: `http://localhost:8000/instagram/`. 
+
+If you are facing issues, double check your routing and gatsby-config. In my case, I needed to free up the instagram path due to how strict this project is regarding unwanted path creation.
+
+On loading the page, you'll see the instagram posts for the user you're targetting:
+
+![rendered instagram posts](./hero.png)
+
+# Conclusion
+In the end, this library does what it says on the tin. However, I think we would have more options and more resilient retrieval if we could incorporate the Graph API. It would make things even easier to have a premium account from what I understand. I'll be reading up on how free accounts can use facebook apps and hope to revisit with a future blog post where I address the issues faced here. 
+
+Hope this was helpful. 
