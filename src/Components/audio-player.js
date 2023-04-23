@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Marquee from './marquee';
 
 const pad = (n) => (n < 10 ? "0" : "") + n;
 const formatTime = (timeInSeconds) => {
@@ -30,13 +31,15 @@ const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
       flexDirection: 'column',
     },
     bigContainer: {
-      flex: "3 1 400px",
+      flex: "3 1 380px",
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'start',
       flexDirection: 'column',
       marginLeft: 8,
       marginRight: 8,
+      padding: 8,
+      overflow: "hidden",
     },
     paper: {
       padding: 16,
@@ -175,9 +178,7 @@ const AudioPlayer = ({ src, songName = '', artist = '', image }) => {
         <div style={styles.bigContainer}>
           {
             playing ?
-              /* eslint-disable jsx-a11y/no-distracting-elements */
-              <marquee> <h1>{songName}</h1></marquee>
-              /* eslint-enable jsx-a11y/no-distracting-elements */
+              <Marquee> <h1>{songName}</h1></Marquee>
               : <h1>{songName}</h1>
           }
           <h3>{artist}</h3>
