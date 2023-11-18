@@ -71,7 +71,7 @@ const TableOfContents = ({ tocs }) => {
         <div style={toc}>
           <ol style={orderedList}>
             {
-              items.map(item =>
+              items?.map(item =>
                 <li key={item.title}>
                   <Link
                     key={item.title}
