@@ -37,7 +37,6 @@ const TabbedContent = ({ tabs, title, heading }) => {
   const activeTabButtonStyle = {
     ...tabButtonStyle,
     flex: '2 0 70px',
-    backgroundColor: 'white',
     cursor: 'default',
     backgroundColor: "rgba(1, 151, 88, 0.32)",
     boxShadow: 'rgba(0, 0, 37, 0.6) 2px 2px 5px inset',
