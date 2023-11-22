@@ -44,7 +44,7 @@ const TransitionsItem = styled(animated.div)`
 
 const TransitionsTxt = styled(animated.div)`
     overflow: hidden;
-    font-size: min(6em, 20vw);
+    font-size: min(5em, 20vw);
     min-width: 310px;
 `;
 
@@ -106,7 +106,7 @@ export default function Header() {
         </TransitionsContainer>
         <Networks />
       </Wrapper>
-      <NextSectionLink nextSection="/#about" size={120} />
+      <NextSectionLink nextSection="/#about" />
     </section>
   );
 }

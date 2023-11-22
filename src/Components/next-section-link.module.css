@@ -1,14 +1,12 @@
 .svgIcon {
-  -moz-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
+  -moz-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
   color: #35435d !important;
   border-radius: 50%;
 }
 
 .svgIcon:hover {
-  color: #321010 !important;
-  scale: .99;
-  box-shadow: 1px 1px 6px grey;
+  color: #546179 !important;
 }
