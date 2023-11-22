@@ -39,7 +39,7 @@ const About = () => {
             <h2>About Me</h2>
             <p>
               At work, I lead a team of experienced Javascript and Java  developers. We develop ways to collect user behavior {highlight("data")} and
-              visualize {highlight("analytics")} insights. With the tools I make, businesses are able to identify friction points and respond accordingly.
+              visualize {highlight("analytics")} insights. Using our tools, businesses can identify user friction points and respond accordingly.
             </p>
             <p>
               After hours, I'm usually working on some web project or making music.
