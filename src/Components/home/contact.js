@@ -10,7 +10,7 @@ import {
   rightSide,
 } from "./contact.module.css";
 
-const reasons = ["Let's go skate", "Let's make a song", "Do some programming", "Just hang out", "Discuss a job", "Do something else"];
+const reasons = ["Discuss a job", "Do some programming", "Let's make a song", "Let's go skate", "Just hang out", "Do something else"];
 const dates = ["ASAP", "Next few days", "In about a week", "Within the month", "In more than a month"];
 const Contact = () => {
   const [state, handleSubmit] = useForm("xgebyzzr");
@@ -38,7 +38,6 @@ const Contact = () => {
       </div>
       <div>
         <h2>Want to </h2>
-        <br />
         <h2>get in </h2>
         <h2>touch?</h2>
         <button aria-label="Contact Me" type="button" onClick={handleRequestJob}>

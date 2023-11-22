@@ -38,23 +38,16 @@ const About = () => {
           <div className={aboutText}>
             <h2>About Me</h2>
             <p>
-              After studying linguistic anthropology, I'm now a {highlight("software developer")} and {highlight("product owner")}.
+              At work, I lead a team of experienced Javascript and Java  developers. We develop ways to collect user behavior {highlight("data")} and
+              visualize {highlight("analytics")} insights. With the tools I make, businesses are able to identify friction points and respond accordingly.
             </p>
             <p>
-              I'm passionate about building things that are {highlight("useful")} and {highlight("engaging")} because I
-              eat {highlight("feedback")} for breakfast.
-            </p >
-            <p>
-              At work, I lead a team that leverages Javascript and Java to collect user behavior {highlight("data")} and
-              visualize {highlight("analytics")}. With the tools I make, businesses are able to identify friction points and respond accordingly.
-            </p>
-            <p>
-              After hours, I'm usually working on some web project, making music or out on the skateboard.
+              After hours, I'm usually working on some web project or making music.
             </p>
             <a aria-label="Download Resume" href={data.file.publicURL} download>
               <button aria-label="Download Resume">
                 Download My Resume
-                <span role="img" aria-label="hugging"> &#129303;</span>
+                <span role="img" aria-label="BOOKMARK TABS"> &#128209;</span>
               </button>
             </a>
           </div >
