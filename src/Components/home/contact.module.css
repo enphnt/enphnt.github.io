@@ -40,6 +40,7 @@
 }
 
 .contactCover {
+  border-radius: 4px;
   min-height: 40vh;
   line-height: 2em;
   transition: all .3s linear;
@@ -100,7 +101,7 @@
 
 .contactCover p {
   line-height: 1em;
-  background-color: white;
+  color: white;
   line-height: 1.3em;
   margin-bottom: 8px;
   padding: 4px 4px;
@@ -116,7 +117,7 @@
 .contactCover h2 {
   display: inline-block;
   margin: 0;
-  background-color: white;
+  color: white;
   line-height: 1.3em;
   margin-bottom: 8px;
   padding: 0 4px;
