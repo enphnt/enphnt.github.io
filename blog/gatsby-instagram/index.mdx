@@ -9,13 +9,24 @@ hero_image_credit_text: "me"
 hero_image_credit_link: "https://enphnt.github.io/"
 tags: ["instagram", "web dev", "gatsby"]
 ---
+import { note } from "../../src/components/layout.module.css";
 
 # Gatsby & instagram 
-*UPDATE: After a few months of experimenting, I've concluded this plugin or perhaps Instagram's underlying APIs are very unreliable. Most builds these days no longer succeed for me and looking at the [repo](https://github.com/oorestisime/gatsby-source-instagram/issues/190), maintainers aren't very active. I've decided to remove this from my site and I'm looking for alternatives.*
+
+
 
 Do you want your Gatsby site to display your Instagram posts with images, captions, likes, comments and hashtags?
 
-Check out my example here: [Instagram Gatsby Page](/instagram/)
+
+<ul className={note}>
+  <h3>Udpate:</h3> 
+  After a few months of experimenting, I've concluded this plugin or perhaps Instagram's underlying APIs are very unreliable. Most builds these days no longer succeed for me and looking at the [repo](https://github.com/oorestisime/gatsby-source-instagram/issues/190), maintainers aren't very active. 
+  <br/>
+  *I've decided to remove this from my site and I'm looking for alternatives.*
+</ul>
+
+Check out my example here: [Instagram Gatsby Page](/instagram/) (now removed from site)
+
 
 In this blog post, I will show you how to create this example. We will leverage the existing [gatsby-source-instagram](https://www.gatsbyjs.com/plugins/gatsby-source-instagram/) plugin. 
 
