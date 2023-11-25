@@ -7,9 +7,10 @@ import TabbedContent from '../tabbed-content';
 const Playlist = ({ apple, youtube, spotify, title }) => {
   const tabs = [
     { label: 'Apple Music', content: <AppleMusic src={apple} title={title} /> },
-    { label: 'Spotify', content: <SpotifyPlaylist src={spotify} title={title} /> },
     { label: 'YouTube', content: <YouTubePlaylist src={youtube} title={title} /> },
   ];
+
+  if (spotify) tabs.push({ label: 'Spotify', content: <SpotifyPlaylist src={spotify} title={title} /> });
 
   return (
     <div style={{ padding: 8 }}>
