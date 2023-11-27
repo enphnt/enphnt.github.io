@@ -35,7 +35,7 @@ export const query = graphql`
     allMdx(
       filter: {
         internal: {contentFilePath: {regex: "/blog/"}}
-        frontmatter: {tags:  {regex: "/web dev/"}}
+        frontmatter: {tags:  {regex: "/web dev|software/"}}
       }
       sort: {frontmatter: {date: DESC}}
     ) {
