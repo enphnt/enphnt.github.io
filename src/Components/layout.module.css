@@ -37,11 +37,12 @@
   --dark-shadow: -5px 5px 50px rgba(0, 0, 0, 0.2);
   --light-shadow: -2px 3px 10px rgba(0, 0, 0, 0.2);
   --max-width: 970px;
+  --line-height: 1.75;
 }
 
 html {
   scroll-padding-top: 70px;
-  color: rgb(73, 73, 73);
+  color: var(--clr-black);
   font-family: "quicksand", sans-serif;
   font-weight: 300;
   /* scroll-behavior: smooth; */
@@ -219,6 +220,23 @@ h5 {
   left: 0;
   top: 0;
   box-shadow: 6px 2px 24px 8px rgba(0, 0, 0, .12)
+}
+
+/* 
+  ensure that all elements have the same line-height
+  including inline code blocks
+*/
+p,
+li,
+td,
+th,
+sup,
+sub {
+  line-height: var(--line-height);
+}
+
+:not(pre)>code[class*="language-"] {
+  line-height: var(--line-height);
 }
 
 @keyframes fadein {
