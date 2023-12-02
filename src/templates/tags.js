@@ -21,7 +21,7 @@ const Tags = ({ pageContext, data }) => {
         <AllTags />
       </div>
       {
-        edges.map(({ node }) => <ArticleListItem key={node.id} node={node} />)
+        edges.map(({ node }, idx) => <ArticleListItem key={idx} node={node} />)
       }
       <br />
       <AllTags />
