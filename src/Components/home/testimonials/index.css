@@ -55,6 +55,7 @@ Reviews
 
 .button-container {
   width: 150px;
+  min-height: 24px;
   display: flex;
   margin: 0 auto;
   position: relative;
