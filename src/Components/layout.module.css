@@ -38,6 +38,7 @@
   --light-shadow: -2px 3px 10px rgba(0, 0, 0, 0.2);
   --max-width: 970px;
   --line-height: 1.75;
+  --font-size: 1.1rem;
 }
 
 html {
@@ -45,6 +46,7 @@ html {
   color: var(--clr-black);
   font-family: "quicksand", sans-serif;
   font-weight: 300;
+  font-size: var(--font-size);
   /* scroll-behavior: smooth; */
   scrollbar-color: #c3c3c346 transparent;
   animation: .5s ease 1s normal forwards 1 fadein;

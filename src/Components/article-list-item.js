@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -11,14 +11,25 @@ const lightColors = [
 const ArticleListItem = ({ idx, node: { id, frontmatter: { thumbnail, slug, title, date, tags }, excerpt } }) => {
   const thumb = getImage(thumbnail);
   const fancyColor = lightColors[idx % lightColors.length];
+  const [mobileGrid, setMobileGrid] = useState("span 1");
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        setMobileGrid("span 2");
+      } else {
+        setMobileGrid("span 1");
+      }
+    });
+  }, []);
 
   const styles = {
     article: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(9em, 1fr))",
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
       gridGap: "1em",
       maxWidth: "99%",
-      padding: "1em 1em",
+      padding: "1em",
     },
     tag: {
       padding: 4,
@@ -34,19 +45,25 @@ const ArticleListItem = ({ idx, node: { id, frontmatter: { thumbnail, slug, titl
     },
     heading: {
       marginTop: 0,
-      fontSize: "1.6em",
+      fontSize: "1.3em",
       fontWeight: 600,
       textDecorationLine: "underline",
       textDecorationStyle: "solid",
       textDecorationColor: fancyColor,
       textDecorationThickness: 1,
+      maxWidth: "max-content",
     },
     thumbnailWrapper: {
-      margin: "0.5em 0 0 0",
-      justifySelf: "center"
+      margin: "0.35em 0 0 0",
+      justifySelf: "center",
+      gridColumn: mobileGrid,
+      maxWidth: 350,
     },
     info: {
-      gridColumnEnd: "span 3"
+      gridColumn: "span 2",
+      justifyContent: "space-around",
+      display: "flex",
+      flexDirection: "column",
     },
     hr: {
       color: fancyColor,
