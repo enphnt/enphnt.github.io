@@ -21,8 +21,8 @@ const MusicPage = ({ data }) => {
           music I also write about <Link aria-label="Over to code" to="/code/">code</Link>, too.
         </p>
         {
-          data.allMdx.nodes.map(node =>
-            <ArticleListItem key={node.id} node={node} path={"blog"} />
+          data.allMdx.nodes.map((node, idx) =>
+            <ArticleListItem key={node.id} node={node} path={"blog"} idx={idx} />
           )
         }
       </div>
