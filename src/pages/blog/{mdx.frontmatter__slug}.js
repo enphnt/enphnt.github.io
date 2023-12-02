@@ -14,10 +14,9 @@ const BlogPost = ({ data, children }) => {
   const {
     mdx: {
       frontmatter: {
-        title, tags, date, slug,
+        title, tags, date,
         hero_image, hero_image_alt, hero_image_credit_link, hero_image_credit_text,
       },
-      excerpt,
       tableOfContents
     }
   } = data;
@@ -47,8 +46,6 @@ const BlogPost = ({ data, children }) => {
         <br />
         <RandomPost />
       </div>
-      {/* // todo export const Head = () => <Seo title="Blog" />; */}
-      <Seo title={title} excerpt={excerpt} slug={slug} hero_image={hero_image} />
     </Layout >
   );
 };
@@ -75,5 +72,13 @@ export const query = graphql`
     }
   }
 `;
+
+export const Head = ({ location, data }) =>
+  <Seo
+    location={location}
+    title={data.mdx.frontmatter.title}
+    hero_image={data.mdx.frontmatter.hero_image}
+    excerpt={data.mdx.excerpt}
+  />;
 
 export default BlogPost;;

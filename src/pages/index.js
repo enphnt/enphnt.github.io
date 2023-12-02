@@ -22,6 +22,6 @@ const IndexPage = () => (
   </div>
 );
 
-export const Head = () => <Seo title="Home Page" />;
+export const Head = ({ location }) => <Seo title="Home Page" location={location} />;
 
 export default IndexPage;

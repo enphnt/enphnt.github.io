@@ -25,10 +25,11 @@ const Tags = ({ pageContext, data }) => {
       }
       <br />
       <AllTags />
-      <Seo title={`Tagged with: '${tag}'`} />
     </Layout>
   );
 };
+
+export const Head = ({ location }) => <Seo title="Tags" location={location} />;
 
 export default Tags;
 

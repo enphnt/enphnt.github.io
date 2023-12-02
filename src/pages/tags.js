@@ -14,7 +14,6 @@ const TagsPage = ({
   },
 }) => (
   <Layout>
-    <Seo title="Tags" />
     <div>
       <h1>Tags</h1>
       <p>Click tags to discover related content.</p>
@@ -32,6 +31,8 @@ const TagsPage = ({
 );
 
 export default TagsPage;
+
+export const Head = ({ location }) => <Seo title="Tags" location={location} />;
 
 export const pageQuery = graphql`
 query {

@@ -22,7 +22,7 @@ const MusicPage = ({ data }) => {
         </p>
         {
           data.allMdx.nodes.map((node, idx) =>
-            <ArticleListItem key={node.id} node={node} path={"blog"} idx={idx} />
+            <ArticleListItem key={idx} node={node} path={"blog"} idx={idx} />
           )
         }
       </div>
@@ -61,6 +61,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Music" />;
+export const Head = ({ location }) => <Seo title="Music" location={location} />;
 
 export default MusicPage;

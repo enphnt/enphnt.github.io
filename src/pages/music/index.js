@@ -61,6 +61,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Music" />;
+export const Head = ({ location }) => <Seo title="Music" location={location} />;
 
 export default MusicPage;

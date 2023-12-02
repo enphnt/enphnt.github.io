@@ -26,69 +26,57 @@ You can learn more about adding an SEO component to a Gatsby project by reading 
 ## The SEO component
 Let's take a look at how it all fits together.
 
-The component returns a set of meta tags that provide information about the page to search engines and social media platforms.
+The component returns a set of meta tags that provide information about the page to search engines and social media platforms. 
 
 ```javascript
 
-  import React from "react";
-  import { useStaticQuery, graphql } from "gatsby";
-  import { getImage, getSrc } from "gatsby-plugin-image";
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { getImage, getSrc } from "gatsby-plugin-image";
 
-  const Seo = ({ excerpt, title, slug, hero_image }) => {
-    const data = useStaticQuery(graphql`
-      query SiteMetadata {
-        site {
-          siteMetadata {
-            title
-            description
-            image
-            siteUrl
-          }
+const Seo = ({ excerpt, title, slug, hero_image, location, params, pageContext }) => {
+  const data = useStaticQuery(graphql`
+    query SiteMetadata {
+      site {
+        siteMetadata {
+          title
+          description
+          image
+          siteUrl
         }
       }
-    `);
+    }
+  `);
 
-    const { 
-      title: siteTitle, 
-      description: siteDescription, 
-      image: siteImage, siteUrl 
-    } = data.site.siteMetadata;
+  const { title: siteTitle, description: siteDescription, image: siteImage, siteUrl } = data.site.siteMetadata;
 
-    const currentUrl = typeof window !== 'undefined' 
-      ? window.location.href 
-      : siteUrl;
+  const blurb = excerpt || siteDescription;
+  const heroImageObject = getImage(hero_image || null);
+  const heroImageUrl = getSrc(heroImageObject);
+  const fullTitle = `${title.replace("/", "")} ⍟ ${siteTitle}`;
+  const fullImageUrl = heroImageUrl ? `${siteUrl}${heroImageUrl}` : `${siteUrl}${siteImage}`;
 
-    const blurb = excerpt || siteDescription;
-    const heroImage = hero_image || null;
+  return <>
+    {/* Remove any <html> tag from here else you'll face SSR issues due to mismatch server/client*/}
+    
+    {/* title of page */}
+    <title>{fullTitle}</title>
+    <meta property="og:title" content={fullTitle} />
+    {/* type of page */}
+    <meta property="og:type" content={slug ? "article" : "website"} />
+    {/* canonical URL of page */}
+    <meta property="og:url" content={siteUrl + location.pathname} />
+    {/* description of page */}
+    <meta name="description" content={blurb} />
+    <meta property="og:description" content={blurb} />
+    {/* image of page */}
+    <meta property="og:image" content={fullImageUrl} />
+    {/* name of website */}
+    <meta property="og:site_name" content={siteTitle} />
+  </>;
+};
 
-    const heroImageObject = getImage(heroImage);
-    const heroImageUrl = getSrc(heroImageObject);
-
-    const fullTitle = `${title.replace("/", "")} ⍟ ${siteTitle}`;
-    const fullImageUrl = heroImageUrl ? `${siteUrl}${heroImageUrl}` : `${siteUrl}${siteImage}`;
-
-    return (
-      <>
-        <html lang="en" />
-        <meta name="description" content={blurb} />
-        {/* title of page */}
-        <meta property="og:title" content={fullTitle} />
-        {/* type of page */}
-        <meta property="og:type" content={slug ? "article" : "website"} />
-        {/* canonical URL of page */}
-        <meta property="og:url" content={currentUrl} />
-        {/* description of page */}
-        <meta property="og:description" content={blurb} />
-        {/* image of page */}
-        <meta property="og:image" content={fullImageUrl} />
-        {/* name of website */}
-        <meta property="og:site_name" content={siteTitle} />
-        <title>{fullTitle}</title>
-      </>
-    );
-  };
-
-  export default Seo;
+export default Seo;
 
 
 ```
@@ -98,8 +86,6 @@ The component takes in `excerpt`, `title`, `slug`, and `hero_image` as props but
 The component uses the `useStaticQuery` hook to query the site's metadata, which includes the site's title, description, image, and URL. This data is then destructured into their respective variables.
 
 The component also defines several variables:
-#### currentUrl
-  The current URL of the page. If the window object is not undefined (i.e., if the code is being run in a browser), it uses the current window location. Otherwise, it uses the site's URL from the metadata.
 #### blurb
   The page's description. If an excerpt is provided as a prop, it uses that. Otherwise, it uses the site's description from the metadata.
   
@@ -120,15 +106,26 @@ The component also defines several variables:
 
 The component returns a fragment containing several meta tags and a title tag for SEO purposes:
 #### lang="en"
-  This specifies the language of the page content. It helps search engines understand the intended audience for the page and can improve the page's ranking for users searching in that language.
-
-  We set the language of the page to English in this example:
+  We could set the language of the page to English in this example:
   ```jsx
   
   <html lang="en" />
   
   
   ```
+
+  However, this lead to SSR issues due to mismatch between server/client. So, I recommend using the `gatsby-ssr.js` to set the language of the page to English:
+  ```js
+    
+    // in gatsby-ssr.js
+
+    exports.onRenderBody = ({ setHtmlAttributes }) => {
+      setHtmlAttributes({ lang: 'en' });
+    };
+
+
+```
+
 #### title
 This specifies the title of the page as it should appear in search engine results and in the browser tab. It's one of the most important factors in helping search engines understand what the page is about and can improve the page's ranking for relevant keywords.
 
@@ -182,10 +179,10 @@ This specifies the type of content on the page (e.g., “article” or “websit
 #### og:url
 This specifies the canonical URL of the page. It helps social media platforms understand where to direct users when they click on the shared content.
 
-Set the Open Graph URL of the page to the value of `currentUrl`.
+Set the Open Graph URL of the page to the value of `location.pathname`.
   ```jsx
   
-  <meta property="og:url" content={currentUrl} />
+  <meta property="og:url" content={location.pathname} />
   
   
   ```
@@ -240,11 +237,31 @@ Here's an example of how you can use the SEO component within a template page fi
 
     return (
       <>
-        <Seo excerpt={excerpt} title={title} slug={slug} hero_image={hero_image} />
-        {/* Page content here */}
+        {/* Page content would be in here */}
+
+        {/* 
+        
+          The SEO component could go inside the component like below 
+          commented code. However, this will lead to nested meta tags 
+          in your html. Use Head export to have Gatsby edit the actual 
+          document head
+        
+        */}
+        
+        {/*<Seo excerpt={excerpt} title={title} slug={slug} hero_image={hero_image} />*/}
       </>
     );
   };
+
+  // Export the named Head component which Gatsby 
+  // will use to render the head section of the page
+  export const Head = ({ location, data }) =>
+  <Seo
+    location={location}
+    title={data.mdx.frontmatter.title}
+    hero_image={data.mdx.frontmatter.hero_image}
+    excerpt={data.mdx.excerpt}
+  />;
 
   export default PostTemplate;
 
@@ -260,18 +277,24 @@ You can still use this component when the page in question is not an MDX file. H
   const Page = () => {
     return (
       <>
-        <Seo title="Page Title" />
-        {/* Page content here */}
+        {/* the page's content would be here in the component*/}
       </>
     );
   };
 
+  // In this case, we only need to set the title prop and pass in the location (the current page's location)
+  export const Head = ({ location }) => <Seo title="Home Page" location={location} />;
+
+  export default Page;
 
 ```
 ## How to test
+You can also view the source code of your webpage and look for the tags in the head section, or use web developer tools built into the browser. You just want to make sure you can see all the tags you expect to see.
+
+![Screenshot of the head section of a webpage](./head.png)
+
 To test if your SEO metatags are working as expected, you can use online tools like [Meta Tags](https://metatags.io/), [Meta Tag Analyzer](https://checkserp.com/meta-tag-analyzer/), or [Meta Tags Checker](https://seomator.com/meta-tags-checker/) to preview how your webpage will look on different platforms. 
 
-You can also view the source code of your webpage and look for the tags in the head section, or use web developer tools built into most web browsers.
 
 ## Conclusion
 I hope this helps you get all the necessary data in place for all your pages and posts.

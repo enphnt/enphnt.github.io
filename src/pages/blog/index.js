@@ -4,6 +4,8 @@ import Layout from '../../components/layout';
 import Seo from '../../components/seo';
 import ArticleListItem from '../../components/article-list-item';
 
+const excerpt = "A collection of posts that I've written on various topics. Check em' out!";
+
 const ArticleList = ({ data }) => {
   const list = {
     display: "flex",
@@ -17,8 +19,7 @@ const ArticleList = ({ data }) => {
       <div style={list}>
         <h1>All Blog Posts</h1>
         <p>
-          A collection of posts that I've written on various
-          topics. I also have split these posts into topics
+          {excerpt} I also have split these posts into topics
           like <Link aria-label={`Over to code`} to={"/code/"}>code</Link>
           {" "}and <Link aria-label={`Over to Music`} to={"/music/"}>music</Link>, too.
         </p>
@@ -57,6 +58,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Blog" />;
+export const Head = ({ location }) => <Seo title="Blog" location={location} />;
 
 export default ArticleList;
