@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { getImage, getSrc } from "gatsby-plugin-image";
 
@@ -18,20 +18,22 @@ const Seo = ({ excerpt, title, slug, hero_image }) => {
 
   const { title: siteTitle, description: siteDescription, image: siteImage, siteUrl } = data.site.siteMetadata;
 
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : siteUrl;
-
+  const [currentUrl, setCurrentUrl] = useState(siteUrl);
   const blurb = excerpt || siteDescription;
-  const heroImage = hero_image || null;
-
-  const heroImageObject = getImage(heroImage);
+  const heroImageObject = getImage(hero_image || null);
   const heroImageUrl = getSrc(heroImageObject);
-
   const fullTitle = `${title.replace("/", "")} ⍟ ${siteTitle}`;
   const fullImageUrl = heroImageUrl ? `${siteUrl}${heroImageUrl}` : `${siteUrl}${siteImage}`;
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
+
   return (
     <>
-      <html lang="en" />
+      {/* Remove the <html> tag from here */}
       <meta name="description" content={blurb} />
       {/* title of page */}
       <meta property="og:title" content={fullTitle} />

@@ -11,6 +11,9 @@ module.exports = {
     description: "My own little world for blogging, experimenting with code, sharing music and web shenanigans.",
     image: `/favicon.png`,
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
