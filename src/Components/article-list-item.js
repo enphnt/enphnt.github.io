@@ -11,14 +11,13 @@ const lightColors = [
 const ArticleListItem = ({ idx, node: { id, frontmatter: { thumbnail, slug, title, date, tags }, excerpt } }) => {
   const thumb = getImage(thumbnail);
   const fancyColor = lightColors[idx % lightColors.length];
-  const [mobileGrid, setMobileGrid] = useState("span 1");
+  const [mobileGrid, setMobileGrid] = useState();
 
   useEffect(() => {
     window.addEventListener("resize", () => {
+      setMobileGrid("span 1");
       if (window.innerWidth <= 768) {
         setMobileGrid("span 2");
-      } else {
-        setMobileGrid("span 1");
       }
     });
   }, []);
@@ -57,7 +56,7 @@ const ArticleListItem = ({ idx, node: { id, frontmatter: { thumbnail, slug, titl
       margin: "0.35em 0 0 0",
       justifySelf: "center",
       gridColumn: mobileGrid,
-      maxWidth: 350,
+      maxWidth: 230,
     },
     info: {
       gridColumn: "span 2",
