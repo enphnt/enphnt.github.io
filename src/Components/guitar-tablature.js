@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import TabbedContent from './tabbed-content';
 
 const GuitarTablature = ({ tabs, title }) => {
-  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
+  const [isMobile, setIsMobile] = useState();
 
   useEffect(() => {
+    setIsMobile(false);
     window.addEventListener("resize", () => {
       setIsMobile(window.innerWidth <= 768);
     });

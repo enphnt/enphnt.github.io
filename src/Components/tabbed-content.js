@@ -11,7 +11,6 @@ const TabbedContent = ({ tabs, title, heading }) => {
   };
 
   const tabButtonStyle = {
-    wordWrap: "none",
     flex: '0 0 40px',
     lineHeight: 1.2,
     whiteSpace: "nowrap",
